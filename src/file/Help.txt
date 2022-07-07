@@ -1,0 +1,34 @@
+**********************************************************************
+**************************** MENÙ DI HELP ****************************
+**********************************************************************
+
+Salve, giocatore. L'unico scopo della mia esistenza è aiutarti.
+Ti spiego un po' di cose..
+
+Puoi spostarti in partita attraverso dei comandi del tipo seguente:
+- vai a destra/vai a sinistra/vai avanti/vai indietro
+Equivalentemente, puoi digitare:
+- destra/sinistra/avanti/indietro
+Per tua fortuna, puoi spostarti anche solo inserendo il 'numero identificativo' della stanza nella quale vuoi spostarti.
+
+Puoi conoscere la lista delle stanze in cui puoi spostarti, digitando:
+- /lista stanze
+Puoi anche conoscere in quale stanza sei attualmente, digitando:
+- /stanza corrente
+Puoi guardarti attorno attraverso i comandi:
+- /guarda  oppure  /guarda stanza
+
+Puoi aprire e guardare il tuo inventario, attraverso i comandi:
+- /apri inventario  oppure  /inventario
+Puoi aprire il tuo taccuino, attraverso i comandi:
+- /apri taccuino  oppure  /taccuino
+        
+Puoi raccogliere qualcosa, attraverso il comando:
+- /raccogli <nomeOggetto>     [non devi inserire le parentesi angolari!] 
+Puoi usare un oggetto, attraverso il comando:
+- /usa <nomeOggetto>     [non devi inserire le parentesi angolari!]
+       
+Puoi ulteriormente avere un hint, attraverso i comandi:
+- /hint  oppure  /aiuto
+Puoi anche usare il comando /help per visualizzare questo menù di help.
+Puoi invece usare il comando /trama per conoscere la trama di questa avventura testuale.
