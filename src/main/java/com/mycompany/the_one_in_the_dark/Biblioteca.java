@@ -158,4 +158,7 @@ public class Biblioteca extends Ambiente {
         System.out.println("");
         return introduzioneAmbiente= true;
     }
+
+    public static void guardaStanzaBiblioteca() {
+    }
 }

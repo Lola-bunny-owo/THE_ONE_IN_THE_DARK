@@ -91,13 +91,12 @@ public class Oggetti {
         String inputUtente = "";
         boolean sceltaValida = false;
 
-        while ((controllaScelta.hasNext())&&(sceltaValida == false)){
+        while (sceltaValida == false){
             inputUtente = controllaScelta.nextLine();
-
             if ((inputUtente.equalsIgnoreCase("s"))&&(controllaOggettiInInventario() == true)){
                 inserisciOggetto(nomeOggetto, descrizioneOggetto);
                 sceltaValida = true;
-
+    
             }else if((inputUtente.equalsIgnoreCase("s"))&&(controllaOggettiInInventario() == false)){
                 controllaOggettiInInventario();
                 sceltaValida = true;
@@ -105,27 +104,24 @@ public class Oggetti {
             }else if(inputUtente.equalsIgnoreCase("n")){
                 System.out.println("Non hai inserito l'oggetto " + nomeOggetto+ " nel tuo inventario.");
                 sceltaValida = true;
-
+                    
             }else {
-                System.out.println("Hai sbagliato a scrivere? O forse sei solo stupido/a?");
-                
+                    System.out.println("Hai sbagliato a scrivere? O forse sei solo stupido/a?");
+                    
             }
-        }
-
-        controllaScelta.close();
+        } 
     }
 
     // Inserisce un oggetto nell'inventario.
     public static void inserisciOggetto(String nomeOggetto, String descrizioneOggetto) {
         // Inserisce l'oggetto nell'inventario.
-        Inventario.nomeOggettiInventario[Inventario.numeroOggettiInventario+1] = nomeOggetto;
-        Inventario.descrizioneOggettiInventario[Inventario.numeroOggettiInventario+1] = descrizioneOggetto;
-
+        Inventario.numeroOggettiInventario++;
+        Inventario.setInventario(nomeOggetto, descrizioneOggetto);
         System.out.println("Hai inserito l'oggetto " + nomeOggetto + " nel tuo inventario!");
         System.out.println("");
         Oggetti.inInventario= true;
-        Inventario.numeroOggettiInventario++;
         getNumOggettiInInventario();
+        Inventario.stampaInventario();
     }
 
     // Esegue un controllo booleano sul numero di oggetti nell'inventario.

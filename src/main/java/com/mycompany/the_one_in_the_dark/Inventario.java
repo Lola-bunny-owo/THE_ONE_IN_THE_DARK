@@ -3,11 +3,13 @@ package com.mycompany.the_one_in_the_dark;
 public class Inventario extends Oggetti{
 
     protected static int numeroOggettiInventario= 0;
-    protected static String[] nomeOggettiInventario;
-    protected static String[] descrizioneOggettiInventario;
 
     Inventario(){
         super();
+    }
+
+    public static void main(String[] args) {
+        
     }
 
     // Stampa a schermo gli oggetti nel proprio inventario
@@ -21,17 +23,18 @@ public class Inventario extends Oggetti{
         }else{
 
             for(int i= 0; i< numeroOggettiInventario; i++){
-                System.out.println("Oggetto n°[" + i+1 + "]: ");
-                System.out.println(" - NOME: " + nomeOggettiInventario[i]);
-                System.out.println(" - DESCRIZIONE:" + descrizioneOggettiInventario[i]);
+                System.out.println("Oggetto n°[" + (i+1) + "]: ");
+                System.out.println(" - NOME: " + Oggetti.nomeOggetto[i]);
+                System.out.println(" - DESCRIZIONE:" + Oggetti.descrizioneOggetto[i]);
             }
             
         }  
         
     }
 
-    public static void setInventario(){
-        
+    public static void setInventario(String nome, String descrizione){
+        Inventario.nomeOggetto= new String[] { nome };
+        Inventario.descrizioneOggetto= new String[] { descrizione };
     }
 
 }

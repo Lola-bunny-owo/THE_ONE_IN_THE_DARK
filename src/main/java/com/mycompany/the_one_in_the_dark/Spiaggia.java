@@ -204,6 +204,9 @@ public class Spiaggia extends Ambiente {
         System.out.println("Fai due passi..<");
         System.out.println("");
         return introduzioneAmbiente= true;
+    }
+
+    public static void guardaStanzaSpiaggia() {
     } 
 
 }

@@ -169,4 +169,7 @@ public class StazioneDiPolizia extends Ambiente {
         return introduzioneAmbiente= true;
     }
 
+    public static void guardaStanzaStazioneDiPolizia() {
+    }
+
 }

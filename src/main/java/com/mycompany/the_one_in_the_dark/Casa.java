@@ -50,7 +50,7 @@ public class Casa extends Ambiente {
         // Set degli oggetti presenti nella casa
         // INGRESSO
         if(!setOggettiCasa){
-            Oggetti.setNomeOggetto(new String[] { "Libro", "Carota", "Penna", "Gomma" });
+            Oggetti.setNomeOggetto(new String[] { "tappeto", "vaso", "armadietto", "Gomma" });
             Oggetti.setDescrizione(new String[] { "Un vecchio libro di storia", "Cibo commestibile", "Una penna a stilo", "Gomma per cancellare" });
             Oggetti.setNumeroOggetti(new int[] { 1, 2, 3, 4 });
             setOggettiCasa= true;
@@ -225,4 +225,95 @@ public class Casa extends Ambiente {
         }
     }
 
+    public static void guardaStanzaCasa(){
+        if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Ingresso")){
+            Casa.stampaIngresso();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Cucina")){
+            Casa.stampaCucina();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Salone")){
+            Casa.stampaSalone();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Veranda")){
+            Casa.stampaVeranda();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Corridoio largo")){
+            Casa.stampaCorridoioLargo();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Corridoio stretto")){
+            Casa.stampaCorridoioStretto();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Camera da letto di Spike")){
+            Casa.stampaCameraDaLettoSpike();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Camera da letto del custode")){
+            Casa.stampaCameraDaLettoCustode();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Bagno")){
+            Casa.stampaBagno();
+        }else if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Stanza segreta")){
+            Casa.stampaStanzaSegreta();
+        }
+    }
+
+// Messaggi che vengono stampati quando l'utente digita /guarda stanza
+
+    public static void stampaIngresso(){
+        System.out.println("> L'ingresso della casa. Le pareti sembrano cadere a pezzi, il loro colore è un bianco sporco che non ti mette a tuo agio.");
+        System.out.println("Il tappeto per terra è graffiato, quindi forse in questa casa ci sono stati dei gatti. O chissà..");
+        System.out.println("Per essere un ingresso, è comunque bello grande. Tanti piccoli vasi con fiori di vario genere sono disposti di fianco alla porta.<");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    public static void stampaSalone(){
+        System.out.println("> Il salone è grigio e cupo, come lo è del resto l'intera casa. Due grandi divani occupano gran parte della stanza.");
+        System.out.println("Armadietti, piccole scrivanie e quadri la decorano.");
+        System.out.println("Si può salire al piano grazie alle scale affianco ai divani.<");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    public static void stampaCucina(){
+        System.out.println("> La cucina è messa meglio: ordinata, pulita, la spazzatura al proprio posto.. Il sogno di tutti gli universitari fuorisede.");
+        System.out.println("Un dolce odore di pancake ti fa venire l'acquolina in bocca. Il custode sa cucinare?");
+        System.out.println("La tavola è apparecchiata per 2. Ma quante altre persone vivono in questa casa?<");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    public static void stampaVeranda(){
+        System.out.println("> La veranda è la stanza più illuminata perché è l'unica nella quale il sole arriva direttamente.");
+        System.out.println("Un paio di ruote forate sono appoggiate affianco alla porta.");
+        System.out.println("Il tavolino pieno di chiodi, martelli e strumenti di vario genere è la principale attrazione della stanza.");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    private static void stampaBagno() {
+        System.out.println("> Gli angoli di questo bagno sono pieni di muffa. Piccoli ragnetti e formiche qui dentro si godono la vita."); 
+        System.out.println("Almeno il gabinetto è pulito e, strano ma vero, nella vasca da bagno non c'è nessuna donna dai capelli neri e lunghi morta.");
+        System.out.println("Noti il lavandino: ci sono delle goccie di sangue..");
+    }
+
+    private static void stampaCorridoioLargo(){
+        System.out.println("> Il corridoio largo è un corridoio molto vivace. Sono presenti dei cavalletti da pittura, delle fotocamere, librerie e strofinacci sporchi.");
+        System.out.println("Le crepe sul muro e sul pavimento rendono però tutto quanto abbastanza inquietante.");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    private static void stampaCorridoioStretto(){
+        System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, e un piccolo comodino di fronte al bagno.");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    private static void stampaCameraDaLettoSpike(){
+        System.out.println("> La tua nuova stanza. È così spenta e triste che ti fa venire voglia solo di dormire.");
+        System.out.println("Il letto è pieno di polvere, e tu ci dovrai dormire sopra.");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    private static void stampaCameraDaLettoCustode(){
+        System.out.println("> La stanza del custode. Ti sembra strano che non la tenga chiusa a chiave.");
+        System.out.println("Il suo letto è ordinato, e sulla scrivania ci sono tanti fogli ed un diario.");
+        System.out.println("Il muro affianco al letto ha qualcosa che non va..");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+    }
+
+    private static void stampaStanzaSegreta(){
+        System.out.println("> È una stanza con delle luci accecanti bianche. Le pareti sono tinte di un colore rosso vermiglio. È sangue.");
+        System.out.println("Non riesci a credere ai tuoi occhi. Per terra, dei teli bianchi sporcati anch'essi dal sangue.");
+        System.out.println("Macchine fotografiche ovunque.. Non osi immaginare cosa sia successo in questa stanza. Il tuo passato ti è sconosciuto.");
+        System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
+
+    }
 }

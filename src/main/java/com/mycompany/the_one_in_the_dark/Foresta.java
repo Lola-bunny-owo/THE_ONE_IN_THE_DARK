@@ -165,6 +165,9 @@ public class Foresta extends Ambiente {
         System.out.println("Boh, almeno sarai ricordato come un eroe.. Certo, da tua madre.<");
         System.out.println("");
         return introduzioneAmbiente= true;
+    }
+
+    public static void guardaStanzaForesta() {
     } 
 
 }

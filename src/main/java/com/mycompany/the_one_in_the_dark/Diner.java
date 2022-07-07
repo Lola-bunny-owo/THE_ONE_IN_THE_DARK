@@ -165,5 +165,8 @@ public class Diner extends Ambiente {
         System.out.println("Sei combattuto..<");
         System.out.println("");
         return introduzioneAmbiente= true;
+    }
+
+    public static void guardaStanzaDiner() {
     } 
 }

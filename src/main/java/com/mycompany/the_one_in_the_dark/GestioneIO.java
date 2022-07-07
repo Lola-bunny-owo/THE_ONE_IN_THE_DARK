@@ -48,6 +48,7 @@ public class GestioneIO {
                 }
 
                 System.out.println("Aspettando un tuo comando..");
+                System.out.println("");
             }
         }
 

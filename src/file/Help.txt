@@ -28,7 +28,5 @@ Puoi raccogliere qualcosa, attraverso il comando:
 Puoi usare un oggetto, attraverso il comando:
 - /usa <nomeOggetto>     [non devi inserire le parentesi angolari!]
        
-Puoi ulteriormente avere un hint, attraverso i comandi:
-- /hint  oppure  /aiuto
 Puoi anche usare il comando /help per visualizzare questo menù di help.
 Puoi invece usare il comando /trama per conoscere la trama di questa avventura testuale.

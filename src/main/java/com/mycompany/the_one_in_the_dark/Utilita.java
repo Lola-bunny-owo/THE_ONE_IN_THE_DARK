@@ -100,10 +100,6 @@ public class Utilita {
             }
         }
     }
-    
-    public static void stampaHint(){
-        
-    }
 
     /* STAMPE ENTRATE AMBIENTI - quando il giocatore entra nell'ambiente, visualizza il messaggio. */
 
@@ -158,26 +154,36 @@ public class Utilita {
                 e.printStackTrace();
             }
     
-        }else if((inputUtente.equalsIgnoreCase("/hint"))||(inputUtente.equalsIgnoreCase("/aiuto"))){
-            Utilita.stampaHint();
-    
         }else if((inputUtente.equalsIgnoreCase("/apri inventario"))||(inputUtente.equalsIgnoreCase("/inventario"))){
             Inventario.stampaInventario();
 
-        }else if(inputUtente.equalsIgnoreCase("/usa ")){
+        }else if(inputUtente.startsWith("/usa ")){
             // TO - DO: usare oggetto
                 
         }else if((inputUtente.equalsIgnoreCase("/apri taccuino"))||(inputUtente.equalsIgnoreCase("/taccuino"))){
             //TO - DO: apri taccuino
     
-        }else if((inputUtente.equalsIgnoreCase("/guarda"))||(inputUtente.equalsIgnoreCase("/guarda stanza"))){
-            //TO - DO: guarda
+        }else if(inputUtente.equalsIgnoreCase("/guarda stanza")){
+            if(Ambiente.nomeAmbiente.equals("Casa")){
+                Casa.guardaStanzaCasa();
+            }else if(Ambiente.nomeAmbiente.equals("Biblioteca")){
+                Biblioteca.guardaStanzaBiblioteca();
+            }else if(Ambiente.nomeAmbiente.equals("Foresta")){
+                Foresta.guardaStanzaForesta();
+            }else if(Ambiente.nomeAmbiente.equals("Diner")){
+                Diner.guardaStanzaDiner();
+            }else if(Ambiente.nomeAmbiente.equals("Stazione di Polizia")){
+                StazioneDiPolizia.guardaStanzaStazioneDiPolizia();
+            }else if(Ambiente.nomeAmbiente.equals("Spiaggia")){
+                Spiaggia.guardaStanzaSpiaggia();
+            }
     
         }else if(inputUtente.startsWith("/raccogli ")){
             Oggetti.raccogliOggetto(inputUtente);
         
         }else if(inputUtente.equalsIgnoreCase("/lista stanze")){
             Ambiente.stampaStanze();
+
         }else if(inputUtente.equalsIgnoreCase("/mappa")){
             
             if((Ambiente.nomeAmbiente.equals("Casa"))&&(Ambiente.numeroStanzaCorrente <= 4)){
