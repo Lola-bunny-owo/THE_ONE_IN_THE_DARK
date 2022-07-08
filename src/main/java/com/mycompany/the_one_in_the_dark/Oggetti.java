@@ -24,32 +24,6 @@ public class Oggetti {
     Oggetti() {
     }
 
-    public static void setNomeOggetto(String[] nomeOggetto) {
-        Oggetti.nomeOggetto = nomeOggetto;
-    }
-
-    public static void setDescrizione(String[] descrizione) {
-        Oggetti.descrizioneOggetto = descrizione;
-    }
-
-    public static void setNumeroOggetti(int[] numeroOggetti) {
-        Oggetti.numeroOggetti = numeroOggetti;
-    }
-
-    /* METODI GET */
-
-    public static String[] getNomeOggetto() {
-        return nomeOggetto;
-    }
-
-    public static String[] getDescrizione() {
-        return descrizioneOggetto;
-    }
-
-    public static int[] getNumeroOggetti() {
-        return numeroOggetti;
-    }
-
     // Controlla se un oggetto è nell'inventario o meno
     public static boolean isInInventario() {
         return inInventario;

@@ -28,6 +28,7 @@ public class Utilita {
     // Introduzione al gioco.
     public static void intro() throws InterruptedException{
         Casa.setCasa();
+        Database.setDatabase();
         System.out.println("...Quasi arrivato.");
         delay();
         System.out.println("");
