@@ -54,7 +54,7 @@ public class Spiaggia extends Ambiente {
     }
 }
 
-    public static void acquisisciInputSpiaggia(String inputUtente){
+    public static void acquisisciInputSpiaggia(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 1){

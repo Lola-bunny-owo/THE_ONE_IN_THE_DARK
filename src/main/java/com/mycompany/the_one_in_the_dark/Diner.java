@@ -54,7 +54,7 @@ public class Diner extends Ambiente {
         }
     }
 
-    public static void acquisisciInputDiner(String inputUtente){
+    public static void acquisisciInputDiner(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 2){

@@ -55,7 +55,7 @@ public class StazioneDiPolizia extends Ambiente {
         }
     }
 
-    public static void acquisisciInputStazionePolizia(String inputUtente){
+    public static void acquisisciInputStazionePolizia(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 1){

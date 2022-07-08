@@ -54,7 +54,7 @@ public class Biblioteca extends Ambiente {
         
     }
 
-    public static void acquisisciInputBiblioteca(String inputUtente){
+    public static void acquisisciInputBiblioteca(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 2){

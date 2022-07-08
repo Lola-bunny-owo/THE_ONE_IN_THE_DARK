@@ -14,7 +14,7 @@ public class GestioneIO {
 
     // Acquisisce l'input da tastiera
 
-    public void gestisciInputUtente() {
+    public void gestisciInputUtente() throws InterruptedException {
 
         System.out.println("Aspettando un tuo comando..");
         System.out.println("");

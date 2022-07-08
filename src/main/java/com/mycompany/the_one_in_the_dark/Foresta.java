@@ -54,7 +54,7 @@ public class Foresta extends Ambiente {
         }
     }
 
-    public static void acquisisciInputForesta(String inputUtente){
+    public static void acquisisciInputForesta(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 2){
