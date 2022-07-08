@@ -62,7 +62,7 @@ class Ambiente {
         return nomeStanzaCorrente;
     }
 
-    /* METODI DI STAMPA etc.. */
+    /* METODI DI STAMPA */
     public static void stampaStanzaCorrente() {
         System.out.println("Sei in: [" + Ambiente.getNumeroStanzaCorrente() + "] - " + Ambiente.getNomeStanzaCorrente());
     }

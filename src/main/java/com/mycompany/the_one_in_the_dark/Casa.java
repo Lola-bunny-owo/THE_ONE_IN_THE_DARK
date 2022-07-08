@@ -63,6 +63,7 @@ public class Casa extends Ambiente {
 
     }
 
+    // Acquisisce l'input dell'utente, il quale vuole spostarsi tra le stanze dell'ambiente.
     public static void acquisisciInputCasa(String inputUtente){
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -230,6 +231,7 @@ public class Casa extends Ambiente {
         }
     }
 
+    // Metodo che permette all'utente di guardare la stanza.
     public static void guardaStanzaCasa(){
         if(Ambiente.nomeStanzaCorrente.equalsIgnoreCase("Ingresso")){
             Casa.stampaIngresso();
@@ -254,7 +256,8 @@ public class Casa extends Ambiente {
         }
     }
 
-// Messaggi che vengono stampati quando l'utente digita /guarda stanza
+    // Sono dei metodi di stampa, che includono un filtro sugli oggetti presenti nella stanza.
+    // Gli oggetti sono filtrati in base al numero della stanza e in base alla loro visibilità.
 
     public static void stampaIngresso(){
 
@@ -264,16 +267,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 1");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 1 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -288,16 +288,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 2");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 2 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -311,16 +308,14 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 3");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 3 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
 
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -334,16 +329,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 4");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 4 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -356,16 +348,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 5");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 5 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -377,16 +366,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 6");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 6 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -399,16 +385,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 7");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 7 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -418,20 +401,17 @@ public class Casa extends Ambiente {
     private static void stampaCameraDaLettoCustode(){
         System.out.println("> La stanza del custode. Ti sembra strano che non la tenga chiusa a chiave.");
         System.out.println("Il suo letto è ordinato, e sulla scrivania ci sono tanti fogli ed un diario.");
-        System.out.println("Il muro affianco al letto ha qualcosa che non va..");
+        System.out.println("Il muro affianco al letto ha qualcosa che non va.. È un passaggio per un'altra stanza.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 8");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 8 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -444,16 +424,13 @@ public class Casa extends Ambiente {
         System.out.println("Noti il lavandino: ci sono delle goccie di sangue..");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 9");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 9 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");
@@ -467,16 +444,13 @@ public class Casa extends Ambiente {
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
 
         try {
-            Database.connessioneDB();
             Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 10");
+            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 10 and visibile = TRUE");
             
             while(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
             }
-
             stm.close();
-            Database.connessioneDB().close();
 
         }catch (SQLException e) {
             System.out.println("Errore.");

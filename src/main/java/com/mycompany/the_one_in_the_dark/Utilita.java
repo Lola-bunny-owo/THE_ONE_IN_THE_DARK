@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import com.mycompany.the_one_in_the_dark.Mappe.MappaBiblioteca;
@@ -20,6 +21,8 @@ import com.mycompany.the_one_in_the_dark.Mappe.MappaSpiaggia;
  */
 public class Utilita {
 
+    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN, idOggetto INT, stanza INT, visibile BOOLEAN)";
+
     // Metodo che dà un delay di 2s ai messaggi.
     public static void delay() throws InterruptedException{
         Thread.sleep(2000);
@@ -27,8 +30,8 @@ public class Utilita {
 
     // Introduzione al gioco.
     public static void intro() throws InterruptedException{
+        Database.cancellaDatabase();
         Casa.setCasa();
-        Database.setDatabase();
         System.out.println("...Quasi arrivato.");
         delay();
         System.out.println("");
@@ -64,12 +67,12 @@ public class Utilita {
         delay();
         System.out.println("GRIGIO: Ho sentito parlare di lei, signor Spike. In realtà, non ricordo molto. La mia memoria fa brutti scherzi.");
         System.out.println("GRIGIO: Non faccia caso a me, e si accomodi pure. Io non sarò altro che un fantasma, per tutta la sua permanenza qui.");
-        // aggiungere "checkpoint", perché potenzialmente il giocatore non vuole rileggersi sempre sta pappardella
     }
 
 
     /* STAMPE A SCHERMO */
 
+    // Stampa a schermo l'help dei comandi che prende da un file.
     public static void stampaHelp() throws IOException{
         Scanner stampaHelp= null;
         File fileHelp= new File(".//src//file//Help.txt");
@@ -86,7 +89,7 @@ public class Utilita {
         }
     }
     
-    // TO DO - scrivere la trama del gioco
+    // Stampa a schermo la trama del gioco che prende da un file.
     public static void stampaTrama() throws IOException{
         Scanner stampaTrama= null;
         File fileTrama= new File(".//src//file//Trama.txt");
@@ -134,7 +137,8 @@ public class Utilita {
         System.out.println("");
     }
 
-    // Acquisisci comandi utente
+    // Metodo che acquisisce i comandi dell'utente. Questi comandi sono comandi
+    // utilizzabili dall'utente in qualsiasi ambiente e stanza egli si trovi.
     public static void acquisisciInputComando(String inputUtente){
         if(inputUtente.equalsIgnoreCase("/help")){
 
@@ -160,11 +164,15 @@ public class Utilita {
 
         }else if(inputUtente.startsWith("/usa ")){
             // TO - DO: usare oggetto
-                
+
+        }else if(inputUtente.startsWith("/apri ")){
+            Oggetti.apriOggetto(inputUtente);
+
         }else if((inputUtente.equalsIgnoreCase("/apri taccuino"))||(inputUtente.equalsIgnoreCase("/taccuino"))){
             //TO - DO: apri taccuino
     
         }else if(inputUtente.equalsIgnoreCase("/guarda stanza")){
+
             if(Ambiente.nomeAmbiente.equals("Casa")){
                 Casa.guardaStanzaCasa();
             }else if(Ambiente.nomeAmbiente.equals("Biblioteca")){
@@ -178,7 +186,10 @@ public class Utilita {
             }else if(Ambiente.nomeAmbiente.equals("Spiaggia")){
                 Spiaggia.guardaStanzaSpiaggia();
             }
-    
+
+        }else if (inputUtente.startsWith("/guarda ")){
+            Oggetti.guardaOggetto(inputUtente);
+
         }else if(inputUtente.startsWith("/raccogli ")){
             Oggetti.raccogliOggetto(inputUtente);
         
@@ -202,7 +213,20 @@ public class Utilita {
             }else if(Ambiente.nomeAmbiente.equals("Stazione di Polizia")){
                 MappaPolizia.stampaFrame();
             }
-                
+
+        }else if(inputUtente.equalsIgnoreCase("/esci")){
+            System.out.println("***** ARRIVEDERCI *****");
+            System.out.println("");
+
+            try {
+                Database.cancellaDatabase();
+                Database.connessioneDB().close();
+            } catch (SQLException e) {
+                System.out.println("Errore chiusura del DB.");
+            }
+
+            System.exit(0);
+
         }else{
             System.out.println("Comando non riconosciuto.");
         }
