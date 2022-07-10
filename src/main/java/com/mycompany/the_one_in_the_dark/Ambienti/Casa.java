@@ -1,6 +1,7 @@
-package com.mycompany.the_one_in_the_dark;
-
-import java.sql.*;
+package com.mycompany.the_one_in_the_dark.Ambienti;
+import com.mycompany.the_one_in_the_dark.Oggetti;
+import com.mycompany.the_one_in_the_dark.Utilita;
+import com.mycompany.the_one_in_the_dark.Db.DatabaseCasa;
 
 /**
  *
@@ -13,34 +14,6 @@ public class Casa extends Ambiente {
      */
 
     static boolean setOggettiCasa= false;
-    
-    public static void main(String[] args) {
-
-        try {
-            setCasa();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Stampa del nome dell'ambiente
-        System.out.println("Nome ambiente: " + Ambiente.getNomeAmbiente());
-
-        // Stampa del numero di stanze
-        for(int i= 0; i< Ambiente.getNumeroStanze().length; i++){
-            System.out.println("Numero stanza: " + Ambiente.getNumeroStanze()[i]);
-        }
-
-        // Stampa del nome delle stanze
-        for (int j= 0; j< Ambiente.getNomiStanze().length; j++){
-            System.out.println("Nome stanza: " + Ambiente.getNomiStanze()[j]);
-        }
-
-        // Stampa delle stanze
-        Ambiente.stampaStanze();
-
-        // Stampa numero stanze
-        System.out.println("Il numero di stanze presenti in " + Ambiente.getNomeAmbiente() + " è: " + Ambiente.getNumeroStanze().length);
-    }
 
     public static void setCasa() throws InterruptedException {
         
@@ -157,6 +130,10 @@ public class Casa extends Ambiente {
                     incrementoStanza();
                     incrementoStanza();
                     stampaStanzaCorrente();
+                }else if(getNumeroStanzaCorrente() == 8){
+                    incrementoStanza();
+                    incrementoStanza();
+                    stampaStanzaCorrente();
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -265,20 +242,7 @@ public class Casa extends Ambiente {
         System.out.println("Il tappeto per terra è graffiato, quindi forse in questa casa ci sono stati dei gatti. O chissà..");
         System.out.println("Per essere un ingresso, è comunque bello grande. Tanti piccoli vasi con fiori di vario genere sono disposti di fianco alla porta.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 1 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
-       
+        Oggetti.stampaOggetti();
     }
 
     public static void stampaSalone(){
@@ -286,19 +250,7 @@ public class Casa extends Ambiente {
         System.out.println("Armadietti, piccole scrivanie e quadri la decorano.");
         System.out.println("Si può salire al piano grazie alle scale affianco ai divani.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 2 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     public static void stampaCucina(){
@@ -306,20 +258,7 @@ public class Casa extends Ambiente {
         System.out.println("Un dolce odore di pancake ti fa venire l'acquolina in bocca. Il custode sa cucinare?");
         System.out.println("La tavola è apparecchiata per 2. Ma quante altre persone vivono in questa casa?<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 3 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     public static void stampaVeranda(){
@@ -327,75 +266,27 @@ public class Casa extends Ambiente {
         System.out.println("Un paio di ruote forate sono appoggiate affianco alla porta.");
         System.out.println("Il tavolino pieno di chiodi, martelli e strumenti di vario genere è la principale attrazione della stanza.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 4 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     private static void stampaCorridoioLargo(){
         System.out.println("> Il corridoio largo è un corridoio molto vivace. Sono presenti dei cavalletti da pittura, delle fotocamere, librerie e strofinacci sporchi.");
         System.out.println("Le crepe sul muro e sul pavimento rendono però tutto quanto abbastanza inquietante.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 5 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     private static void stampaCorridoioStretto(){
         System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, e un piccolo comodino di fronte al bagno.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 6 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     private static void stampaCameraDaLettoSpike(){
         System.out.println("> La tua nuova stanza. È così spenta e triste che ti fa venire voglia solo di dormire.");
         System.out.println("Il letto è pieno di polvere, e tu ci dovrai dormire sopra.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 7 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     private static void stampaCameraDaLettoCustode(){
@@ -403,38 +294,14 @@ public class Casa extends Ambiente {
         System.out.println("Il suo letto è ordinato, e sulla scrivania ci sono tanti fogli ed un diario.");
         System.out.println("Il muro affianco al letto ha qualcosa che non va.. È un passaggio per un'altra stanza.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 8 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     private static void stampaBagno() {
         System.out.println("> Gli angoli di questo bagno sono pieni di muffa. Piccoli ragnetti e formiche qui dentro si godono la vita."); 
         System.out.println("Almeno il gabinetto è pulito e, strano ma vero, nella vasca da bagno non c'è nessuna donna dai capelli neri e lunghi morta.");
         System.out.println("Noti il lavandino: ci sono delle goccie di sangue..");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 9 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
+        Oggetti.stampaOggetti();
     }
 
     private static void stampaStanzaSegreta(){
@@ -442,20 +309,7 @@ public class Casa extends Ambiente {
         System.out.println("Non riesci a credere ai tuoi occhi. Per terra, dei teli bianchi sporcati anch'essi dal sangue.");
         System.out.println("Macchine fotografiche ovunque.. Non osi immaginare cosa sia successo in questa stanza. Il tuo passato ti è sconosciuto.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-
-        try {
-            Statement stm= Database.connessioneDB().createStatement();
-            ResultSet result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = 10 and visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-            stm.close();
-
-        }catch (SQLException e) {
-            System.out.println("Errore.");
-        }
-
+        Oggetti.stampaOggetti();
     }
 
 }

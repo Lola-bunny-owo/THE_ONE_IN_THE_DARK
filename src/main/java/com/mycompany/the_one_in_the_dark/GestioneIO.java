@@ -3,6 +3,8 @@ package com.mycompany.the_one_in_the_dark;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+import com.mycompany.the_one_in_the_dark.Ambienti.*;
+
 /**
  *
  * @author Angela Mileti

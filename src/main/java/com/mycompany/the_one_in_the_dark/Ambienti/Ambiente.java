@@ -1,17 +1,17 @@
-package com.mycompany.the_one_in_the_dark;
+package com.mycompany.the_one_in_the_dark.Ambienti;
 
 /**
  *
  * @author Angela Mileti
  */
 
-class Ambiente {
+public class Ambiente {
 
     // Attributi condivisi da ogni sottoclasse
-    protected static String nomeAmbiente= "";
+    public static String nomeAmbiente= "";
     protected static int[] numeroStanze;
     protected static String[] nomiStanze;
-    protected static int numeroStanzaCorrente;
+    public static int numeroStanzaCorrente;
     protected static String nomeStanzaCorrente= "";
     protected static boolean mappaAperta= false;
 
@@ -73,7 +73,11 @@ class Ambiente {
             System.out.println("Queste sono le stanze presenti in " + nomeAmbiente + ":");
             
             for(int i= 0; i< numeroStanze.length; i++){
-                System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+                if(numeroStanze[i] == 10){
+                    System.out.println("[???] - ???");
+                }else {
+                    System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+                }  
             }
 
         }else if(nomeAmbiente.equals("Spiaggia")){
@@ -131,7 +135,7 @@ class Ambiente {
         // Trasforma l'input utente nell'intero equivalente
         numeroStanzaUtente= Integer.parseInt(inputUtente);
 
-        if((numeroStanzaUtente > 0)&&(numeroStanzaUtente <= 10)&&(controlloNumeroStanze >= numeroStanzaUtente)){
+        if((numeroStanzaUtente > 0)&&(numeroStanzaUtente < 10)&&(controlloNumeroStanze >= numeroStanzaUtente)){
 
             if(controlloNumeroStanza(numeroStanzaUtente)){
                 numeroStanzaCorrente= numeroStanzaUtente;

@@ -20,7 +20,7 @@ Attenzione: se cambi ambiente e non hai chiuso la mappa precedente, questa mappa
 Puoi conoscere la lista delle stanze in cui puoi spostarti, digitando:
 - /lista stanze
 Puoi anche conoscere in quale stanza sei attualmente, digitando:
-- /stanza corrente
+- /stanza
 Puoi guardarti attorno attraverso i comandi:
 - /guarda stanza
 
@@ -36,10 +36,10 @@ Puoi raccogliere qualcosa, attraverso il comando:
 Puoi usare un oggetto, attraverso il comando:
 - /usa <nomeOggetto>    
 
+Importante: non devi inserire le parentesi angolari e il nome dev'essere inserito con la lettera maiuscola! :)
+
 Se invece vuoi uscire dal gioco (in modo corretto), puoi farlo attraverso il comando:
 - /esci
 
-Importante: non devi inserire le parentesi angolari (:
-       
 Puoi anche usare il comando /help per visualizzare questo menù di help.
 Puoi invece usare il comando /trama per conoscere la trama di questa avventura testuale.

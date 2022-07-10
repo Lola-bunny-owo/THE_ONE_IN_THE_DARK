@@ -4,6 +4,14 @@ import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.Scanner;
 
+import com.mycompany.the_one_in_the_dark.Ambienti.Ambiente;
+import com.mycompany.the_one_in_the_dark.Db.Database;
+
+/**
+ *
+ * @author Angela Mileti
+ */
+
 public class Oggetti {
 
     // Queste variabili devo salvarle da qualche parte? 
@@ -113,16 +121,18 @@ public class Oggetti {
             Statement stm = Database.connessioneDB().createStatement();
             // Aggiorna valore dell'oggetto nella tabella oggetti
             stm.executeUpdate("UPDATE oggetti SET inInventario = TRUE WHERE nomeOggetto = '" + nomeOggetto + "'");
+            stm.executeUpdate("UPDATE oggetti SET inseribile = FALSE WHERE nomeOggetto = '" + nomeOggetto + "'");
+            stm.executeUpdate("UPDATE oggetti SET visibile = FALSE WHERE nomeOggetto = '" + nomeOggetto + "'");
+            System.out.println("Hai inserito l'oggetto [" + nomeOggetto + "] nel tuo inventario!");
+            System.out.println("");
+            Inventario.numeroOggettiInventario++;
+            System.out.println("");
+            getNumOggettiInInventario();
             stm.close();
         } catch (SQLException e) {  
             System.out.println("Errore nell'aggiornamento dell'attributo nel database.");
         }
-
-        System.out.println("Hai inserito l'oggetto [" + nomeOggetto + "] nel tuo inventario!");
-        System.out.println("");
-        Inventario.numeroOggettiInventario++;
-        System.out.println("");
-        getNumOggettiInInventario();
+        
     }
 
     // Esegue un controllo booleano sul numero di oggetti nell'inventario.
@@ -143,7 +153,10 @@ public class Oggetti {
         if(Inventario.numeroOggettiInventario == MAX_OGGETTI){
             System.out.println("Il numero di oggetti nell'inventario è [" + Inventario.numeroOggettiInventario + "] - Hai raggiunto il numero massimo di oggetti che puoi inserire nell'inventario.");
             return MAX_OGGETTI;
-        }else{
+        }else if(Inventario.numeroOggettiInventario == 0){
+            System.out.println("Nel tuo inventario non c'è nulla!");
+            return Inventario.numeroOggettiInventario;
+        }else {
             System.out.println("Il numero di oggetti nell'inventario è [" + Inventario.numeroOggettiInventario + "] - Puoi ancora inserire oggetti.");
             return Inventario.numeroOggettiInventario;
         }
@@ -171,16 +184,75 @@ public class Oggetti {
     }
 
     // Metodo che permette di aprire un oggetto.
-    public static void apriOggetto(String inputUtente) {
-        // TO-DO: aprire oggetto
+    public static void usaOggetto(String inputUtente) {
+        Statement stm;
+        ResultSet result;
+        String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
+
+        try {
+            stm= Database.connessioneDB().createStatement();
+            result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE AND usabile = TRUE");
+            
+            if(result.next()){
+                System.out.println(result.getString("descrizioneUsa"));
+                Utilita.controllaOggettoUsato(nuovoInput);
+                stm.close();
+            }else if(result.next() == false){
+                System.out.println("Non puoi usare questo oggetto.");
+            }else{
+                System.out.println("Non puoi usare un oggetto che non esiste.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Errore nella query.");
+        }
+
     }
 
     // Metodo che permette di scartare un oggetto dall'inventario.
     public static void scartaOggetto(String inputUtente) {
-        // TO-DO: Scartare oggetto dall'inventario.
+        Statement stm;
+        ResultSet result;
+        String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
+        try {
+            stm= Database.connessioneDB().createStatement();
+            result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto ='" + nuovoInput + "' AND inInventario = TRUE");
+            
+            if(result.next()){
+                stm.executeUpdate("UPDATE oggetti SET inInventario = FALSE WHERE nomeOggetto = '" + nuovoInput + "'");
+                stm.executeUpdate("UPDATE oggetti SET inseribile = TRUE WHERE nomeOggetto = '" + nuovoInput + "'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = '" + nuovoInput + "'");
+                // Ritorna da solo a casa sua?? Ahahah.
+                System.out.println("Hai scartato l'oggetto [" + nuovoInput + "] dall'inventario!");
+                Inventario.numeroOggettiInventario--;
+                getNumOggettiInInventario();
+                stm.close();
+            }else{
+                System.out.println("Non c'è nessun oggetto con questo nome nel tuo inventario. Fatti controllare da un medico.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Il nome dell'oggetto inserito non esiste.");
+        }
+
     }
 
+    // Metodo che stampa gli oggetti visibili presenti nella stanza corrente.
+    public static void stampaOggetti() {
+        Statement stm;
+        ResultSet result;
+        try {
+            stm= Database.connessioneDB().createStatement();
+            result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND visibile = TRUE");
+            
+            while(result.next()){
+                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
+            }
 
+            stm.close();
+        } catch (SQLException e) {
+            System.out.println("Errore nella stampa degli oggetti.");
+        } 
+    }
 
-    
 }

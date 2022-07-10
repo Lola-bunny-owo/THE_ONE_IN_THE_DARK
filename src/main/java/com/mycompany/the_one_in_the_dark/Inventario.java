@@ -1,6 +1,12 @@
 package com.mycompany.the_one_in_the_dark;
 
 import java.sql.*;
+import com.mycompany.the_one_in_the_dark.Db.Database;
+
+/**
+ *
+ * @author Angela Mileti
+ */
 
 public class Inventario extends Oggetti{
 
@@ -9,11 +15,7 @@ public class Inventario extends Oggetti{
     Inventario(){
         super();
     }
-
-    public static void main(String[] args) {
-        
-    }
-
+    
     // Stampa a schermo gli oggetti nel proprio inventario
     public static void stampaInventario(){
         System.out.println("| | | | | | | | | | | | | |");
@@ -48,10 +50,6 @@ public class Inventario extends Oggetti{
                
         }  
         
-    }
-
-    public static void setInventario(String nomeOggetto, String descrizioneOggetto){
-        // TO-DO: inserire l'oggetto nel inventario
     }
 
 }

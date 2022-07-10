@@ -1,4 +1,6 @@
-package com.mycompany.the_one_in_the_dark;
+package com.mycompany.the_one_in_the_dark.Ambienti;
+
+import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
  *
@@ -11,30 +13,6 @@ public class StazioneDiPolizia extends Ambiente {
      */
 
     static boolean introduzioneAmbiente= false;
-
-    public static void main(String[] args) {
-
-        setStazioneDiPolizia();
-
-        // Stampa del nome dell'ambiente
-        System.out.println("Nome ambiente: " + Ambiente.getNomeAmbiente());
-
-        // Stampa del numero di stanze
-        for(int i= 0; i< Ambiente.getNumeroStanze().length; i++){
-            System.out.println("Numero dipartimento: " + Ambiente.getNumeroStanze()[i]);
-        }
-
-        // Stampa del nome delle stanze
-        for (int j= 0; j< Ambiente.getNomiStanze().length; j++){
-            System.out.println("Nome dipartimento: " + Ambiente.getNomiStanze()[j]);
-        }
-
-        // Stampa delle stanze
-        Ambiente.stampaStanze();
-
-        // Stampa numero stanze
-        System.out.println("Il numero di dipartimenti presenti in " + Ambiente.getNomeAmbiente() + " è: " + Ambiente.getNumeroStanze().length);
-    }
 
     public static void setStazioneDiPolizia() {
         
@@ -170,6 +148,8 @@ public class StazioneDiPolizia extends Ambiente {
     }
 
     public static void guardaStanzaStazioneDiPolizia() {
+        // TO-DO: da implementare più avanti :)
+        System.out.println("Per ora, non puoi.");
     }
 
 }

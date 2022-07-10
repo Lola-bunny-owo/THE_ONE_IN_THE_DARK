@@ -1,7 +1,13 @@
-package com.mycompany.the_one_in_the_dark;
+package com.mycompany.the_one_in_the_dark.Db;
 
 import java.util.Properties;
+import com.mycompany.the_one_in_the_dark.Utilita;
 import java.sql.*;
+
+/**
+ *
+ * @author Angela Mileti
+ */
 
 public class Database {
 

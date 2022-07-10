@@ -1,4 +1,6 @@
-package com.mycompany.the_one_in_the_dark;
+package com.mycompany.the_one_in_the_dark.Ambienti;
+
+import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
  *
@@ -11,29 +13,6 @@ public class Foresta extends Ambiente {
      */
 
     static boolean introduzioneAmbiente= false;
-
-    public static void main(String[] args) {
-
-        setForesta();
-        // Stampa del nome dell'ambiente
-        System.out.println("Nome ambiente: " + Ambiente.getNomeAmbiente());
-
-        // Stampa del numero di stanze
-        for(int i= 0; i< Ambiente.getNumeroStanze().length; i++){
-            System.out.println("Numero zona: " + Ambiente.getNumeroStanze()[i]);
-        }
-
-        // Stampa del nome delle stanze
-        for (int j= 0; j< Ambiente.getNomiStanze().length; j++){
-            System.out.println("Nome zona: " + Ambiente.getNomiStanze()[j]);
-        }
-
-        // Stampa delle stanze
-        Ambiente.stampaStanze();
-
-        // Stampa numero stanze
-        System.out.println("Il numero di zone presenti in " + Ambiente.getNomeAmbiente() + " è: " + Ambiente.getNumeroStanze().length);
-    }
 
     public static void setForesta() {
         
@@ -168,6 +147,8 @@ public class Foresta extends Ambiente {
     }
 
     public static void guardaStanzaForesta() {
-    } 
+        // TO-DO: da implementare più avanti :)
+        System.out.println("Nope. Non puoi ancora.");
+    }
 
 }

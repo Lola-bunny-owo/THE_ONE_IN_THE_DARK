@@ -5,15 +5,17 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
-import com.mycompany.the_one_in_the_dark.Mappe.MappaBiblioteca;
-import com.mycompany.the_one_in_the_dark.Mappe.MappaCasaPrimoPiano;
-import com.mycompany.the_one_in_the_dark.Mappe.MappaCasaSecondoPiano;
-import com.mycompany.the_one_in_the_dark.Mappe.MappaDiner;
-import com.mycompany.the_one_in_the_dark.Mappe.MappaForesta;
-import com.mycompany.the_one_in_the_dark.Mappe.MappaPolizia;
-import com.mycompany.the_one_in_the_dark.Mappe.MappaSpiaggia;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.*;
+
+import com.mycompany.the_one_in_the_dark.Db.Database;
+import com.mycompany.the_one_in_the_dark.Ambienti.*;
+import com.mycompany.the_one_in_the_dark.Mappe.*;
 
 /**
  *
@@ -21,7 +23,7 @@ import com.mycompany.the_one_in_the_dark.Mappe.MappaSpiaggia;
  */
 public class Utilita {
 
-    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN, idOggetto INT, stanza INT, visibile BOOLEAN)";
+    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN, idOggetto INT, stanza INT, visibile BOOLEAN, usabile BOOLEAN, descrizioneUsa VARCHAR(600))";
 
     // Metodo che dà un delay di 2s ai messaggi.
     public static void delay() throws InterruptedException{
@@ -51,7 +53,7 @@ public class Utilita {
         delay();
         System.out.println("");
         System.out.println("E voi chi siete?");
-        introGrigio();
+        NPCs.introGrigio();
         delay();
         System.out.println("> Non eri a conoscenza del custode di casa, ma te ne fai una ragione. Ti senti libero di esplorare la tua nuova casa a due piani.");
         Ambiente.stampaStanzaCorrente();
@@ -60,15 +62,6 @@ public class Utilita {
         System.out.println("!Suggerimento!: ehi giocatore, digita il comando /help, per capire come muoverti nell'ambiente e per capire quali comandi puoi o meno inserire.");
         System.out.println("");
     }
-
-    // Introduzione del personaggio "Grigio".
-    public static void introGrigio() throws InterruptedException{
-        System.out.println("GRIGIO: Benvenuto. Io sono Ralof, anche detto 'Il Grigio', e sono il custode di questa casa.");
-        delay();
-        System.out.println("GRIGIO: Ho sentito parlare di lei, signor Spike. In realtà, non ricordo molto. La mia memoria fa brutti scherzi.");
-        System.out.println("GRIGIO: Non faccia caso a me, e si accomodi pure. Io non sarò altro che un fantasma, per tutta la sua permanenza qui.");
-    }
-
 
     /* STAMPE A SCHERMO */
 
@@ -140,6 +133,7 @@ public class Utilita {
     // Metodo che acquisisce i comandi dell'utente. Questi comandi sono comandi
     // utilizzabili dall'utente in qualsiasi ambiente e stanza egli si trovi.
     public static void acquisisciInputComando(String inputUtente){
+
         if(inputUtente.equalsIgnoreCase("/help")){
 
             try {
@@ -148,7 +142,7 @@ public class Utilita {
                 e.printStackTrace();
             }
         
-        }else if(inputUtente.equalsIgnoreCase("/stanza corrente")){
+        }else if(inputUtente.equalsIgnoreCase("/stanza")){
             Ambiente.stampaStanzaCorrente();
 
         }else if(inputUtente.equalsIgnoreCase("/trama")){
@@ -162,12 +156,9 @@ public class Utilita {
         }else if((inputUtente.equalsIgnoreCase("/apri inventario"))||(inputUtente.equalsIgnoreCase("/inventario"))){
             Inventario.stampaInventario();
 
-        }else if(inputUtente.startsWith("/usa ")){
-            // TO - DO: usare oggetto
-
-        }else if(inputUtente.startsWith("/apri ")){
-            Oggetti.apriOggetto(inputUtente);
-
+        }else if((inputUtente.startsWith("/usa "))||(inputUtente.startsWith("/apri "))){
+            Oggetti.usaOggetto(inputUtente);
+            
         }else if((inputUtente.equalsIgnoreCase("/apri taccuino"))||(inputUtente.equalsIgnoreCase("/taccuino"))){
             //TO - DO: apri taccuino
     
@@ -192,7 +183,13 @@ public class Utilita {
 
         }else if(inputUtente.startsWith("/raccogli ")){
             Oggetti.raccogliOggetto(inputUtente);
-        
+
+        }else if(inputUtente.startsWith("/scarta ")){
+            Oggetti.scartaOggetto(inputUtente);
+
+        }else if(inputUtente.equalsIgnoreCase("/oggetti")){
+            Oggetti.stampaOggetti();
+
         }else if(inputUtente.equalsIgnoreCase("/lista stanze")){
             Ambiente.stampaStanze();
 
@@ -232,5 +229,99 @@ public class Utilita {
         }
     }
     
+    // Metodo che in base all'oggetto che viene usato, cambia la visibilità di alcuni oggetti o richiama altri metodi.
+    public static void controllaOggettoUsato(String oggettoUsato){
+        Statement stm;
+        
+        if((oggettoUsato.equals("Baule"))&&(Ambiente.numeroStanzaCorrente == 1)){
+
+            try {
+                stm= Database.connessioneDB().createStatement();
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Album di foto'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Coniglietto'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Lettera'");
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Impossibile aggiornare gli attributi.");
+            }
+
+        }else if((oggettoUsato.equals("Armadietto"))&&(Ambiente.numeroStanzaCorrente == 1)){
+
+            try {
+                stm= Database.connessioneDB().createStatement();
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Scarponi'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Corda'");
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Impossibile aggiornare gli attributi.");
+            }
+
+        }else if((oggettoUsato.equals("Armadietto"))&&(Ambiente.numeroStanzaCorrente == 2)){
+
+            try {
+                stm= Database.connessioneDB().createStatement();
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Chiave'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Vestiti femminili'");
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Impossibile aggiornare gli attributi.");
+            }
+
+        }else if((oggettoUsato.equals("Armadietto da cucina"))&&(Ambiente.numeroStanzaCorrente == 3)){
+
+            try {
+                stm= Database.connessioneDB().createStatement();
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Dito sottovuoto'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Piatti'");
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Impossibile aggiornare gli attributi.");
+            }
+
+        }else if((oggettoUsato.equals("Cestino"))&&(Ambiente.numeroStanzaCorrente == 4)){
+
+            try {
+                stm= Database.connessioneDB().createStatement();
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Accendino'");
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Impossibile aggiornare gli attributi.");
+            }
+
+        }else if((oggettoUsato.equals("Libreria"))&&(Ambiente.numeroStanzaCorrente == 5)){
+
+            try {
+                stm= Database.connessioneDB().createStatement();
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Romeo e Giulietta'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Orgoglio e Pregiudizio'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Le migliori barzellette di Totti'");
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Impossibile aggiornare gli attributi.");
+            }
+
+        }else if((oggettoUsato.equals("Orologio a pendolo"))&&(Ambiente.numeroStanzaCorrente == 6)){
+        
+            // TO-DO: Implementare l'utilizzo dell'API RESTful.
+
+        }else if((oggettoUsato.equals("Chitarra"))&&(Ambiente.numeroStanzaCorrente == 7)){
+
+            riproduciChitarra(".//src//audio//radiohead.mp3");
+        }
+
+    }
+
+    // Al comando /usa Chitarra, viene riprodotto l'audio specificato dalla stringa passata come parametro.
+    public static void riproduciChitarra(String path){
+        try{
+            Clip clip= AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
+            // riproduce l'audio
+            clip.open(inputStream);
+            clip.start();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Impossibile riprodurre il suono della chitarra.");
+        }
+    }
     
 }

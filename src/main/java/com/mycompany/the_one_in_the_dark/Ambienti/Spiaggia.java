@@ -1,4 +1,6 @@
-package com.mycompany.the_one_in_the_dark;
+package com.mycompany.the_one_in_the_dark.Ambienti;
+
+import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
  *
@@ -11,29 +13,6 @@ public class Spiaggia extends Ambiente {
      */
 
     static boolean introduzioneAmbiente= false;
-
-    public static void main(String[] args) {
-
-        setSpiaggia();
-        // Stampa del nome dell'ambiente
-        System.out.println("Nome ambiente: " + Ambiente.getNomeAmbiente());
-
-        // Stampa del numero di stanze
-        for(int i= 0; i< Ambiente.getNumeroStanze().length; i++){
-            System.out.println("Numero area: " + Ambiente.getNumeroStanze()[i]);
-        }
-
-        // Stampa del nome delle stanze
-        for (int j= 0; j< Ambiente.getNomiStanze().length; j++){
-            System.out.println("Nome area: " + Ambiente.getNomiStanze()[j]);
-        }
-
-        // Stampa delle stanze
-        Ambiente.stampaStanze();
-
-        // Stampa numero stanze
-        System.out.println("Il numero di aree presenti in " + Ambiente.getNomeAmbiente() + " è: " + Ambiente.getNumeroStanze().length);
-}
 
     public static void setSpiaggia() {
     
@@ -207,6 +186,8 @@ public class Spiaggia extends Ambiente {
     }
 
     public static void guardaStanzaSpiaggia() {
-    } 
+        // TO-DO: da implementare più avanti :)
+        System.out.println("Ti piacerebbe.");
+    }
 
 }
