@@ -15,4 +15,17 @@ La casa è infatti stato il luogo del suicidio dei suoi zii, Sig.ra **Felicia Th
 
 Spike, spinto da curiosità e da pura voglia di conoscere la storia dei suoi zii, si ritrova a risolvere i misteri che avvolgono la città nella malinconia. Un amico si unisce a lui nel corso della storia: un tenero cagnolino del colore del sole, Ein.
 
-
+### Informazioni sulla Repository
+La repository è suddivisa in:
+ - `src`, che è a sua volta suddivisa in
+ - - `audio`
+ - - `file`
+ - - `img`
+ - - `main`
+ - - `test`
+ 
+ - `target`
+ 
+ - `doc`
+ -----------
+ Questo è quanto! :)
