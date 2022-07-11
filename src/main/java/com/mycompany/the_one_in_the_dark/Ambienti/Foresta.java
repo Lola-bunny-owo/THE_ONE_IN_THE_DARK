@@ -18,10 +18,17 @@ public class Foresta extends Ambiente {
         
         // Set del nome dell'ambiente e del numero delle stanze.
         Ambiente.setNomeAmbiente("Foresta");
-        Ambiente.setNumeroStanze(new int[] { 1, 2, 3, 4, 5 });
+        if(!Ambiente.numeroStanze.isEmpty()){
+            Ambiente.numeroStanze.clear();
+        }
+        Ambiente.numeroStanze.add(1); 
+        Ambiente.numeroStanze.add(2);
+        Ambiente.numeroStanze.add(3);
+        Ambiente.numeroStanze.add(4);
+        Ambiente.numeroStanze.add(5);
 
         Ambiente.setNomiStanze(new String[] { "Ingresso", "Zona spinosa", "Per il diner",  "Per la spiaggia", "Sentiero sconosciuto"});
-        Ambiente.setNumeroStanzaCorrente(numeroStanze[0]);
+        Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
         Ambiente.setNomeStanzaCorrente("Ingresso");
 
         if(!introduzioneAmbiente){

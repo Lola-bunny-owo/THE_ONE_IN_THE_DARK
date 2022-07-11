@@ -241,18 +241,23 @@ public class Oggetti {
     public static void stampaOggetti() {
         Statement stm;
         ResultSet result;
-        try {
-            stm= Database.connessioneDB().createStatement();
-            result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND visibile = TRUE");
-            
-            while(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
-            }
-
-            stm.close();
-        } catch (SQLException e) {
-            System.out.println("Errore nella stampa degli oggetti.");
-        } 
+        if(Ambiente.nomeAmbiente.equals("Casa")){
+            try {
+                stm= Database.connessioneDB().createStatement();
+                result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND visibile = TRUE");
+                
+                while(result.next()){
+                    System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
+                }
+    
+                stm.close();
+            } catch (SQLException e) {
+                System.out.println("Errore nella stampa degli oggetti.");
+            } 
+        }else{
+            System.out.println("Al momento, in questo ambiente non ci sono oggetti. :)");
+        }
+        
     }
 
 }
