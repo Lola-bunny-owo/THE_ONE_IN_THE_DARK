@@ -19,13 +19,25 @@ public class Casa extends Ambiente {
         
         // Set del nome dell'ambiente e del numero delle stanze.
         Ambiente.setNomeAmbiente("Casa");
-        Ambiente.setNumeroStanze(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+        if(!Ambiente.numeroStanze.isEmpty()){
+            Ambiente.numeroStanze.clear();
+        }
+        Ambiente.numeroStanze.add(1); 
+        Ambiente.numeroStanze.add(2);
+        Ambiente.numeroStanze.add(3);
+        Ambiente.numeroStanze.add(4);
+        Ambiente.numeroStanze.add(5);
+        Ambiente.numeroStanze.add(6);
+        Ambiente.numeroStanze.add(7);
+        Ambiente.numeroStanze.add(8);
+        Ambiente.numeroStanze.add(9);
+        Ambiente.numeroStanze.add(10);
 
         // Set dei nomi delle stanze
         Ambiente.setNomiStanze(new String[] { "Ingresso", "Salone", "Cucina",  "Veranda", "Corridoio largo", "Corridoio stretto", "Camera da letto di Spike", "Camera da letto del custode", "Bagno", "Stanza segreta"});
 
         // Set numero della stanza corrente e del nome della stanza corrente
-        Ambiente.setNumeroStanzaCorrente(numeroStanze[0]);
+        Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
         Ambiente.setNomeStanzaCorrente("Ingresso");
 
         // Set degli oggetti presenti nella casa
@@ -204,7 +216,11 @@ public class Casa extends Ambiente {
             }
 
         }else{
-            Utilita.acquisisciInputComando(inputUtente);
+            try {
+                Utilita.acquisisciInputComando(inputUtente);
+            } catch (InterruptedException e) {
+                System.out.println("Errore nell'acquisizione del comando.");
+            }
         }
     }
 

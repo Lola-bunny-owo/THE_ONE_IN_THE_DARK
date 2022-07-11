@@ -1,5 +1,8 @@
 package com.mycompany.the_one_in_the_dark.Ambienti;
 
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 /**
  *
  * @author Angela Mileti
@@ -9,7 +12,8 @@ public class Ambiente {
 
     // Attributi condivisi da ogni sottoclasse
     public static String nomeAmbiente= "";
-    protected static int[] numeroStanze;
+    // Utilizzo di una Collection, ovvero la SortedSet.
+    protected static SortedSet<Integer> numeroStanze= new TreeSet<>();
     protected static String[] nomiStanze;
     public static int numeroStanzaCorrente;
     protected static String nomeStanzaCorrente= "";
@@ -24,7 +28,7 @@ public class Ambiente {
         Ambiente.nomeAmbiente= nomeAmbiente;
     }
 
-    public static void setNumeroStanze(int[] numeroStanze){
+    public static void setNumeroStanze(SortedSet<Integer> numeroStanze){
         Ambiente.numeroStanze= numeroStanze;
     }
 
@@ -46,7 +50,7 @@ public class Ambiente {
         return nomeAmbiente;
     }
 
-    public static int[] getNumeroStanze(){
+    public static SortedSet<Integer> getNumeroStanze(){
         return numeroStanze;
     }
     
@@ -71,44 +75,44 @@ public class Ambiente {
     public static void stampaStanze(){
         if(nomeAmbiente.equals("Casa")){
             System.out.println("Queste sono le stanze presenti in " + nomeAmbiente + ":");
-            
-            for(int i= 0; i< numeroStanze.length; i++){
-                if(numeroStanze[i] == 10){
+
+            for(Integer numero: numeroStanze){
+                if(numero == 10){
                     System.out.println("[???] - ???");
-                }else {
-                    System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
-                }  
+                }else{
+                    System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                }
             }
 
         }else if(nomeAmbiente.equals("Spiaggia")){
             System.out.println("Queste sono le aree presenti in " + nomeAmbiente + ":");
 
-            for(int i= 0; i< numeroStanze.length; i++){
-                System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+            for(Integer numero: numeroStanze){
+                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
             }
 
         }else if(nomeAmbiente.equals("Stazione di Polizia")){
             System.out.println("Questi sono i dipartimenti presenti in " + nomeAmbiente + ":");
 
-            for(int i= 0; i< numeroStanze.length; i++){
-                System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+            for(Integer numero: numeroStanze){
+                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
             }
 
         }else if(nomeAmbiente.equals("Biblioteca")){
             System.out.println("Queste sono le aule presenti in " + nomeAmbiente + ":");
-            for(int i= 0; i< numeroStanze.length; i++){
-                System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+            for(Integer numero: numeroStanze){
+                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
             }
 
         }else if(nomeAmbiente.equals("Diner")){
             System.out.println("Queste sono le sale presenti in " + nomeAmbiente + ":");
-            for(int i=0; i< numeroStanze.length; i++){
-                System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+            for(Integer numero: numeroStanze){
+                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
             }
         }else if(nomeAmbiente.equals("Foresta")){
             System.out.println("Queste sono le zone presenti in " + nomeAmbiente + ":");
-            for(int i= 0; i< numeroStanze.length; i++){
-                System.out.println("[" + numeroStanze[i] + "] - " + nomiStanze[i]);
+            for(Integer numero: numeroStanze){
+                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
             }
         }
 
@@ -131,7 +135,7 @@ public class Ambiente {
     // Acquisisci input
     public static void acquisisciInputConNumero(String inputUtente){
         int numeroStanzaUtente= 0;
-        int controlloNumeroStanze= getNumeroStanze().length;
+        int controlloNumeroStanze= getNumeroStanze().size();
         // Trasforma l'input utente nell'intero equivalente
         numeroStanzaUtente= Integer.parseInt(inputUtente);
 
