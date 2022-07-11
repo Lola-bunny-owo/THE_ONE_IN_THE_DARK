@@ -184,7 +184,7 @@ public class Oggetti {
     }
 
     // Metodo che permette di aprire un oggetto.
-    public static void usaOggetto(String inputUtente) {
+    public static void usaOggetto(String inputUtente) throws InterruptedException {
         Statement stm;
         ResultSet result;
         String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);

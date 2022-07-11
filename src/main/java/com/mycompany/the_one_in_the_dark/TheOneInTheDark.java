@@ -12,5 +12,4 @@ public class TheOneInTheDark{
         GestioneIO IO= new GestioneIO();
         IO.gestisciInputUtente();
     }
-
 }
