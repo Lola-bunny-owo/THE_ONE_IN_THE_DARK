@@ -472,7 +472,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setInt(6, 6);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "");
+            statementPrep.setString(9, "Ti avvicini all'orologio a pendolo.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB().prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
