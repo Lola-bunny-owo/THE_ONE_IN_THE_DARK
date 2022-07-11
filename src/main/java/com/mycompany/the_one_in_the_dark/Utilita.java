@@ -8,10 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.swing.*;
+import javax.sound.sampled.*;
 
 import com.mycompany.the_one_in_the_dark.Db.Database;
 import com.mycompany.the_one_in_the_dark.Ambienti.*;
@@ -132,7 +129,7 @@ public class Utilita {
 
     // Metodo che acquisisce i comandi dell'utente. Questi comandi sono comandi
     // utilizzabili dall'utente in qualsiasi ambiente e stanza egli si trovi.
-    public static void acquisisciInputComando(String inputUtente){
+    public static void acquisisciInputComando(String inputUtente) throws InterruptedException{
 
         if(inputUtente.equalsIgnoreCase("/help")){
 
@@ -230,7 +227,7 @@ public class Utilita {
     }
     
     // Metodo che in base all'oggetto che viene usato, cambia la visibilità di alcuni oggetti o richiama altri metodi.
-    public static void controllaOggettoUsato(String oggettoUsato){
+    public static void controllaOggettoUsato(String oggettoUsato) throws InterruptedException{
         Statement stm;
         
         if((oggettoUsato.equals("Baule"))&&(Ambiente.numeroStanzaCorrente == 1)){
@@ -305,23 +302,32 @@ public class Utilita {
             // TO-DO: Implementare l'utilizzo dell'API RESTful.
 
         }else if((oggettoUsato.equals("Chitarra"))&&(Ambiente.numeroStanzaCorrente == 7)){
-
-            riproduciChitarra(".//src//audio//radiohead.mp3");
+            delay();
+            riproduciChitarra("src/audio/radiohead.wav");
         }
-
     }
 
     // Al comando /usa Chitarra, viene riprodotto l'audio specificato dalla stringa passata come parametro.
     public static void riproduciChitarra(String path){
-        try{
+        File file = new File(path);
+        try {
+            // Crea un oggetto di tipo AudioInputStream che contiene il file audio.
+            // Crea un oggetto di tipo Clip che permette di riprodurre l'audio.
+            AudioInputStream audioStream= AudioSystem.getAudioInputStream(file);
             Clip clip= AudioSystem.getClip();
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(path));
-            // riproduce l'audio
-            clip.open(inputStream);
+            clip.open(audioStream);
             clip.start();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Impossibile riprodurre il suono della chitarra.");
+
+            // Riproduce il file fino a quando non arriva alla fine.
+            while(clip.getFramePosition() < clip.getFrameLength()){
+                Thread.sleep(100);
+            }
+            
+            clip.close();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | InterruptedException e) {
+            System.out.println("Errore nella riproduzione dell'audio.");
         }
+        
     }
     
 }
