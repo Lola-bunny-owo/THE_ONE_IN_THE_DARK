@@ -227,7 +227,7 @@ public class Utilita {
     }
     
     // Metodo che in base all'oggetto che viene usato, cambia la visibilità di alcuni oggetti o richiama altri metodi.
-    public static void controllaOggettoUsato(String oggettoUsato) throws InterruptedException{
+    public static void controllaOggettoUsato(String oggettoUsato){
         Statement stm;
         
         if((oggettoUsato.equals("Baule"))&&(Ambiente.numeroStanzaCorrente == 1)){
@@ -302,8 +302,14 @@ public class Utilita {
             // TO-DO: Implementare l'utilizzo dell'API RESTful.
 
         }else if((oggettoUsato.equals("Chitarra"))&&(Ambiente.numeroStanzaCorrente == 7)){
-            delay();
-            riproduciChitarra("src/audio/radiohead.wav");
+
+            try {
+                delay();
+                riproduciChitarra("src/audio/radiohead.wav");
+            } catch (InterruptedException e) {
+                System.out.println("Errore.");
+            }
+            
         }
     }
 
