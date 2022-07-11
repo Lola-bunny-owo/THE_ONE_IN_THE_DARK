@@ -13,6 +13,7 @@ import javax.sound.sampled.*;
 import com.mycompany.the_one_in_the_dark.Db.Database;
 import com.mycompany.the_one_in_the_dark.Ambienti.*;
 import com.mycompany.the_one_in_the_dark.Mappe.*;
+import com.mycompany.the_one_in_the_dark.REST.*;
 
 /**
  *
@@ -299,7 +300,9 @@ public class Utilita {
 
         }else if((oggettoUsato.equals("Orologio a pendolo"))&&(Ambiente.numeroStanzaCorrente == 6)){
         
-            // TO-DO: Implementare l'utilizzo dell'API RESTful.
+            RestOrologioResponse ora = RestOrologio.getOra("Europe/Rome");
+            System.out.println("Esso segna:"); 
+            System.out.println("ORA: " + ora.hour + ":" + ora.minute + ":" + ora.seconds);
 
         }else if((oggettoUsato.equals("Chitarra"))&&(Ambiente.numeroStanzaCorrente == 7)){
 
