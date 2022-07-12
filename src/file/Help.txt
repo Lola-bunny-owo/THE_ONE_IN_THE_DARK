@@ -26,15 +26,15 @@ Puoi guardarti attorno attraverso i comandi:
 
 Puoi aprire e guardare il tuo inventario, attraverso i comandi:
 - /apri inventario  oppure  /inventario
-Puoi aprire il tuo taccuino, attraverso i comandi:
-- /apri taccuino  oppure  /taccuino
-
 Puoi guardare nel dettaglio un oggetto, attraverso il comando:
 - /guarda <nomeOggetto>
 Puoi raccogliere qualcosa, attraverso il comando:
 - /raccogli <nomeOggetto>     
 Puoi usare un oggetto, attraverso il comando:
 - /usa <nomeOggetto>    
+
+Puoi anche interagire, in determinati casi, con i personaggi dell'avventura. Usa il comando:
+/parla con <nomePersonaggio>
 
 Importante: non devi inserire le parentesi angolari e il nome dev'essere inserito con la lettera maiuscola! :)
 

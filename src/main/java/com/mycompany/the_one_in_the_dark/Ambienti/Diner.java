@@ -3,7 +3,9 @@ package com.mycompany.the_one_in_the_dark.Ambienti;
 import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
- *
+ * Classe che gestisce l'ambiente Diner. Come per ogni altro ambiente, questa classe contiene un
+ * metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per l'acquisizione
+ * dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati all'ambiente.
  * @author Angela Mileti
  */
 
@@ -12,8 +14,13 @@ public class Diner extends Ambiente {
      * @param args
      */
 
+    public Diner(){
+        super();
+    }
+
     static boolean introduzioneAmbiente= false;
 
+    // Set dell'ambiente.
     public static void setDiner() {
         
         // Set del nome dell'ambiente e del numero delle stanze.
@@ -41,6 +48,7 @@ public class Diner extends Ambiente {
         }
     }
 
+    // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputDiner(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -136,10 +144,11 @@ public class Diner extends Ambiente {
             }
 
         }else{
-            Utilita.acquisisciInputComando(inputUtente);
+            System.out.println("Comando non riconosciuto.");
         }
     }
 
+    // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneDiner() throws InterruptedException{
         System.out.println("> Entri nel diner 'Lola's Diner', e vieni subito pervaso da un odore di frittura misto dolcezza.");
         System.out.println("Il tuo sguardo viene subito catturato dall'incantevole cameriera al bancone. La sua uniforme rivela il suo nome: 'Fanny'.");

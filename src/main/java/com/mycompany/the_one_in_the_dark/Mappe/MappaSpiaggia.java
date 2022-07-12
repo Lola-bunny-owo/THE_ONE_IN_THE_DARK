@@ -1,7 +1,7 @@
 package com.mycompany.the_one_in_the_dark.Mappe;
 
 /**
- *
+ * Classe che permette di creare una finestra la quale contiene la mappa della Spiaggia.
  * @author Angela Mileti
  */
 public class MappaSpiaggia extends javax.swing.JFrame {

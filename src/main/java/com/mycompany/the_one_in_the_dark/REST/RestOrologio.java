@@ -7,6 +7,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 
+/**
+ * Classe che implementa un'API RESTful necessaria all'avventura testuale.
+ * @author Angela Mileti
+ */
+
 public class RestOrologio {
 
     // Implementazione dell'API RESTful per ottenere le informazioni relative all'ora attuale.

@@ -1,7 +1,7 @@
 package com.mycompany.the_one_in_the_dark;
 
 /**
- *
+ * Classe main dalla quale inizia l'esecuzione del gioco. 
  * @author Angela Mileti
  */
 

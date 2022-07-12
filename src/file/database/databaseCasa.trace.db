@@ -1,7 +1,4 @@
-2022-07-10 20:24:08 jdbc[4]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "OGGETTI" not found (this database is empty); SQL statement:
-TRUNCATE TABLE oggetti [42104-214]
-2022-07-10 20:24:08 jdbc[5]: null
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -12,36 +9,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Db.Database.setDatabase(Database.java:34)
-	at com.mycompany.the_one_in_the_dark.Db.DatabaseCasa.setOggettiCasa(DatabaseCasa.java:18)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.setCasa(Casa.java:33)
-	at com.mycompany.the_one_in_the_dark.Utilita.intro(Utilita.java:30)
-	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:11)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
-	at org.h2.message.DbException.get(DbException.java:223)
-	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.message.DbException.get(DbException.java:188)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
-	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -52,16 +27,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -72,16 +45,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -92,16 +63,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -112,16 +81,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -132,16 +99,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -152,16 +117,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -172,16 +135,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -192,16 +153,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -212,16 +171,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -232,16 +189,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -252,16 +207,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -272,16 +225,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -292,16 +243,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -312,16 +261,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -332,16 +279,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -352,16 +297,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -372,16 +315,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -392,16 +333,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -412,16 +351,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -432,16 +369,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -452,16 +387,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -472,16 +405,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -492,16 +423,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -512,16 +441,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -532,16 +459,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -552,16 +477,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -572,16 +495,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -592,16 +513,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -612,16 +531,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -632,16 +549,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -652,16 +567,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -672,16 +585,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -692,16 +603,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -712,16 +621,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -732,16 +639,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -752,16 +657,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -772,16 +675,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -792,16 +693,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -812,16 +711,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -832,16 +729,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -852,16 +747,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -872,16 +765,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -892,16 +783,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -912,16 +801,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -932,16 +819,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -952,16 +837,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -972,16 +855,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -992,16 +873,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1012,16 +891,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1032,16 +909,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1052,16 +927,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1072,16 +945,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1092,16 +963,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1112,16 +981,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1132,16 +999,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1152,16 +1017,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1172,16 +1035,14 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
-2022-07-10 21:24:28 jdbc[63]: null
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -1192,12 +1053,82 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
-	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:245)
-	at com.mycompany.the_one_in_the_dark.Utilita.acquisisciInputComando(Utilita.java:191)
-	at com.mycompany.the_one_in_the_dark.Ambienti.Casa.acquisisciInputCasa(Casa.java:207)
-	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:34)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
 	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 14 more
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
+	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
+	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
+	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 12 more
+2022-07-12 18:03:56 jdbc[61]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
+	at com.mycompany.the_one_in_the_dark.Oggetti.stampaOggetti(Oggetti.java:231)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:100)
+	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 12 more

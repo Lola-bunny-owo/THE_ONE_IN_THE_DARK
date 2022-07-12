@@ -4,19 +4,18 @@ import java.sql.*;
 import com.mycompany.the_one_in_the_dark.Db.Database;
 
 /**
- *
+ * Classe che si occupa dell'inventario dell'utente.
  * @author Angela Mileti
  */
 
 public class Inventario extends Oggetti{
-
     protected static int numeroOggettiInventario= 0;
 
     Inventario(){
         super();
     }
     
-    // Stampa a schermo gli oggetti nel proprio inventario
+    // Stampa a schermo gli oggetti presenti nell'inventario.
     public static void stampaInventario(){
         System.out.println("| | | | | | | | | | | | | |");
         System.out.println("         INVENTARIO        ");
@@ -29,7 +28,7 @@ public class Inventario extends Oggetti{
             ResultSet result;
 
             try {
-                stm = Database.connessioneDB().createStatement();
+                stm = Database.connessioneDB("jdbc:h2:.//src//file//databaseCasa").createStatement();
                 result= stm.executeQuery("SELECT * FROM oggetti WHERE inInventario = TRUE");
 
                 while(result.next()){
@@ -44,9 +43,6 @@ public class Inventario extends Oggetti{
             } catch (SQLException e) {
                 System.out.println("Errore nella query.");
             }
-
-
-            
                
         }  
         

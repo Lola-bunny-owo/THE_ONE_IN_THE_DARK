@@ -1,7 +1,7 @@
 package com.mycompany.the_one_in_the_dark.Mappe;
 
 /**
- *
+ * Classe che permette di creare una finestra la quale contiene la mappa della Casa al primo piano.
  * @author Angela Mileti
  */
 public class MappaCasaPrimoPiano extends javax.swing.JFrame {

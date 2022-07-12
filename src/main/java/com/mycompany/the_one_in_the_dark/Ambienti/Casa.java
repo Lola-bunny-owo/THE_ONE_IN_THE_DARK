@@ -1,10 +1,15 @@
 package com.mycompany.the_one_in_the_dark.Ambienti;
+
+import java.sql.*;
 import com.mycompany.the_one_in_the_dark.Oggetti;
 import com.mycompany.the_one_in_the_dark.Utilita;
+import com.mycompany.the_one_in_the_dark.Db.Database;
 import com.mycompany.the_one_in_the_dark.Db.DatabaseCasa;
 
 /**
- *
+ * Classe che gestisce l'ambiente Casa. Come per ogni altro ambiente, questa classe contiene un
+ * metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per l'acquisizione
+ * dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati all'ambiente.
  * @author Angela Mileti
  */
 
@@ -12,6 +17,10 @@ public class Casa extends Ambiente {
     /**
      * @param args
      */
+
+    public Casa(){
+        super();
+    }
 
     static boolean setOggettiCasa= false;
 
@@ -36,7 +45,7 @@ public class Casa extends Ambiente {
         // Set dei nomi delle stanze
         Ambiente.setNomiStanze(new String[] { "Ingresso", "Salone", "Cucina",  "Veranda", "Corridoio largo", "Corridoio stretto", "Camera da letto di Spike", "Camera da letto del custode", "Bagno", "Stanza segreta"});
 
-        // Set numero della stanza corrente e del nome della stanza corrente
+        // Set del numero della stanza corrente e del nome della stanza corrente
         Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
         Ambiente.setNomeStanzaCorrente("Ingresso");
 
@@ -48,8 +57,10 @@ public class Casa extends Ambiente {
 
     }
 
-    // Acquisisce l'input dell'utente, il quale vuole spostarsi tra le stanze dell'ambiente.
+    // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputCasa(String inputUtente){
+        controllaStanza();
+
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 1){
@@ -114,6 +125,7 @@ public class Casa extends Ambiente {
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
+                stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
                 System.out.println("Non puoi andare giù dal corridoio stretto.");
             }else if(getNumeroStanzaCorrente() == 7){
@@ -216,11 +228,7 @@ public class Casa extends Ambiente {
             }
 
         }else{
-            try {
-                Utilita.acquisisciInputComando(inputUtente);
-            } catch (InterruptedException e) {
-                System.out.println("Errore nell'acquisizione del comando.");
-            }
+            System.out.println("Comando non riconosciuto.");
         }
     }
 
@@ -249,13 +257,16 @@ public class Casa extends Ambiente {
         }
     }
 
-    // Sono dei metodi di stampa, che includono un filtro sugli oggetti presenti nella stanza.
-    // Gli oggetti sono filtrati in base al numero della stanza e in base alla loro visibilità.
+    /*  METODI DI STAMPA
+    * I seguenti sono dei metodi di stampa, che includono un filtro sugli oggetti presenti 
+    * nell'ambiente. Gli oggetti sono filtrati in base al numero della stanza e in base alla 
+    * loro visibilità.
+    */
 
     public static void stampaIngresso(){
 
         System.out.println("> L'ingresso della casa. Le pareti sembrano cadere a pezzi, il loro colore è un bianco sporco che non ti mette a tuo agio.");
-        System.out.println("Il tappeto per terra è graffiato, quindi forse in questa casa ci sono stati dei gatti. O chissà..");
+        System.out.println("Il tappeto per terra è graffiato, forse è stata colpa di Ein..");
         System.out.println("Per essere un ingresso, è comunque bello grande. Tanti piccoli vasi con fiori di vario genere sono disposti di fianco alla porta.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
@@ -271,8 +282,8 @@ public class Casa extends Ambiente {
 
     public static void stampaCucina(){
         System.out.println("> La cucina è messa meglio: ordinata, pulita, la spazzatura al proprio posto.. Il sogno di tutti gli universitari fuorisede.");
-        System.out.println("Un dolce odore di pancake ti fa venire l'acquolina in bocca. Il custode sa cucinare?");
-        System.out.println("La tavola è apparecchiata per 2. Ma quante altre persone vivono in questa casa?<");
+        System.out.println("L'unico problema è l'odore: c'è puzza nell'intera stanza. Forse qualcosa di ammuffito?");
+        System.out.println("La tavola è apparecchiata per 2. Un gesto molto carino da parte del custode.. ma ha comunque un qualcosa che non ti convince.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
@@ -293,7 +304,7 @@ public class Casa extends Ambiente {
     }
 
     private static void stampaCorridoioStretto(){
-        System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, e un piccolo comodino di fronte al bagno.");
+        System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, un pendolo e un piccolo comodino di fronte al bagno.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
@@ -308,7 +319,7 @@ public class Casa extends Ambiente {
     private static void stampaCameraDaLettoCustode(){
         System.out.println("> La stanza del custode. Ti sembra strano che non la tenga chiusa a chiave.");
         System.out.println("Il suo letto è ordinato, e sulla scrivania ci sono tanti fogli ed un diario.");
-        System.out.println("Il muro affianco al letto ha qualcosa che non va.. È un passaggio per un'altra stanza.");
+        System.out.println("Il muro affianco al letto ha qualcosa che non va..");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
@@ -326,6 +337,39 @@ public class Casa extends Ambiente {
         System.out.println("Macchine fotografiche ovunque.. Non osi immaginare cosa sia successo in questa stanza. Il tuo passato ti è sconosciuto.");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
+    }
+
+    // Metodo che controlla la stanza corrente. Se è una stanza speciale, viene eseguito uno dei casi specifici.
+    public static void controllaStanza(){
+        Statement stm;
+        ResultSet result;
+
+        if(getNumeroStanzaCorrente() == 2){
+
+            try {
+                stm= Database.connessioneDB(Utilita.urlNPCs).createStatement();
+                result= stm.executeQuery("SELECT * FROM personaggi WHERE nomeNPC ='Grigio' AND visibile = FALSE");
+
+                if(result.next()){
+                    stm.executeUpdate("UPDATE personaggi SET visibile = TRUE WHERE nomeNPC = 'Grigio'");
+                    stm.close();
+                }
+            }catch (SQLException e) {
+                System.out.println("Errore nella query.");
+            }
+        }else {
+            try {
+                stm= Database.connessioneDB(Utilita.urlNPCs).createStatement();
+                result= stm.executeQuery("SELECT * FROM personaggi WHERE nomeNPC ='Grigio'");
+
+                if(result.next()){
+                    stm.executeUpdate("UPDATE personaggi SET visibile = FALSE WHERE nomeNPC = 'Grigio'");
+                    stm.close();
+                }
+            }catch (SQLException e) {
+                System.out.println("Errore nella query.");
+            }
+        }
     }
 
 }

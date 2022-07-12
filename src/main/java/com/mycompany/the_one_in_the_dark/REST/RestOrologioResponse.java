@@ -1,5 +1,10 @@
 package com.mycompany.the_one_in_the_dark.REST;
 
+/**
+ * Classe che definisce delle variabili, le quali rappresentano la risposta dell'API RESTful.
+ * @author Angela Mileti
+ */
+
 public class RestOrologioResponse {
     public int year;
     public int month;

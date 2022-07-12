@@ -4,24 +4,33 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
+import java.util.Scanner;
 import javax.sound.sampled.*;
 
 import com.mycompany.the_one_in_the_dark.Db.Database;
+import com.mycompany.the_one_in_the_dark.Db.DatabaseNPCs;
 import com.mycompany.the_one_in_the_dark.Ambienti.*;
-import com.mycompany.the_one_in_the_dark.Mappe.*;
 import com.mycompany.the_one_in_the_dark.REST.*;
 
 /**
- *
+ * Classe di Utilità: in quest'ultima, si trovano metodi di vario tipo.
+ * 
  * @author Angela Mileti
  */
 public class Utilita {
+    // Stringhe utili alla gestione del database
+    public static final String CREATE_TABLE_CASA = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN, idOggetto INT, stanza INT, visibile BOOLEAN, usabile BOOLEAN, descrizioneUsa VARCHAR(600))";
+    public static final String CREATE_TABLE_NPCS = "CREATE TABLE IF NOT EXISTS personaggi (nomeNPC VARCHAR(300), descrizione VARCHAR(700), visibile BOOLEAN)";
+    public static final String urlCasa= "jdbc:h2:.//src//file//database//databaseCasa";
+    public static final String urlNPCs= "jdbc:h2:.//src//file//database//databasePersonaggi";
 
-    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN, idOggetto INT, stanza INT, visibile BOOLEAN, usabile BOOLEAN, descrizioneUsa VARCHAR(600))";
+    public Utilita(){
+        // Costruttore vuoto
+    }
 
     // Metodo che dà un delay di 2s ai messaggi.
     public static void delay() throws InterruptedException{
@@ -30,7 +39,9 @@ public class Utilita {
 
     // Introduzione al gioco.
     public static void intro() throws InterruptedException{
-        Database.cancellaDatabase();
+        Database.cancellaDatabase(urlCasa);
+        Database.cancellaDatabase(urlNPCs);
+        DatabaseNPCs.setPersonaggi();
         Casa.setCasa();
         System.out.println("...Quasi arrivato.");
         delay();
@@ -50,10 +61,14 @@ public class Utilita {
         System.out.println("Appena valichi l'ingresso, ritrovi ad un palmo da te una figura scura. È un uomo dalla folta barba bianca, dall'aspetto cupo.<");
         delay();
         System.out.println("");
-        System.out.println("E voi chi siete?");
+        System.out.println("???: E voi chi siete?");
         NPCs.introGrigio();
         delay();
-        System.out.println("> Non eri a conoscenza del custode di casa, ma te ne fai una ragione. Ti senti libero di esplorare la tua nuova casa a due piani.");
+        System.out.println("> Non eri a conoscenza del custode di casa. Il suo modo di trattare il cagnolino ti ha infastidito.<");
+        System.out.println("SPIKE: Ehi piccolino, tutto ok?");
+        NPCs.einAbbaia();
+        delay();
+        System.out.println("> Ti senti libero di esplorare la tua nuova casa. A quanto pare Ein ha voglia di seguirti.<");
         Ambiente.stampaStanzaCorrente();
         delay();
         System.out.println("");
@@ -127,114 +142,15 @@ public class Utilita {
         System.out.println("***** STAZIONE DI POLIZIA *****");
         System.out.println("");
     }
-
-    // Metodo che acquisisce i comandi dell'utente. Questi comandi sono comandi
-    // utilizzabili dall'utente in qualsiasi ambiente e stanza egli si trovi.
-    public static void acquisisciInputComando(String inputUtente) throws InterruptedException{
-
-        if(inputUtente.equalsIgnoreCase("/help")){
-
-            try {
-                Utilita.stampaHelp();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        
-        }else if(inputUtente.equalsIgnoreCase("/stanza")){
-            Ambiente.stampaStanzaCorrente();
-
-        }else if(inputUtente.equalsIgnoreCase("/trama")){
-
-            try {
-                Utilita.stampaTrama();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
     
-        }else if((inputUtente.equalsIgnoreCase("/apri inventario"))||(inputUtente.equalsIgnoreCase("/inventario"))){
-            Inventario.stampaInventario();
-
-        }else if((inputUtente.startsWith("/usa "))||(inputUtente.startsWith("/apri "))){
-            Oggetti.usaOggetto(inputUtente);
-            
-        }else if((inputUtente.equalsIgnoreCase("/apri taccuino"))||(inputUtente.equalsIgnoreCase("/taccuino"))){
-            //TO - DO: apri taccuino
-    
-        }else if(inputUtente.equalsIgnoreCase("/guarda stanza")){
-
-            if(Ambiente.nomeAmbiente.equals("Casa")){
-                Casa.guardaStanzaCasa();
-            }else if(Ambiente.nomeAmbiente.equals("Biblioteca")){
-                Biblioteca.guardaStanzaBiblioteca();
-            }else if(Ambiente.nomeAmbiente.equals("Foresta")){
-                Foresta.guardaStanzaForesta();
-            }else if(Ambiente.nomeAmbiente.equals("Diner")){
-                Diner.guardaStanzaDiner();
-            }else if(Ambiente.nomeAmbiente.equals("Stazione di Polizia")){
-                StazioneDiPolizia.guardaStanzaStazioneDiPolizia();
-            }else if(Ambiente.nomeAmbiente.equals("Spiaggia")){
-                Spiaggia.guardaStanzaSpiaggia();
-            }
-
-        }else if (inputUtente.startsWith("/guarda ")){
-            Oggetti.guardaOggetto(inputUtente);
-
-        }else if(inputUtente.startsWith("/raccogli ")){
-            Oggetti.raccogliOggetto(inputUtente);
-
-        }else if(inputUtente.startsWith("/scarta ")){
-            Oggetti.scartaOggetto(inputUtente);
-
-        }else if(inputUtente.equalsIgnoreCase("/oggetti")){
-            Oggetti.stampaOggetti();
-
-        }else if(inputUtente.equalsIgnoreCase("/lista stanze")){
-            Ambiente.stampaStanze();
-
-        }else if(inputUtente.equalsIgnoreCase("/mappa")){
-            
-            if((Ambiente.nomeAmbiente.equals("Casa"))&&(Ambiente.numeroStanzaCorrente <= 4)){
-                MappaCasaPrimoPiano.stampaFrame();
-            }else if((Ambiente.nomeAmbiente.equals("Casa"))&&(Ambiente.numeroStanzaCorrente > 4)){
-                MappaCasaSecondoPiano.stampaFrame();
-            }else if(Ambiente.nomeAmbiente.equals("Diner")){
-                MappaDiner.stampaFrame();
-            }else if(Ambiente.nomeAmbiente.equals("Spiaggia")){
-                MappaSpiaggia.stampaFrame();
-            }else if(Ambiente.nomeAmbiente.equals("Biblioteca")){
-                MappaBiblioteca.stampaFrame();
-            }else if(Ambiente.nomeAmbiente.equals("Foresta")){
-                MappaForesta.stampaFrame();
-            }else if(Ambiente.nomeAmbiente.equals("Stazione di Polizia")){
-                MappaPolizia.stampaFrame();
-            }
-
-        }else if(inputUtente.equalsIgnoreCase("/esci")){
-            System.out.println("***** ARRIVEDERCI *****");
-            System.out.println("");
-
-            try {
-                Database.cancellaDatabase();
-                Database.connessioneDB().close();
-            } catch (SQLException e) {
-                System.out.println("Errore chiusura del DB.");
-            }
-
-            System.exit(0);
-
-        }else{
-            System.out.println("Comando non riconosciuto.");
-        }
-    }
-    
-    // Metodo che in base all'oggetto che viene usato, cambia la visibilità di alcuni oggetti o richiama altri metodi.
+    // Metodo che in base all'oggetto usato dal giocatore, cambia la visibilità dell'oggetto oppure richiama altri metodi.
     public static void controllaOggettoUsato(String oggettoUsato){
         Statement stm;
         
         if((oggettoUsato.equals("Baule"))&&(Ambiente.numeroStanzaCorrente == 1)){
 
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(urlCasa).createStatement();
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Album di foto'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Coniglietto'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Lettera'");
@@ -246,7 +162,7 @@ public class Utilita {
         }else if((oggettoUsato.equals("Armadietto"))&&(Ambiente.numeroStanzaCorrente == 1)){
 
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(urlCasa).createStatement();
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Scarponi'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Corda'");
                 stm.close();
@@ -257,7 +173,7 @@ public class Utilita {
         }else if((oggettoUsato.equals("Armadietto"))&&(Ambiente.numeroStanzaCorrente == 2)){
 
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(urlCasa).createStatement();
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Chiave'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Vestiti femminili'");
                 stm.close();
@@ -268,7 +184,7 @@ public class Utilita {
         }else if((oggettoUsato.equals("Armadietto da cucina"))&&(Ambiente.numeroStanzaCorrente == 3)){
 
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(urlCasa).createStatement();
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Dito sottovuoto'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Piatti'");
                 stm.close();
@@ -279,7 +195,7 @@ public class Utilita {
         }else if((oggettoUsato.equals("Cestino"))&&(Ambiente.numeroStanzaCorrente == 4)){
 
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(urlCasa).createStatement();
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Accendino'");
                 stm.close();
             } catch (SQLException e) {
@@ -289,7 +205,7 @@ public class Utilita {
         }else if((oggettoUsato.equals("Libreria"))&&(Ambiente.numeroStanzaCorrente == 5)){
 
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(urlCasa).createStatement();
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Romeo e Giulietta'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Orgoglio e Pregiudizio'");
                 stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Le migliori barzellette di Totti'");

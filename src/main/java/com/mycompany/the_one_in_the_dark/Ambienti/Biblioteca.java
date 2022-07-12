@@ -1,9 +1,10 @@
 package com.mycompany.the_one_in_the_dark.Ambienti;
-
 import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
- *
+ * Classe che gestisce l'ambiente Biblioteca. Come per ogni altro ambiente, questa classe contiene un
+ * metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per l'acquisizione
+ * dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati all'ambiente.
  * @author Angela Mileti
  */
 
@@ -12,8 +13,13 @@ public class Biblioteca extends Ambiente {
      * @param args
      */
 
+    public Biblioteca(){
+        super();
+    }
+
     static boolean introduzioneAmbiente= false;
 
+    // Set dell'ambiente.
     public static void setBiblioteca() {
         
         // Set del nome dell'ambiente e del numero delle stanze.
@@ -41,6 +47,7 @@ public class Biblioteca extends Ambiente {
         
     }
 
+    // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputBiblioteca(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -131,11 +138,12 @@ public class Biblioteca extends Ambiente {
             }
 
         }else{
-            Utilita.acquisisciInputComando(inputUtente);
+            System.out.println("Comando non riconosciuto.");
         }
 
     }
-
+    
+    // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneBiblioteca() throws InterruptedException{
         System.out.println("> La biblioteca: un posto amato da grandi e piccini. Il silenzio è una delle sue caratteristiche.");
         Utilita.delay();

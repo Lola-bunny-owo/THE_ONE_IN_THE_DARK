@@ -3,7 +3,9 @@ package com.mycompany.the_one_in_the_dark.Ambienti;
 import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
- *
+ * Classe che gestisce l'ambiente Foresta. Come per ogni altro ambiente, questa classe contiene un
+ * metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per l'acquisizione
+ * dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati all'ambiente.
  * @author Angela Mileti
  */
 
@@ -12,8 +14,13 @@ public class Foresta extends Ambiente {
      * @param args
      */
 
+    public Foresta(){
+        super();
+    }
+
     static boolean introduzioneAmbiente= false;
 
+    // Set dell'ambiente.
     public static void setForesta() {
         
         // Set del nome dell'ambiente e del numero delle stanze.
@@ -38,8 +45,9 @@ public class Foresta extends Ambiente {
                 e.printStackTrace();
             }
         }
-    }
+    }   
 
+    // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputForesta(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -136,11 +144,12 @@ public class Foresta extends Ambiente {
         }else if((inputUtente.equalsIgnoreCase("vai in Biblioteca"))||(inputUtente.equalsIgnoreCase("Biblioteca"))){
             System.out.println("Non puoi andare in Biblioteca da qui.");
         }else{
-            Utilita.acquisisciInputComando(inputUtente);
+            System.out.println("Comando non riconosciuto.");
         }
     
     }
 
+    // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneForesta() throws InterruptedException{
         System.out.println("> Sei un pazzo, sei un pazzo, sei un pazzo. Continui a ripetertelo ma comunque prosegui.");
         System.out.println("Questa ti sembra l'occasione giusta per mangiare, perché potrebbe anche essere il tuo ultimo pasto.");

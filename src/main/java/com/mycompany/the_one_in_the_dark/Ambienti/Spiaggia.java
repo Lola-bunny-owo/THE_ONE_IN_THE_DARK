@@ -3,7 +3,9 @@ package com.mycompany.the_one_in_the_dark.Ambienti;
 import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
- *
+ * Classe che gestisce l'ambiente Spiaggia. Come per ogni altro ambiente, questa classe contiene un
+ * metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per l'acquisizione
+ * dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati all'ambiente.
  * @author Angela Mileti
  */
 
@@ -12,34 +14,40 @@ public class Spiaggia extends Ambiente {
      * @param args
      */
 
+    public Spiaggia(){
+        super();
+    }
+
     static boolean introduzioneAmbiente= false;
 
+    // Set dell'ambiente.
     public static void setSpiaggia() {
     
-    // Set del nome dell'ambiente e del numero delle stanze.
-    Ambiente.setNomeAmbiente("Spiaggia");
-    if(!Ambiente.numeroStanze.isEmpty()){
-        Ambiente.numeroStanze.clear();
-    }
-    Ambiente.numeroStanze.add(1); 
-    Ambiente.numeroStanze.add(2);
-    Ambiente.numeroStanze.add(3);
-    Ambiente.numeroStanze.add(4);
-    Ambiente.numeroStanze.add(5);
+        // Set del nome dell'ambiente e del numero delle stanze.
+        Ambiente.setNomeAmbiente("Spiaggia");
+        if(!Ambiente.numeroStanze.isEmpty()){
+            Ambiente.numeroStanze.clear();
+        }
+        Ambiente.numeroStanze.add(1); 
+        Ambiente.numeroStanze.add(2);
+        Ambiente.numeroStanze.add(3);
+        Ambiente.numeroStanze.add(4);
+        Ambiente.numeroStanze.add(5);
 
-    Ambiente.setNomiStanze(new String[] { "Di fronte casa", "Per la foresta", "Per il diner",  "Per la stazione di polizia", "Per la biblioteca"});
-    Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
-    Ambiente.setNomeStanzaCorrente("Di fronte casa");
+        Ambiente.setNomiStanze(new String[] { "Di fronte casa", "Per la foresta", "Per il diner",  "Per la stazione di polizia", "Per la biblioteca"});
+        Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
+        Ambiente.setNomeStanzaCorrente("Di fronte casa");
 
-    if(!introduzioneAmbiente){
-        try {
-            introduzioneSpiaggia();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if(!introduzioneAmbiente){
+            try {
+                introduzioneSpiaggia();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
-}
 
+    // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputSpiaggia(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -175,10 +183,11 @@ public class Spiaggia extends Ambiente {
             }
 
         }else{
-            Utilita.acquisisciInputComando(inputUtente);
+            System.out.println("Comando non riconosciuto.");
         }
     }
 
+    // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneSpiaggia() throws InterruptedException{
         System.out.println("> Fa caldo.. Il tuo corpo sta iniziando a piangere.");
         System.out.println("Senti il rumore delle onde. Un vento violento ed improvviso ti sferza il viso.");

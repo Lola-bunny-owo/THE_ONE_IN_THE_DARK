@@ -8,39 +8,33 @@ import com.mycompany.the_one_in_the_dark.Ambienti.Ambiente;
 import com.mycompany.the_one_in_the_dark.Db.Database;
 
 /**
- *
+ * Classe che si occupa di gestire gli oggetti nell'avventura testuale. 
  * @author Angela Mileti
  */
 
 public class Oggetti {
-
-    // Queste variabili devo salvarle da qualche parte? 
+    // Definizione di variabili utili
     protected static String[] nomeOggetto;
     protected static String[] descrizioneOggetto;
     protected static int[] numeroOggetti;
-    protected static boolean oggettoRaccolto= false;
-    protected static boolean inInventario= false;
-    
+    protected static boolean oggettoRaccolto;
+    protected static boolean inInventario;
     /**
      * MAX_OGGETTI: variabile che indica il numero massimo di oggetti 
      * che si possono inserire nell'inventario. 
      */ 
-
     protected static final int MAX_OGGETTI = 10;
 
-    /* METODI SET */
-
     Oggetti() {
+        oggettoRaccolto= false;
+        inInventario= false;
     }
 
-    // Controlla se un oggetto è nell'inventario o meno
-    public static boolean isInInventario() {
-        // TO-DO: implementare il metodo
-        return inInventario;
-    }
-
-    // Raccoglie un oggetto e lo ispeziona. 
-    // Ulteriormente, sceglie se inserire l'oggetto nell'inventario o meno.
+    /* Il seguente metodo di raccolta di un oggetto, raccoglie l'oggetto e lo ispeziona.
+     * Da questo metodo ne discendono altri due, che permettono al giocatore di scegliere
+     * se inserire o meno l'oggetto nell'inventario. 
+     * Importante: l'oggetto può essere inserito nell'inventario solo dopo averlo raccolto.
+     */
     public static void raccogliOggetto(String inputUtente) {
         Statement stm;
         ResultSet result;
@@ -48,7 +42,7 @@ public class Oggetti {
         
         // Controlla che l'input sia nel database
         try {
-            stm= Database.connessioneDB().createStatement();
+            stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE");
             if(result.next()){
                 oggettoRaccolto= true;
@@ -83,7 +77,7 @@ public class Oggetti {
                 ResultSet res;
 
                 try {
-                    stm= Database.connessioneDB().createStatement();
+                    stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
                     res= stm.executeQuery("SELECT * FROM oggetti WHERE inseribile = TRUE AND nomeOggetto ='" + nomeOggetto + "'");
                     
                     if(res.next()){
@@ -114,11 +108,11 @@ public class Oggetti {
         } 
     }
 
-    // Inserisce un oggetto nell'inventario.
+    // Inserisce l'oggetto nell'inventario.
     public static void inserisciOggetto(String nomeOggetto) {
 
         try {
-            Statement stm = Database.connessioneDB().createStatement();
+            Statement stm = Database.connessioneDB(Utilita.urlCasa).createStatement();
             // Aggiorna valore dell'oggetto nella tabella oggetti
             stm.executeUpdate("UPDATE oggetti SET inInventario = TRUE WHERE nomeOggetto = '" + nomeOggetto + "'");
             stm.executeUpdate("UPDATE oggetti SET inseribile = FALSE WHERE nomeOggetto = '" + nomeOggetto + "'");
@@ -135,19 +129,8 @@ public class Oggetti {
         
     }
 
-    // Esegue un controllo booleano sul numero di oggetti nell'inventario.
-    public static boolean controllaOggettiInInventario() {
+    /* METODI GET */
 
-        if(Inventario.numeroOggettiInventario >= MAX_OGGETTI){
-            System.out.println("Hai raggiunto il numero massimo di oggetti che puoi inserire nell'inventario. L'oggetto non è stato inserito.");
-            System.out.println("Se vuoi puoi buttare qualcosa dal tuo inventario per avere uno o più slot liberi.");
-            return false;
-        }else{
-            return true;
-        }
-    }
-
-    // Restituisce il numero di oggetti nell'inventario.
     public static int getNumOggettiInInventario() {
 
         if(Inventario.numeroOggettiInventario == MAX_OGGETTI){
@@ -163,13 +146,14 @@ public class Oggetti {
 
     }
 
-    // Metodo che permette di guardare l'oggetto.
+    /* Metodi per guardare, usare, scartare un oggetto. */
+
     public static void guardaOggetto(String inputUtente) {
         String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
         Statement stm;
         ResultSet result;
         try {
-            stm= Database.connessioneDB().createStatement();
+            stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE");
             if(result.next()){
                 System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
@@ -183,14 +167,13 @@ public class Oggetti {
         } 
     }
 
-    // Metodo che permette di aprire un oggetto.
     public static void usaOggetto(String inputUtente) {
         Statement stm;
         ResultSet result;
         String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
 
         try {
-            stm= Database.connessioneDB().createStatement();
+            stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE AND usabile = TRUE");
             
             if(result.next()){
@@ -209,13 +192,13 @@ public class Oggetti {
 
     }
 
-    // Metodo che permette di scartare un oggetto dall'inventario.
+    // Metodo che scarta l'oggetto dall'inventario, se è presente.
     public static void scartaOggetto(String inputUtente) {
         Statement stm;
         ResultSet result;
         String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
         try {
-            stm= Database.connessioneDB().createStatement();
+            stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto ='" + nuovoInput + "' AND inInventario = TRUE");
             
             if(result.next()){
@@ -237,13 +220,15 @@ public class Oggetti {
 
     }
 
-    // Metodo che stampa gli oggetti visibili presenti nella stanza corrente.
+    /** Metodo che stampa gli oggetti presenti nella stanza corrente.
+    * @param numeroStanzaCorrente: numero della stanza corrente.
+    */
     public static void stampaOggetti() {
         Statement stm;
         ResultSet result;
         if(Ambiente.nomeAmbiente.equals("Casa")){
             try {
-                stm= Database.connessioneDB().createStatement();
+                stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
                 result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND visibile = TRUE");
                 
                 while(result.next()){
@@ -258,6 +243,18 @@ public class Oggetti {
             System.out.println("Al momento, in questo ambiente non ci sono oggetti. :)");
         }
         
+    }
+
+    // Esegue un controllo booleano sul numero di oggetti nell'inventario.
+    public static boolean controllaOggettiInInventario() {
+
+        if(Inventario.numeroOggettiInventario >= MAX_OGGETTI){
+            System.out.println("Hai raggiunto il numero massimo di oggetti che puoi inserire nell'inventario. L'oggetto non è stato inserito.");
+            System.out.println("Se vuoi puoi buttare qualcosa dal tuo inventario per avere uno o più slot liberi.");
+            return false;
+        }else{
+            return true;
+        }
     }
 
 }

@@ -3,7 +3,10 @@ package com.mycompany.the_one_in_the_dark.Ambienti;
 import com.mycompany.the_one_in_the_dark.Utilita;
 
 /**
- *
+ * Classe che gestisce l'ambiente Stazione di Polizia. Come per ogni altro ambiente, questa classe 
+ * contiene un metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per
+ * l'acquisizione dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati
+ * all'ambiente.
  * @author Angela Mileti
  */
 
@@ -12,8 +15,13 @@ public class StazioneDiPolizia extends Ambiente {
      * @param args
      */
 
+    public StazioneDiPolizia(){
+        super();
+    }
+
     static boolean introduzioneAmbiente= false;
 
+    // Set dell'ambiente.
     public static void setStazioneDiPolizia() {
         
         // Set del nome dell'ambiente e del numero delle stanze.
@@ -41,6 +49,7 @@ public class StazioneDiPolizia extends Ambiente {
         }
     }
 
+    // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputStazionePolizia(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -139,11 +148,11 @@ public class StazioneDiPolizia extends Ambiente {
             }
 
         }else{
-            Utilita.acquisisciInputComando(inputUtente);
+            System.out.println("Comando non riconosciuto.");
         }
-      
     }
 
+    // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneStazionePolizia() throws InterruptedException{
         System.out.println("> Ti avvicini alla stazione di polizia timoroso. Chissà quante brutte storie ha sentito questo luogo, e chissà quante altre sono state sepolte.");
         Utilita.delay();
