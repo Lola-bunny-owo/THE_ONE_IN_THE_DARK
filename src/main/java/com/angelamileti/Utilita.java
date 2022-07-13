@@ -26,8 +26,8 @@ public class Utilita {
     // Stringhe utili alla gestione del database
     public static final String CREATE_TABLE_CASA = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN,  raccoglibile BOOLEAN, stanza INT, visibile BOOLEAN, usabile BOOLEAN, descrizioneUsa VARCHAR(600))";
     public static final String CREATE_TABLE_NPCS = "CREATE TABLE IF NOT EXISTS personaggi (nomeNPC VARCHAR(300), descrizione VARCHAR(700), visibile BOOLEAN)";
-    public static final String urlCasa= "jdbc:h2:.//src//file//database//databaseCasa";
-    public static final String urlNPCs= "jdbc:h2:.//src//file//database//databasePersonaggi";
+    public static final String urlCasa= "jdbc:h2:.//resources//file//database//databaseCasa";
+    public static final String urlNPCs= "jdbc:h2:.//resources//file//database//databasePersonaggi";
 
     public Utilita(){
         // Costruttore vuoto
@@ -83,7 +83,7 @@ public class Utilita {
     // Stampa a schermo l'help dei comandi che prende da un file.
     public static void stampaHelp() throws IOException{
         Scanner stampaHelp= null;
-        File fileHelp= new File(".//src//file//Help.txt");
+        File fileHelp= new File(".//resources//file//Help.txt");
 
         try{
             stampaHelp= new Scanner(new BufferedReader(new FileReader(fileHelp)));
@@ -100,7 +100,7 @@ public class Utilita {
     // Stampa a schermo la trama del gioco che prende da un file.
     public static void stampaTrama() throws IOException{
         Scanner stampaTrama= null;
-        File fileTrama= new File(".//src//file//Trama.txt");
+        File fileTrama= new File(".//resources//file//Trama.txt");
         try{
             stampaTrama= new Scanner(new BufferedReader(new FileReader(fileTrama)));
             while(stampaTrama.hasNextLine()){
@@ -231,7 +231,7 @@ public class Utilita {
 
             try {
                 delay(2000);
-                riproduciChitarra("src/audio/radiohead.wav");
+                riproduciChitarra("resources/audio/radiohead.wav");
             } catch (InterruptedException e) {
                 System.out.println("Errore.");
             }

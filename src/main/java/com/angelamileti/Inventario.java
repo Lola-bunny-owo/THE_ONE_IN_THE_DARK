@@ -28,7 +28,7 @@ public class Inventario extends Oggetti{
             ResultSet result;
 
             try {
-                stm = Database.connessioneDB("jdbc:h2:.//src//file//database//databaseCasa").createStatement();
+                stm = Database.connessioneDB("jdbc:h2:.//resources//file//database//databaseCasa").createStatement();
                 result= stm.executeQuery("SELECT * FROM oggetti WHERE inInventario = TRUE");
 
                 while(result.next()){
