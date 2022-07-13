@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany.nome_provvisorio</groupId>
+    <groupId>com.angelamileti</groupId>
     <artifactId>THE_ONE_IN_THE_DARK</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <exec.mainClass>com.mycompany.the_one_in_the_dark.TheOneInTheDark</exec.mainClass>
+        <exec.mainClass>com.mycompany.Main</exec.mainClass>
     </properties>
     <name>THE_ONE_IN_THE_DARK</name>
     <dependencies>
@@ -49,49 +49,51 @@
             <version>2.9.0</version>
         </dependency>
     </dependencies>
-    <plugins>
-        <plugin>
-             <artifactId>maven-assembly-plugin</artifactId>
-              <version>3.3.0</version>
-              <configuration>
-                  <descriptorRefs>
-                      <descriptorRef>jar-with-dependencies</descriptorRef>
-                  </descriptorRefs>
-                  <archive>
-                      <manifest>
-                          <mainClass>src.main.java.com.mycompany.the_one_in_the_dark.TheOneInTheDark</mainClass>
-                      </manifest>
-                  </archive>
-              </configuration>
-              <executions>
-              <execution>
-                  <id>make-assembly</id>
-                  <phase>package</phase>
-                  <goals>                         
-                        <goal>single</goal>
-                  </goals>
-             </execution>
-             </executions>
-      </plugin>
-      <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>3.1.2</version>
-            <executions>
-            <execution>
-                 <id>copy-dependencies</id>
-                 <phase>package</phase>
-                 <goals>
-                        <goal>copy-dependencies</goal>
-                 </goals>
-                 <configuration>
-                       	<outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        <overWriteReleases>false</overWriteReleases>
-                        <overWriteSnapshots>false</overWriteSnapshots>
-                        <overWriteIfNewer>true</overWriteIfNewer>
-                 </configuration>
-           </execution>
-           </executions>
-    </plugin>
-    </plugins>
+    <build>
+        <plugins>
+            <plugin>
+                 <artifactId>maven-assembly-plugin</artifactId>
+                  <version>3.3.0</version>
+                  <configuration>
+                      <descriptorRefs>
+                          <descriptorRef>jar-with-dependencies</descriptorRef>
+                      </descriptorRefs>
+                      <archive>
+                          <manifest>
+                              <mainClass>com.angelamileti.Main</mainClass>
+                          </manifest>
+                      </archive>
+                  </configuration>
+                  <executions>
+                  <execution>
+                      <id>make-assembly</id>
+                      <phase>package</phase>
+                      <goals>                         
+                            <goal>single</goal>
+                      </goals>
+                 </execution>
+                 </executions>
+          </plugin>
+          <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
+                <executions>
+                <execution>
+                     <id>copy-dependencies</id>
+                     <phase>package</phase>
+                     <goals>
+                            <goal>copy-dependencies</goal>
+                     </goals>
+                     <configuration>
+                               <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                     </configuration>
+               </execution>
+               </executions>
+        </plugin>
+        </plugins>
+    </build>
 </project>
