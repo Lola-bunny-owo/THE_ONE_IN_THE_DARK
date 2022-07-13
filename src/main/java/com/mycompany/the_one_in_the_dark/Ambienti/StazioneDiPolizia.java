@@ -51,7 +51,7 @@ public class StazioneDiPolizia extends Ambiente {
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputStazionePolizia(String inputUtente) throws InterruptedException{
-        if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
+        if((inputUtente.equalsIgnoreCase("destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 1){
                 incrementoStanza();
@@ -155,9 +155,9 @@ public class StazioneDiPolizia extends Ambiente {
     // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneStazionePolizia() throws InterruptedException{
         System.out.println("> Ti avvicini alla stazione di polizia timoroso. Chissà quante brutte storie ha sentito questo luogo, e chissà quante altre sono state sepolte.");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("All'ingresso non ci trovi anima viva, il ché è abbastanza strano. Dovrebbe essere pieno di agenti pronti a servirti ed ascoltarti, eppure.. zero.");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("Vuoi essere così ficcanaso da entrare in un posto del genere, senza aver ricevuto il permesso di nessuno?");
         System.out.println(".. Ovviamente sì.<");
         System.out.println("");

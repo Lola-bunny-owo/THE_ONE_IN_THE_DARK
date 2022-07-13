@@ -28,12 +28,12 @@ public class Inventario extends Oggetti{
             ResultSet result;
 
             try {
-                stm = Database.connessioneDB("jdbc:h2:.//src//file//databaseCasa").createStatement();
+                stm = Database.connessioneDB("jdbc:h2:.//src//file//database//databaseCasa").createStatement();
                 result= stm.executeQuery("SELECT * FROM oggetti WHERE inInventario = TRUE");
 
                 while(result.next()){
                     System.out.println("---------------------------------------------");
-                    System.out.println("NOME: [" + result.getString("nomeOggetto") + "]");
+                    System.out.println("NOME: [" + result.getString("nomeOggetto").substring(0, 1).toUpperCase() + result.getString("nomeOggetto").substring(1) + "]");
                     System.out.println("DESCRIZIONE: [" + result.getString("descrizione") + "]");
                 }
                 System.out.println("---------------------------------------------");

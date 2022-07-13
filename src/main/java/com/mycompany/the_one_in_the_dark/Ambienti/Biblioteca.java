@@ -49,7 +49,7 @@ public class Biblioteca extends Ambiente {
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputBiblioteca(String inputUtente) throws InterruptedException{
-        if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
+        if((inputUtente.equalsIgnoreCase("destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
@@ -146,9 +146,9 @@ public class Biblioteca extends Ambiente {
     // Metodo di stampa per l'introduzione dell'ambiente.
     public static boolean introduzioneBiblioteca() throws InterruptedException{
         System.out.println("> La biblioteca: un posto amato da grandi e piccini. Il silenzio è una delle sue caratteristiche.");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("L'aspetto è serio e cupo, e anche le persone al suo interno sono abbastanza inquietanti. Sembrano tutte così spente..");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("Nonostante la paura, scegli di dare un'occhiata in giro. Magari può aiutarti a scoprire qualcosa..<");
         System.out.println("");
         return introduzioneAmbiente= true;

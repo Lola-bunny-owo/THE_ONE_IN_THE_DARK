@@ -88,7 +88,7 @@ public class Ambiente {
                 if(numero == 10){
                     System.out.println("[???] - ???");
                 }else{
-                    System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                    System.out.println("[" + numero + "] - " + nomiStanze[numero-1]);
                 }
             }
 
@@ -96,31 +96,31 @@ public class Ambiente {
             System.out.println("Queste sono le aree presenti in " + nomeAmbiente + ":");
 
             for(Integer numero: numeroStanze){
-                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                System.out.println("[" + numero + "] - " + nomiStanze[numero-1]);
             }
 
         }else if(nomeAmbiente.equals("Stazione di Polizia")){
             System.out.println("Questi sono i dipartimenti presenti in " + nomeAmbiente + ":");
 
             for(Integer numero: numeroStanze){
-                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                System.out.println("[" + numero + "] - " + nomiStanze[numero-1]);
             }
 
         }else if(nomeAmbiente.equals("Biblioteca")){
             System.out.println("Queste sono le aule presenti in " + nomeAmbiente + ":");
             for(Integer numero: numeroStanze){
-                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                System.out.println("[" + numero + "] - " + nomiStanze[numero-1]);
             }
 
         }else if(nomeAmbiente.equals("Diner")){
             System.out.println("Queste sono le sale presenti in " + nomeAmbiente + ":");
             for(Integer numero: numeroStanze){
-                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                System.out.println("[" + numero + "] - " + nomiStanze[numero-1]);
             }
         }else if(nomeAmbiente.equals("Foresta")){
             System.out.println("Queste sono le zone presenti in " + nomeAmbiente + ":");
             for(Integer numero: numeroStanze){
-                System.out.println("[" + numero + "] - " + nomiStanze[numero]);
+                System.out.println("[" + numero + "] - " + nomiStanze[numero-1]);
             }
         }
 
@@ -144,11 +144,12 @@ public class Ambiente {
     // Metodo che acquisisce l'input dell'utente e lo trasforma in intero,
     // in modo da poter eseguire i controlli del caso e farlo spostare nella stanza da lui desiderata.
     public static void acquisisciInputConNumero(String inputUtente){
+        String nuovoInput = inputUtente.substring(inputUtente.lastIndexOf(" ") + 1);
         int numeroStanzaUtente= 0;
         int controlloNumeroStanze= getNumeroStanze().size();
 
         // Trasforma l'input utente nell'intero equivalente
-        numeroStanzaUtente= Integer.parseInt(inputUtente);
+        numeroStanzaUtente= Integer.parseInt(nuovoInput);
 
         if((numeroStanzaUtente > 0)&&(numeroStanzaUtente < 10)&&(controlloNumeroStanze >= numeroStanzaUtente)){
 

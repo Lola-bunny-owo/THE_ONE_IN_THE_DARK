@@ -49,7 +49,7 @@ public class Spiaggia extends Ambiente {
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputSpiaggia(String inputUtente) throws InterruptedException{
-        if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
+        if((inputUtente.equalsIgnoreCase("destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 1){
                 incrementoStanza();
@@ -192,10 +192,10 @@ public class Spiaggia extends Ambiente {
         System.out.println("> Fa caldo.. Il tuo corpo sta iniziando a piangere.");
         System.out.println("Senti il rumore delle onde. Un vento violento ed improvviso ti sferza il viso.");
         System.out.println("Il meteo è sempre inaffidabile..");
-        Utilita.delay();
+        Utilita.delay(3000);
         System.out.println("Noti che dalla spiaggia puoi spostarti ovunque.");
         System.out.println("Ti senti Dio.");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("Fai due passi..<");
         System.out.println("");
         return introduzioneAmbiente= true;

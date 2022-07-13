@@ -50,7 +50,7 @@ public class Diner extends Ambiente {
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputDiner(String inputUtente) throws InterruptedException{
-        if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
+        if((inputUtente.equalsIgnoreCase("destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
@@ -153,10 +153,10 @@ public class Diner extends Ambiente {
         System.out.println("> Entri nel diner 'Lola's Diner', e vieni subito pervaso da un odore di frittura misto dolcezza.");
         System.out.println("Il tuo sguardo viene subito catturato dall'incantevole cameriera al bancone. La sua uniforme rivela il suo nome: 'Fanny'.");
         System.out.println("Il nome del diner però è diverso..");
-        Utilita.delay();
+        Utilita.delay(4000);
         System.out.println("Fanny è circondata da clienti, affascinati dal suo sorriso e dal suo profumo inebriante.");
         System.out.println("Allora ti chiedi: ordino da mangiare? Ordino da bere?");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("Vorresti prima ispezionare il posto, ma se non mangi tua nonna ti vede sciupato..");
         System.out.println("Sei combattuto..<");
         System.out.println("");

@@ -63,14 +63,6 @@ public class MappaCasaSecondoPiano extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-       
-        
-    }
     
     public static void stampaFrame(){
         /* Create and display the form */

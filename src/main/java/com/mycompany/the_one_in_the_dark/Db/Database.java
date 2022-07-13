@@ -53,10 +53,11 @@ public class Database {
         try (Statement statement = connessioneDB(url).createStatement()) {
 
             if(url == "jdbc:h2:.//src//file//database//databaseCasa"){
-                statement.executeUpdate("TRUNCATE TABLE oggetti");
+                statement.executeUpdate("DROP TABLE IF EXISTS oggetti");
             }else if(url == "jdbc:h2:.//src//file//database//databasePersonaggi"){
-                statement.executeUpdate("TRUNCATE TABLE personaggi");
+                statement.executeUpdate("DROP TABLE IF EXISTS personaggi");
             }
+            
             statement.close();
         } catch (SQLException e) {
             System.out.println("Errore nella cancellazione della tabella.");

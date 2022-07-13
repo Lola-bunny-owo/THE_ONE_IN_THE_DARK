@@ -17,7 +17,8 @@ import com.mycompany.the_one_in_the_dark.Ambienti.*;
 import com.mycompany.the_one_in_the_dark.REST.*;
 
 /**
- * Classe di Utilità: in quest'ultima, si trovano metodi di vario tipo.
+ * Classe di Utilità: in quest'ultima, si trovano metodi di vario tipo, come metodi per la stampa,
+ * metodi che implementano alcune funzionalità specifiche, etc./
  * 
  * @author Angela Mileti
  */
@@ -33,18 +34,19 @@ public class Utilita {
     }
 
     // Metodo che dà un delay di 2s ai messaggi.
-    public static void delay() throws InterruptedException{
-        Thread.sleep(2000);
+    public static void delay(int tempo) throws InterruptedException{
+        Thread.sleep(tempo);
     }
 
     // Introduzione al gioco.
     public static void intro() throws InterruptedException{
+        
         Database.cancellaDatabase(urlCasa);
         Database.cancellaDatabase(urlNPCs);
         DatabaseNPCs.setPersonaggi();
         Casa.setCasa();
         System.out.println("...Quasi arrivato.");
-        delay();
+        delay(2000);
         System.out.println("");
         System.out.println("'''''''''''''''''''''''''");
         System.out.println("'                       '");
@@ -52,25 +54,25 @@ public class Utilita {
         System.out.println("'                       '");
         System.out.println("'''''''''''''''''''''''''");
         System.out.println("");
-        delay();
+        delay(2000);
         System.out.println("Chissà se questa cittadina è accogliente come dicono..");
-        delay();
+        delay(2000);
         System.out.println("Ma, piuttosto, dov'è casa mia?");
-        delay();
+        delay(2000);
         System.out.println("> Sei arrivato nella tua nuova casa sulla spiaggia. Entri in casa usando le chiavi, che fortunatamente non hai dimenticato.");
         System.out.println("Appena valichi l'ingresso, ritrovi ad un palmo da te una figura scura. È un uomo dalla folta barba bianca, dall'aspetto cupo.<");
-        delay();
+        delay(5000);
         System.out.println("");
         System.out.println("???: E voi chi siete?");
         NPCs.introGrigio();
-        delay();
+        delay(6000);
         System.out.println("> Non eri a conoscenza del custode di casa. Il suo modo di trattare il cagnolino ti ha infastidito.<");
         System.out.println("SPIKE: Ehi piccolino, tutto ok?");
         NPCs.einAbbaia();
-        delay();
+        delay(3000);
         System.out.println("> Ti senti libero di esplorare la tua nuova casa. A quanto pare Ein ha voglia di seguirti.<");
         Ambiente.stampaStanzaCorrente();
-        delay();
+        delay(2000);
         System.out.println("");
         System.out.println("!Suggerimento!: ehi giocatore, digita il comando /help, per capire come muoverti nell'ambiente e per capire quali comandi puoi o meno inserire.");
         System.out.println("");
@@ -147,88 +149,104 @@ public class Utilita {
     public static void controllaOggettoUsato(String oggettoUsato){
         Statement stm;
         
-        if((oggettoUsato.equals("Baule"))&&(Ambiente.numeroStanzaCorrente == 1)){
+        if((oggettoUsato.equals("baule"))&&(Ambiente.numeroStanzaCorrente == 1)){
 
             try {
                 stm= Database.connessioneDB(urlCasa).createStatement();
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Album di foto'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Coniglietto'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Lettera'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'album di foto'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'coniglietto'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'lettera'");
                 stm.close();
             } catch (SQLException e) {
                 System.out.println("Impossibile aggiornare gli attributi.");
             }
 
-        }else if((oggettoUsato.equals("Armadietto"))&&(Ambiente.numeroStanzaCorrente == 1)){
+        }else if((oggettoUsato.equals("armadietto"))&&(Ambiente.numeroStanzaCorrente == 1)){
 
             try {
                 stm= Database.connessioneDB(urlCasa).createStatement();
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Scarponi'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Corda'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'scarponi'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'corda'");
                 stm.close();
             } catch (SQLException e) {
                 System.out.println("Impossibile aggiornare gli attributi.");
             }
 
-        }else if((oggettoUsato.equals("Armadietto"))&&(Ambiente.numeroStanzaCorrente == 2)){
+        }else if((oggettoUsato.equals("armadio"))&&(Ambiente.numeroStanzaCorrente == 2)){
 
             try {
                 stm= Database.connessioneDB(urlCasa).createStatement();
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Chiave'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Vestiti femminili'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'chiave'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'vestiti femminili'");
                 stm.close();
             } catch (SQLException e) {
                 System.out.println("Impossibile aggiornare gli attributi.");
             }
 
-        }else if((oggettoUsato.equals("Armadietto da cucina"))&&(Ambiente.numeroStanzaCorrente == 3)){
+        }else if((oggettoUsato.equals("chiave"))&&(Ambiente.numeroStanzaCorrente != 3)){
+            Ambiente.numeroStanzaCorrente = 3;
+            Ambiente.setNomeStanzaCorrente("Cucina");
+            Ambiente.stampaStanzaCorrente();
+
+        }else if((oggettoUsato.equals("armadietto da cucina"))&&(Ambiente.numeroStanzaCorrente == 3)){
 
             try {
                 stm= Database.connessioneDB(urlCasa).createStatement();
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Dito sottovuoto'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Piatti'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'dito sottovuoto'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'piatti'");
                 stm.close();
             } catch (SQLException e) {
                 System.out.println("Impossibile aggiornare gli attributi.");
             }
 
-        }else if((oggettoUsato.equals("Cestino"))&&(Ambiente.numeroStanzaCorrente == 4)){
+        }else if((oggettoUsato.equals("cestino"))&&(Ambiente.numeroStanzaCorrente == 4)){
 
             try {
                 stm= Database.connessioneDB(urlCasa).createStatement();
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Accendino'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'accendino'");
                 stm.close();
             } catch (SQLException e) {
                 System.out.println("Impossibile aggiornare gli attributi.");
             }
 
-        }else if((oggettoUsato.equals("Libreria"))&&(Ambiente.numeroStanzaCorrente == 5)){
+        }else if((oggettoUsato.equals("libreria"))&&(Ambiente.numeroStanzaCorrente == 5)){
 
             try {
                 stm= Database.connessioneDB(urlCasa).createStatement();
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Romeo e Giulietta'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Orgoglio e Pregiudizio'");
-                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'Le migliori barzellette di Totti'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'romeo e giulietta'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'orgoglio e pregiudizio'");
+                stm.executeUpdate("UPDATE oggetti SET visibile = TRUE WHERE nomeOggetto = 'le migliori barzellette di Totti'");
                 stm.close();
             } catch (SQLException e) {
                 System.out.println("Impossibile aggiornare gli attributi.");
             }
 
-        }else if((oggettoUsato.equals("Orologio a pendolo"))&&(Ambiente.numeroStanzaCorrente == 6)){
+        }else if((oggettoUsato.equals("orologio a pendolo"))&&(Ambiente.numeroStanzaCorrente == 6)){
         
             RestOrologioResponse ora = RestOrologio.getOra("Europe/Rome");
             System.out.println("Esso segna:"); 
             System.out.println("ORA: " + ora.hour + ":" + ora.minute + ":" + ora.seconds);
 
-        }else if((oggettoUsato.equals("Chitarra"))&&(Ambiente.numeroStanzaCorrente == 7)){
+        }else if((oggettoUsato.equals("chitarra"))&&(Ambiente.numeroStanzaCorrente == 7)){
 
             try {
-                delay();
+                delay(2000);
                 riproduciChitarra("src/audio/radiohead.wav");
             } catch (InterruptedException e) {
                 System.out.println("Errore.");
             }
+
+        }else if((oggettoUsato.equals("giornale n#1"))&&(Ambiente.numeroStanzaCorrente == 8)){
+            Oggetti.giornaliAperti++;
+        }else if((oggettoUsato.equals("giornale n#2"))&&(Ambiente.numeroStanzaCorrente == 8)){
+            Oggetti.giornaliAperti++;
+        }else if((oggettoUsato.equals("macchina fotografica n#2"))&&(Ambiente.numeroStanzaCorrente == 10)){
             
+            try {
+                NPCs.dialogoGrigioStanzaSegreta();
+            } catch (InterruptedException e) {
+                System.out.println("Errore nella stampa del dialogo.");
+            }
         }
     }
 

@@ -49,7 +49,7 @@ public class Foresta extends Ambiente {
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputForesta(String inputUtente) throws InterruptedException{
-        if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
+        if((inputUtente.equalsIgnoreCase("destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
             if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
@@ -153,9 +153,9 @@ public class Foresta extends Ambiente {
     public static boolean introduzioneForesta() throws InterruptedException{
         System.out.println("> Sei un pazzo, sei un pazzo, sei un pazzo. Continui a ripetertelo ma comunque prosegui.");
         System.out.println("Questa ti sembra l'occasione giusta per mangiare, perché potrebbe anche essere il tuo ultimo pasto.");
-        Utilita.delay();
+        Utilita.delay(3000);
         System.out.println("Armato di coraggio, arrivi a quella che ti sembra l'entrata di Bosco Atro.");
-        Utilita.delay();
+        Utilita.delay(2000);
         System.out.println("Ti guardi attorno, e vedi solo spine. Non ci sono altre strade, devi per forza attraversarle se vuoi proseguire..");
         System.out.println("Boh, almeno sarai ricordato come un eroe.. Certo, da tua madre.<");
         System.out.println("");

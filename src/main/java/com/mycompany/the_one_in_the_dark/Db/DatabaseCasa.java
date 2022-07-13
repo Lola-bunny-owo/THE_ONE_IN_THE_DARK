@@ -20,7 +20,7 @@ public class DatabaseCasa extends Database {
             PreparedStatement statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
             
             /* INGRESSO */
-            statementPrep.setString(1, "Tappeto");
+            statementPrep.setString(1, "tappeto");
             statementPrep.setString(2, "Un tappeto color porpora.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -32,7 +32,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Vaso");
+            statementPrep.setString(1, "vaso");
             statementPrep.setString(2, "Un vaso con diversi fiori bianchi e blu.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -44,7 +44,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Scarponi");
+            statementPrep.setString(1, "scarponi");
             statementPrep.setString(2, "Delle scarpe pesanti con delle macchie scure. Sembra essere terra.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -56,7 +56,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Corda");
+            statementPrep.setString(1, "corda");
             statementPrep.setString(2, "Una corda spessa, bianca e lunga. Potrebbe servire.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -68,7 +68,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Armadietto");
+            statementPrep.setString(1, "armadietto");
             statementPrep.setString(2, "Un armadio che contiene altri oggetti.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -80,7 +80,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Album di foto");
+            statementPrep.setString(1, "album di foto");
             statementPrep.setString(2, "Un album di foto degli zii e dei loro amici.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -92,7 +92,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Coniglietto");
+            statementPrep.setString(1, "coniglietto");
             statementPrep.setString(2, "Un peluche di un coniglietto marrone. È vecchio e puzza.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -104,7 +104,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Lettera");
+            statementPrep.setString(1, "lettera");
             statementPrep.setString(2, "Una lettera.. per me?!");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -121,7 +121,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Baule");
+            statementPrep.setString(1, "baule");
             statementPrep.setString(2, "Un baule che vuole essere aperto a tutti i costi.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -133,7 +133,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Foto");
+            statementPrep.setString(1, "foto");
             statementPrep.setString(2, "Una foto degli zii con dei loro amici. Anche il custode è in questa foto..");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -146,7 +146,7 @@ public class DatabaseCasa extends Database {
         
             /* SALONE */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Divano");
+            statementPrep.setString(1, "divano");
             statementPrep.setString(2, "Un divano scuro.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -159,7 +159,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Dipinto");
+            statementPrep.setString(1, "dipinto");
             statementPrep.setString(2, "Un dipinto del mare al tramonto. È leggermente inclinato.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -171,7 +171,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Chiave");
+            statementPrep.setString(1, "chiave");
             statementPrep.setString(2, "Una chiave.. ma cosa apre?");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -179,11 +179,12 @@ public class DatabaseCasa extends Database {
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Usi la chiave per aprire l'armadietto da cucina.");
+            statementPrep.setString(9, "Provi ad usare la chiave ovunque.. La cucina è la tua risposta.\n"
+            + "Usi la chiave per aprire l'armadietto da cucina.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Vestiti femminili");
+            statementPrep.setString(1, "vestiti femminili");
             statementPrep.setString(2, "Dei vestiti da ragazzina.. Wtf. Che ci fanno qui questi vestiti?");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -195,7 +196,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Armadietto");
+            statementPrep.setString(1, "armadio");
             statementPrep.setString(2, "Un armadio che contiene altri oggetti.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -203,11 +204,11 @@ public class DatabaseCasa extends Database {
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Apri l'armadietto e ci trovi.. Una Chiave e dei Vestiti femminili.");
+            statementPrep.setString(9, "Apri l'armadio e ci trovi.. Una Chiave e dei Vestiti femminili.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Sketchbook");
+            statementPrep.setString(1, "sketchbook");
             statementPrep.setString(2, "Lo sketchbook di qualcuno. Forse dello zio?");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -221,7 +222,7 @@ public class DatabaseCasa extends Database {
 
             /* CUCINA */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Tavolo");
+            statementPrep.setString(1, "tavolo");
             statementPrep.setString(2, "Un comune tavolo da pranzo.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -233,7 +234,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Coltello");
+            statementPrep.setString(1, "coltello");
             statementPrep.setString(2, "Un coltello dal manico spesso e dalla punta affilata. Fa paura.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -245,7 +246,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Posateria");
+            statementPrep.setString(1, "posateria");
             statementPrep.setString(2, "Una posateria con delle posate che sono state posate da qualcuno.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -257,7 +258,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Forno");
+            statementPrep.setString(1, "forno");
             statementPrep.setString(2, "Un forno per cuocere il cosidetto cibo.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -269,7 +270,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Piatti");
+            statementPrep.setString(1, "piatti");
             statementPrep.setString(2, "Dei piatti, solitamente usati per mangiare. Lol.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -281,7 +282,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Dito sottovuoto");
+            statementPrep.setString(1, "dito sottovuoto");
             statementPrep.setString(2, "Ma questo è... è un dito?!");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -293,7 +294,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Armadietto da cuina");
+            statementPrep.setString(1, "armadietto da cuina");
             statementPrep.setString(2, "Un armadietto da cucina. Richiede una chiave per essere aperto.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -306,19 +307,19 @@ public class DatabaseCasa extends Database {
 
             /* VERANDA */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Piede di porco");
-            statementPrep.setString(2, "Un piede di porco di colore giallo. Sembra utile.");
-            statementPrep.setBoolean(3, true);
+            statementPrep.setString(1, "ruota forata");
+            statementPrep.setString(2, "Una ruota forata.");
+            statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
             statementPrep.setInt(5, 24);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, true);
-            statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Usi il piede di porco per ???");
+            statementPrep.setBoolean(8, false);
+            statementPrep.setString(9, "");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Sparachiodi");
+            statementPrep.setString(1, "sparachiodi");
             statementPrep.setString(2, "Una sparachiodi. Evidentemente il custode ha la passione del bricolage.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -330,7 +331,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Chiodi");
+            statementPrep.setString(1, "chiodi");
             statementPrep.setString(2, "Dei piccoli chiodi.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -342,7 +343,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Ombrello");
+            statementPrep.setString(1, "ombrello");
             statementPrep.setString(2, "Un ombrello grigio. È ancora bagnato.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -354,7 +355,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Cestino");
+            statementPrep.setString(1, "cestino");
             statementPrep.setString(2, "Un cestino vuoto. Sembra ci sia qualcosa al suo interno..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -366,7 +367,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Accendino");
+            statementPrep.setString(1, "accendino");
             statementPrep.setString(2, "Un accendino. È scarico.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -379,7 +380,7 @@ public class DatabaseCasa extends Database {
 
             /* CORRIDOIO LARGO */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Macchina fotografica");
+            statementPrep.setString(1, "macchina fotografica");
             statementPrep.setString(2, "Una macchina fotografica Casio QV-10. Al suo interno ci sono delle foto.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -391,7 +392,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Romeo e Giulietta");
+            statementPrep.setString(1, "romeo e giulietta");
             statementPrep.setString(2, "Un libro di William Shakespeare.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -403,7 +404,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Orgoglio e Pregiudizio");
+            statementPrep.setString(1, "orgoglio e pregiudizio");
             statementPrep.setString(2, "Un libro di Jane Austen.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -416,7 +417,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Le migliori barzellette di Totti");
+            statementPrep.setString(1, "le migliori barzellette di Totti");
             statementPrep.setString(2, "Un libro inutile.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -428,7 +429,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Libreria");
+            statementPrep.setString(1, "libreria");
             statementPrep.setString(2, "Una libreria. Ci sono tanti libri al suo interno.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -440,7 +441,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Manichino");
+            statementPrep.setString(1, "manichino");
             statementPrep.setString(2, "Un manichino di legno. È macchiato.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -453,7 +454,7 @@ public class DatabaseCasa extends Database {
 
             /* CORRIDOIO STRETTO */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Tavolo sospetto");
+            statementPrep.setString(1, "tavolo sospetto");
             statementPrep.setString(2, "Un tavolo alquanto sospetto.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -465,7 +466,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Orologio a pendolo");
+            statementPrep.setString(1, "orologio a pendolo");
             statementPrep.setString(2, "Un vecchio orologio a pendolo. Dice l'ora.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -477,7 +478,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Comodino");
+            statementPrep.setString(1, "comodino");
             statementPrep.setString(2, "Un comodino piccolino con un posacenere. Il custode fuma?");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -490,8 +491,8 @@ public class DatabaseCasa extends Database {
 
             /* CAMERA DA LETTO DI SPIKE */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Armadio");
-            statementPrep.setString(2, "Un armadio nel quale inserire dei vestiti.");
+            statementPrep.setString(1, "armadio nero");
+            statementPrep.setString(2, "Un armadio di color nero nel quale inserire dei vestiti.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
             statementPrep.setInt(5, 39);
@@ -502,7 +503,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Scrivania");
+            statementPrep.setString(1, "scrivania");
             statementPrep.setString(2, "Una scrivania mal ridotta, con delle penne e dei fogli bianchi.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -514,7 +515,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Letto");
+            statementPrep.setString(1, "letto");
             statementPrep.setString(2, "Il tuo letto impolverato. È assurdo quanto faccia schifo..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -526,7 +527,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Chitarra");
+            statementPrep.setString(1, "chitarra");
             statementPrep.setString(2, "Una chitarra acustica. Era sicuramente della zia..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -534,12 +535,12 @@ public class DatabaseCasa extends Database {
             statementPrep.setInt(6, 7);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Era da un sacco che non mettevi le mani su una chitarra. Ti dai una possibilità."); //creep
+            statementPrep.setString(9, "Era da un sacco che non mettevi le mani su una chitarra. Ti dai una possibilità.");
             statementPrep.executeUpdate();
 
             /* CAMERA DA LETTO DEL CUSTODE */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Diario");
+            statementPrep.setString(1, "diario");
             statementPrep.setString(2, "Il diario del custode. Contiene tanti appunti e sicuramente segreti.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -553,7 +554,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Motosega");
+            statementPrep.setString(1, "motosega");
             statementPrep.setString(2, "Una motosega rossa. Ma perché nella sua stanza?!");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -565,7 +566,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Ventilatore");
+            statementPrep.setString(1, "ventilatore");
             statementPrep.setString(2, "Un ventilatore grigio. Quanto vorrei averti tutto per me..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -577,7 +578,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Giornale n#1");
+            statementPrep.setString(1, "giornale n#1");
             statementPrep.setString(2, "Un giornale vecchio.. Datato 25 Agosto 1975. Risale a 20 anni fa.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -587,12 +588,12 @@ public class DatabaseCasa extends Database {
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Leggi il giornale: 'Oggi, in prima pagina: il caso Felicia Thompson e Alan Thompson - i due cittadini"
             + "\nsono stati trovati morti suicidi. L'intera cittadina di Awhell è sconvolta e triste per le perdite.\n"
-            + "Non molto si è ancora saputo sulla vicenda, ma a quanto pare è stata ritrovata una lettera da parte del signor Thompson.'"
-            + "\n.. Ma gli zii non erano morti in un incidente?! I tuoi ti hanno mentito?..");
+            + "Non molto si è ancora saputo sulla vicenda, ma a quanto pare\nè stata ritrovata una lettera da parte del signor Thompson.'"
+            + "\n\n.. Ma gli zii non erano morti in un incidente?! I tuoi ti hanno mentito?..");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Giornale n#2");
+            statementPrep.setString(1, "giornale n#2");
             statementPrep.setString(2, "Un altro giornale vecchio.. Datato 11 Agosto 1975.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -601,13 +602,13 @@ public class DatabaseCasa extends Database {
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Leggi il giornale: 'Di nuovo disperazione e sconforto nella triste Awhell: un'altra ragazzina scomparsa."
-            + "\nLa polizia sta facendo il possibile, ma per ora non ci sono stati progressi dall'ultima scomparsa. Il nome ed il volto sono stati"
-            + "della ragazzina sono stati volutamente nascosti, anche se l'intera città sa tutto.'"
-            + "\n .. Hai un orribile, orribile e disgustoso presentimento.");
+            + "\nLa polizia sta facendo il possibile, ma per ora non ci sono stati progressi dall'ultima scomparsa.\nIl nome ed il volto"
+            + " della ragazzina sono stati volutamente nascosti, anche se l'intera città sa tutto.'"
+            + "\n\n .. Hai un orribile, orribile e disgustoso presentimento.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Muro");
+            statementPrep.setString(1, "muro");
             statementPrep.setString(2, "Il muro sembra strano..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -616,13 +617,13 @@ public class DatabaseCasa extends Database {
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Tasti il muro ovunque, e senti sotto le dita che quel muro non è davvero un muro."
-            + " Provi a tirare, e funziona: ciò che hai tirato era un pomello di una porta, che porta ad un'altra stanza."
-            + "In pratica, è un passaggio segreto..");
+            + " Provi a tirare, e funziona:\nciò che hai tirato era un pomello di una porta, che porta ad un'altra stanza."
+            + " In pratica, è un passaggio segreto..");
             statementPrep.executeUpdate();
             
             /* BAGNO */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Vasca");
+            statementPrep.setString(1, "vasca");
             statementPrep.setString(2, "Una vasca da bagno grigia. È attaccata al muro.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -634,7 +635,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Water");
+            statementPrep.setString(1, "water");
             statementPrep.setString(2, "Un gabinetto utilizzato per fare i propri bisogni oppure.. lo sappiamo tutti. Duh.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -646,7 +647,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Specchio");
+            statementPrep.setString(1, "specchio");
             statementPrep.setString(2, "Uno specchio che sembra stufo di specchiare le persone.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -659,7 +660,7 @@ public class DatabaseCasa extends Database {
             
             /* STANZA SEGRETA */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Macchina fotografica n#1");
+            statementPrep.setString(1, "macchina fotografica n#1");
             statementPrep.setString(2, "Una macchina fotografica piena di foto e video.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -668,12 +669,12 @@ public class DatabaseCasa extends Database {
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Controlli il contenuto della macchina.. Ci sono delle foto. Foto di ragazzine."
-            + "Sono sorridenti, felici, tranquille. Noti in ogni video e foto un mazzetto di soldi."
-            + "Forse si facevano pagare per farsi riprendere?.. Ma, perché..?");
+            + " Sono sorridenti, felici, tranquille. Noti in ogni video e foto un mazzetto di soldi."
+            + " Forse si facevano pagare per farsi riprendere?.. Ma, perché..?");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Macchina fotografica n#2");
+            statementPrep.setString(1, "macchina fotografica n#2");
             statementPrep.setString(2, "Una macchina fotografica semi-piena.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
@@ -683,11 +684,11 @@ public class DatabaseCasa extends Database {
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "In questa macchina ci sono foto e video.. ripugnanti."
             + " Lividi, luci rosse e nudità. Ti viene da vomitare.. il voler indagare sul tuo passato ha portato a galla"
-            + "molte più vicende di quanto pensassi. Ti sale il panico. Il custode chiaramente sa tutto. Hai bisogno di scoprire di più.");
+            + " molte più vicende di quanto pensassi. Ti sale il panico. Il custode chiaramente sa tutto. Hai bisogno di scoprire di più.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Siringa");
+            statementPrep.setString(1, "siringa");
             statementPrep.setString(2, "Una siringa usata..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
@@ -699,7 +700,7 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "Pillole");
+            statementPrep.setString(1, "pillole");
             statementPrep.setString(2, "Dei contenitori con delle pillole di vario tipo. Stilnox, Xanax, ..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);

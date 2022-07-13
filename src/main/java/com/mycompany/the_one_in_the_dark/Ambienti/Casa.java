@@ -1,6 +1,8 @@
 package com.mycompany.the_one_in_the_dark.Ambienti;
 
 import java.sql.*;
+
+import com.mycompany.the_one_in_the_dark.NPCs;
 import com.mycompany.the_one_in_the_dark.Oggetti;
 import com.mycompany.the_one_in_the_dark.Utilita;
 import com.mycompany.the_one_in_the_dark.Db.Database;
@@ -59,7 +61,6 @@ public class Casa extends Ambiente {
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
     public static void acquisisciInputCasa(String inputUtente){
-        controllaStanza();
 
         if((inputUtente.equalsIgnoreCase("vai a destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
@@ -155,9 +156,21 @@ public class Casa extends Ambiente {
                     incrementoStanza();
                     stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 8){
-                    incrementoStanza();
-                    incrementoStanza();
-                    stampaStanzaCorrente();
+
+                    if(Oggetti.giornaliAperti == 2){
+                        incrementoStanza();
+                        incrementoStanza();
+                        stampaStanzaCorrente();
+                        Oggetti.giornaliAperti = 0;
+                        
+                    }else if(NPCs.dialogoGrigioStanzaSegreta == true){
+                        System.out.println("Non puoi andare avanti. Ricordi? C'è un possibile serial killer bloccato all'interno.");
+                        System.out.println("In ogni caso, devi capirne di più.");
+
+                    }else {
+                        System.out.println("Non puoi andare avanti. Cerca degli indizi, e forse la situazione cambierà.");
+                    }
+                    
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -230,6 +243,8 @@ public class Casa extends Ambiente {
         }else{
             System.out.println("Comando non riconosciuto.");
         }
+
+        controllaStanza();
     }
 
     // Metodo che permette all'utente di guardare la stanza.
@@ -275,7 +290,7 @@ public class Casa extends Ambiente {
     public static void stampaSalone(){
         System.out.println("> Il salone è grigio e cupo, come lo è del resto l'intera casa. Due grandi divani occupano gran parte della stanza.");
         System.out.println("Armadietti, piccole scrivanie e quadri la decorano.");
-        System.out.println("Si può salire al piano grazie alle scale affianco ai divani.<");
+        System.out.println("Si può salire al piano di sopra grazie alle scale affianco ai divani.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
@@ -348,10 +363,10 @@ public class Casa extends Ambiente {
 
             try {
                 stm= Database.connessioneDB(Utilita.urlNPCs).createStatement();
-                result= stm.executeQuery("SELECT * FROM personaggi WHERE nomeNPC ='Grigio' AND visibile = FALSE");
+                result= stm.executeQuery("SELECT * FROM personaggi WHERE nomeNPC ='grigio' AND visibile = FALSE");
 
                 if(result.next()){
-                    stm.executeUpdate("UPDATE personaggi SET visibile = TRUE WHERE nomeNPC = 'Grigio'");
+                    stm.executeUpdate("UPDATE personaggi SET visibile = TRUE WHERE nomeNPC = 'grigio'");
                     stm.close();
                 }
             }catch (SQLException e) {
@@ -360,10 +375,10 @@ public class Casa extends Ambiente {
         }else {
             try {
                 stm= Database.connessioneDB(Utilita.urlNPCs).createStatement();
-                result= stm.executeQuery("SELECT * FROM personaggi WHERE nomeNPC ='Grigio'");
+                result= stm.executeQuery("SELECT * FROM personaggi WHERE nomeNPC ='grigio'");
 
                 if(result.next()){
-                    stm.executeUpdate("UPDATE personaggi SET visibile = FALSE WHERE nomeNPC = 'Grigio'");
+                    stm.executeUpdate("UPDATE personaggi SET visibile = FALSE WHERE nomeNPC = 'grigio'");
                     stm.close();
                 }
             }catch (SQLException e) {

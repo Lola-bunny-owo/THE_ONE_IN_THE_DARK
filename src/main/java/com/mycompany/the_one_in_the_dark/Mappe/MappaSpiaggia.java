@@ -64,14 +64,6 @@ public class MappaSpiaggia extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-       
-        
-    }
-    
     public static void stampaFrame(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {

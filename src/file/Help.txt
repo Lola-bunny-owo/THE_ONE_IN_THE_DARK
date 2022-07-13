@@ -4,18 +4,20 @@
 
 Salve, giocatore. L'unico scopo della mia esistenza è aiutarti.
 Ti spiego un po'..
+Innanzitutto: le parentesi angolari che leggerai in questo help dei comandi sono solo segnaposti, non devi inserirle in gioco!
 
-Come primo punto, ti consiglio di digitare /lista stanze per conoscere le stanze nelle quale puoi spostarti. Le stanze che verranno mostrate sullo schermo sono accompagnate da un numero identificativo - capirai a cosa serve più avanti nella spiegazione.
+Detto questo, ti consiglio di digitare /lista stanze per conoscere le stanze nelle quale puoi spostarti. Le stanze che verranno mostrate sullo schermo sono accompagnate da un numero identificativo - capirai a cosa serve più avanti nella spiegazione.
 
 In partita, puoi spostarti attraverso dei comandi del tipo seguente:
-- vai a destra/vai a sinistra/vai avanti/vai indietro/vai sopra/vai giù
+- destra | vai a sinistra | vai avanti | vai indietro | vai sopra | vai giù
 Equivalentemente, puoi digitare:
-- destra/sinistra/avanti/indietro/sopra/giù
-Per tua fortuna, puoi spostarti anche solo inserendo il 'numero identificativo' della stanza nella quale vuoi spostarti.
+- destra | sinistra | avanti | indietro | sopra | giù
+Per tua fortuna, puoi spostarti anche inserendo un comando del genere:
+- vai in stanza <numeroIdentificativo>
+Se lo desideri, puoi andare in altri ambienti con dei comandi del tipo 'vai in Spiaggia', 'vai nella Foresta', e così via.
 
 Dopodiché, ti consiglio di orientarti attraverso la tua mappa. La mappa cambia da ambiente ad ambiente, e ti è accessibile in qualsiasi momento. Ti basta digitare /mappa.
 Attenzione: se cambi ambiente e non hai chiuso la mappa precedente, questa mappa rimane comunque aperta senza essere aggiornata. Per avere la mappa aggiornata devi digitare nuovamente /mappa. Ti consiglio sempre di chiudere la mappa quando hai finito di orientarti!
-
 
 Puoi conoscere la lista delle stanze in cui puoi spostarti, digitando:
 - /lista stanze
@@ -23,6 +25,8 @@ Puoi anche conoscere in quale stanza sei attualmente, digitando:
 - /stanza
 Puoi guardarti attorno attraverso i comandi:
 - /guarda stanza
+Puoi conoscere la lista degli oggetti nella stanza, attraverso il comando:
+- /oggetti
 
 Puoi aprire e guardare il tuo inventario, attraverso i comandi:
 - /apri inventario  oppure  /inventario
@@ -31,15 +35,30 @@ Puoi guardare nel dettaglio un oggetto, attraverso il comando:
 Puoi raccogliere qualcosa, attraverso il comando:
 - /raccogli <nomeOggetto>     
 Puoi usare un oggetto, attraverso il comando:
-- /usa <nomeOggetto>    
+- /usa <nomeOggetto>
+Puoi aprire un oggetto, attraverso il comando:
+- /apri <nomeOggetto>
+Puoi scartare un oggetto dall'inventario, attraverso il comando:
+- /scarta <nomeOggetto>
 
 Puoi anche interagire, in determinati casi, con i personaggi dell'avventura. Usa il comando:
 /parla con <nomePersonaggio>
-
-Importante: non devi inserire le parentesi angolari e il nome dev'essere inserito con la lettera maiuscola! :)
 
 Se invece vuoi uscire dal gioco (in modo corretto), puoi farlo attraverso il comando:
 - /esci
 
 Puoi anche usare il comando /help per visualizzare questo menù di help.
 Puoi invece usare il comando /trama per conoscere la trama di questa avventura testuale.
+
+Importante: il nome dell'oggetto/personaggio dev'essere scritto per intero :)
+Ad esempio... 
+/usa macchina fotografica
+
+Credo di averti detto tutto quello che c'è da sapere. Spero di esserti stato utile, giocatore.
+Buon divertimento!      ^ w ^
+
+**********************************************************************
+**********************************************************************
+**********************************************************************
+
+
