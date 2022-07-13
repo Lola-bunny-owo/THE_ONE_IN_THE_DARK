@@ -24,7 +24,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un tappeto color porpora.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 1);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -36,7 +36,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un vaso con diversi fiori bianchi e blu.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 2);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -48,7 +48,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Delle scarpe pesanti con delle macchie scure. Sembra essere terra.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 3);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -60,7 +60,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una corda spessa, bianca e lunga. Potrebbe servire.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 4);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -72,7 +72,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un armadio che contiene altri oggetti.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 5);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -84,7 +84,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un album di foto degli zii e dei loro amici.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 6);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -96,7 +96,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un peluche di un coniglietto marrone. È vecchio e puzza.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 7);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, false);
@@ -108,7 +108,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una lettera.. per me?!");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 8);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -125,7 +125,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un baule che vuole essere aperto a tutti i costi.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 9);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -137,7 +137,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una foto degli zii con dei loro amici. Anche il custode è in questa foto..");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 10);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 1);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -150,7 +150,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un divano scuro.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 11);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -163,7 +163,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un dipinto del mare al tramonto. È leggermente inclinato.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 12);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -175,12 +175,12 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una chiave.. ma cosa apre?");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 13);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Provi ad usare la chiave ovunque.. La cucina è la tua risposta.\n"
-            + "Usi la chiave per aprire l'armadietto da cucina.");
+            + "Usi la chiave per aprire uno scompartimento da cucina.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
@@ -188,7 +188,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Dei vestiti da ragazzina.. Wtf. Che ci fanno qui questi vestiti?");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 14);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, false);
@@ -200,7 +200,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un armadio che contiene altri oggetti.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 15);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -212,7 +212,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Lo sketchbook di qualcuno. Forse dello zio?");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 16);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 2);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -226,7 +226,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un comune tavolo da pranzo.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 17);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -238,11 +238,11 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un coltello dal manico spesso e dalla punta affilata. Fa paura.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 18);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Usi il coltello per forzare l'armadietto da cucina. Non si apre.");
+            statementPrep.setString(9, "Usi il coltello per forzare lo scompartimento da cucina. Non si apre.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
@@ -250,7 +250,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una posateria con delle posate che sono state posate da qualcuno.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 19);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -260,9 +260,9 @@ public class DatabaseCasa extends Database {
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
             statementPrep.setString(1, "forno");
             statementPrep.setString(2, "Un forno per cuocere il cosidetto cibo.");
-            statementPrep.setBoolean(3, true);
+            statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 20);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -274,7 +274,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Dei piatti, solitamente usati per mangiare. Lol.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 21);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, false);
@@ -286,7 +286,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Ma questo è... è un dito?!");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 22);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, false);
@@ -294,15 +294,15 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "armadietto da cuina");
-            statementPrep.setString(2, "Un armadietto da cucina. Richiede una chiave per essere aperto.");
+            statementPrep.setString(1, "scompartimento");
+            statementPrep.setString(2, "Uno scompartimento da cucina. Richiede una chiave per essere aperto.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 23);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 3);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Apri l'armadietto. Quasi ti viene da vomitare. Ci trovi dei piatti e.. un Dito sottovuoto.");
+            statementPrep.setString(9, "Apri lo scompartimento. Quasi ti viene da vomitare. Ci trovi dei piatti e.. un Dito sottovuoto.");
             statementPrep.executeUpdate();
 
             /* VERANDA */
@@ -311,7 +311,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una ruota forata.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 24);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -323,7 +323,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una sparachiodi. Evidentemente il custode ha la passione del bricolage.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 25);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -335,7 +335,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Dei piccoli chiodi.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 26);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -347,7 +347,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un ombrello grigio. È ancora bagnato.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 27);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -356,10 +356,10 @@ public class DatabaseCasa extends Database {
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
             statementPrep.setString(1, "cestino");
-            statementPrep.setString(2, "Un cestino vuoto. Sembra ci sia qualcosa al suo interno..");
+            statementPrep.setString(2, "Un cestino apparentemente vuoto. In realtà sul fondo noti qualcosa..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 28);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -369,9 +369,9 @@ public class DatabaseCasa extends Database {
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
             statementPrep.setString(1, "accendino");
             statementPrep.setString(2, "Un accendino. È scarico.");
-            statementPrep.setBoolean(3, false);
+            statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 29);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 4);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -384,7 +384,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una macchina fotografica Casio QV-10. Al suo interno ci sono delle foto.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 30);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 5);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -396,7 +396,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un libro di William Shakespeare.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 31);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 5);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -408,7 +408,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un libro di Jane Austen.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 32);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 5);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -417,11 +417,11 @@ public class DatabaseCasa extends Database {
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
-            statementPrep.setString(1, "le migliori barzellette di Totti");
+            statementPrep.setString(1, "le migliori barzellette di totti");
             statementPrep.setString(2, "Un libro inutile.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 33);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 5);
             statementPrep.setBoolean(7, false);
             statementPrep.setBoolean(8, true);
@@ -433,7 +433,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una libreria. Ci sono tanti libri al suo interno.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 34);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 5);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -445,7 +445,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un manichino di legno. È macchiato.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 35);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 5);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -458,7 +458,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un tavolo alquanto sospetto.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 36);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 6);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -470,7 +470,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un vecchio orologio a pendolo. Dice l'ora.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 37);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 6);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -482,7 +482,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un comodino piccolino con un posacenere. Il custode fuma?");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 38);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 6);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -495,7 +495,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un armadio di color nero nel quale inserire dei vestiti.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 39);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 7);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -507,7 +507,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una scrivania mal ridotta, con delle penne e dei fogli bianchi.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 40);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 7);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -519,7 +519,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Il tuo letto impolverato. È assurdo quanto faccia schifo..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 41);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 7);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -531,7 +531,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una chitarra acustica. Era sicuramente della zia..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 42);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 7);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -544,13 +544,13 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Il diario del custode. Contiene tanti appunti e sicuramente segreti.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 43);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 8);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Leggi il diario, anche se forse non dovresti ficcare il naso in cose che non ti appartengono.\n"
             + "In realtà te ne freghi, perché hai bisogno di scoprire di più... 'Felicia.. l'unica cosa che ormai ricordo"
-            + "è il tuo sorriso.. mi manchi. Il tuo nipotino Spike tra qualche giorno mi farà visita. Io lo aspetto.' ..Il custode e la zia?!");
+            + " è il tuo sorriso.. mi manchi. Il tuo nipotino Spike tra qualche giorno mi farà visita. Io lo aspetto.'\n..Il custode e la zia?!");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
@@ -558,11 +558,11 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una motosega rossa. Ma perché nella sua stanza?!");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 44);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 8);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
-            statementPrep.setString(9, "Ti piacerebbe provarla, ma ti sembra troppo da serial killer.");
+            statementPrep.setString(9, "Ti piacerebbe provarla, ma non ti sembra il caso.");
             statementPrep.executeUpdate();
 
             statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
@@ -570,7 +570,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un ventilatore grigio. Quanto vorrei averti tutto per me..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 45);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 8);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -582,7 +582,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un giornale vecchio.. Datato 25 Agosto 1975. Risale a 20 anni fa.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 46);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 8);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -597,7 +597,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un altro giornale vecchio.. Datato 11 Agosto 1975.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 47);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 8);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -612,7 +612,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Il muro sembra strano..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 48);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 8);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -627,7 +627,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una vasca da bagno grigia. È attaccata al muro.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 49);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 9);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -639,7 +639,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Un gabinetto utilizzato per fare i propri bisogni oppure.. lo sappiamo tutti. Duh.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 50);
+            statementPrep.setBoolean(5, false);
             statementPrep.setInt(6, 9);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -651,7 +651,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Uno specchio che sembra stufo di specchiare le persone.");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 51);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 9);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -664,7 +664,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una macchina fotografica piena di foto e video.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 52);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 10);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -678,7 +678,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una macchina fotografica semi-piena.");
             statementPrep.setBoolean(3, true);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 53);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 10);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
@@ -692,7 +692,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Una siringa usata..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 54);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 10);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);
@@ -704,7 +704,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(2, "Dei contenitori con delle pillole di vario tipo. Stilnox, Xanax, ..");
             statementPrep.setBoolean(3, false);
             statementPrep.setBoolean(4, false);
-            statementPrep.setInt(5, 55);
+            statementPrep.setBoolean(5, true);
             statementPrep.setInt(6, 10);
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, false);

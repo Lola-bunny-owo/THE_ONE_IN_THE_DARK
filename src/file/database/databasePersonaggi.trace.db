@@ -3797,3 +3797,21 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/angela/Scr
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 15 more
+2022-07-13 18:05:13 jdbc[11]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
+	at com.mycompany.the_one_in_the_dark.Db.Database.connessioneDB(Database.java:22)
+	at com.mycompany.the_one_in_the_dark.NPCs.parla(NPCs.java:161)
+	at com.mycompany.the_one_in_the_dark.GestioneIO.gestisciInputUtente(GestioneIO.java:109)
+	at com.mycompany.the_one_in_the_dark.TheOneInTheDark.main(TheOneInTheDark.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 12 more

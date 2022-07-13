@@ -24,7 +24,7 @@ import com.mycompany.the_one_in_the_dark.REST.*;
  */
 public class Utilita {
     // Stringhe utili alla gestione del database
-    public static final String CREATE_TABLE_CASA = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN, idOggetto INT, stanza INT, visibile BOOLEAN, usabile BOOLEAN, descrizioneUsa VARCHAR(600))";
+    public static final String CREATE_TABLE_CASA = "CREATE TABLE IF NOT EXISTS oggetti (nomeOggetto VARCHAR(300), descrizione VARCHAR(300), inseribile BOOLEAN, inInventario BOOLEAN,  raccoglibile BOOLEAN, stanza INT, visibile BOOLEAN, usabile BOOLEAN, descrizioneUsa VARCHAR(600))";
     public static final String CREATE_TABLE_NPCS = "CREATE TABLE IF NOT EXISTS personaggi (nomeNPC VARCHAR(300), descrizione VARCHAR(700), visibile BOOLEAN)";
     public static final String urlCasa= "jdbc:h2:.//src//file//database//databaseCasa";
     public static final String urlNPCs= "jdbc:h2:.//src//file//database//databasePersonaggi";

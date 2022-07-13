@@ -92,6 +92,7 @@ public class GestioneIO {
                 Oggetti.guardaOggetto(inputUtente);
         
             }else if(inputUtente.startsWith("/raccogli ")){
+
                 try {
                     Oggetti.raccogliOggetto(inputUtente);
                 } catch (SQLException e) {
@@ -99,6 +100,7 @@ public class GestioneIO {
                 }
         
             }else if(inputUtente.startsWith("/scarta ")){
+
                 try {
                     Oggetti.scartaOggetto(inputUtente);
                 } catch (SQLException e) {
@@ -147,7 +149,9 @@ public class GestioneIO {
                 } catch (SQLException e) {
                     System.out.println("Errore chiusura del DB.");
                 }
-            System.exit(0);
+                
+                gestoreInput.close();
+                System.exit(0);
 
             }else{
                 acquisisciInputSpostamento(inputUtente);

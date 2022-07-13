@@ -16,6 +16,7 @@ public class RestOrologio {
 
     // Implementazione dell'API RESTful per ottenere le informazioni relative all'ora attuale.
     public static RestOrologioResponse getOra(String timezone) {
+        // Creazione di un'istanza di Client per la comunicazione con l'API RESTful.
         Client client = ClientBuilder.newClient();
         Gson gson = new Gson();
 

@@ -155,7 +155,7 @@ public class NPCs {
         Statement stm;
         ResultSet result;
         String nuovoInput = inputUtente.substring(inputUtente.lastIndexOf(" ") + 1);
-        nuovoInput.toLowerCase();
+        nuovoInput= nuovoInput.toLowerCase();
 
         try {
             stm = Database.connessioneDB(Utilita.urlNPCs).createStatement();

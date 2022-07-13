@@ -20,11 +20,11 @@ public class Casa extends Ambiente {
      * @param args
      */
 
+    static boolean setOggettiCasa= false;
+
     public Casa(){
         super();
     }
-
-    static boolean setOggettiCasa= false;
 
     public static void setCasa() throws InterruptedException {
         
@@ -44,10 +44,7 @@ public class Casa extends Ambiente {
         Ambiente.numeroStanze.add(9);
         Ambiente.numeroStanze.add(10);
 
-        // Set dei nomi delle stanze
         Ambiente.setNomiStanze(new String[] { "Ingresso", "Salone", "Cucina",  "Veranda", "Corridoio largo", "Corridoio stretto", "Camera da letto di Spike", "Camera da letto del custode", "Bagno", "Stanza segreta"});
-
-        // Set del numero della stanza corrente e del nome della stanza corrente
         Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
         Ambiente.setNomeStanzaCorrente("Ingresso");
 
@@ -298,7 +295,7 @@ public class Casa extends Ambiente {
     public static void stampaCucina(){
         System.out.println("> La cucina è messa meglio: ordinata, pulita, la spazzatura al proprio posto.. Il sogno di tutti gli universitari fuorisede.");
         System.out.println("L'unico problema è l'odore: c'è puzza nell'intera stanza. Forse qualcosa di ammuffito?");
-        System.out.println("La tavola è apparecchiata per 2. Un gesto molto carino da parte del custode.. ma ha comunque un qualcosa che non ti convince.<");
+        System.out.println("La tavola è apparecchiata per 2. Un gesto molto carino da parte del custode..<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
@@ -306,27 +303,27 @@ public class Casa extends Ambiente {
     public static void stampaVeranda(){
         System.out.println("> La veranda è la stanza più illuminata perché è l'unica nella quale il sole arriva direttamente.");
         System.out.println("Un paio di ruote forate sono appoggiate affianco alla porta.");
-        System.out.println("Il tavolino pieno di chiodi, martelli e strumenti di vario genere è la principale attrazione della stanza.");
+        System.out.println("Il tavolino pieno di chiodi, martelli e strumenti di vario genere è la principale attrazione della stanza.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
 
     private static void stampaCorridoioLargo(){
         System.out.println("> Il corridoio largo è un corridoio molto vivace. Sono presenti dei cavalletti da pittura, delle fotocamere, librerie e strofinacci sporchi.");
-        System.out.println("Le crepe sul muro e sul pavimento rendono però tutto quanto abbastanza inquietante.");
+        System.out.println("Le crepe sul muro e sul pavimento possono essere viste come decorazioni.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
 
     private static void stampaCorridoioStretto(){
-        System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, un pendolo e un piccolo comodino di fronte al bagno.");
+        System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, un pendolo e un piccolo comodino di fronte al bagno.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
 
     private static void stampaCameraDaLettoSpike(){
         System.out.println("> La tua nuova stanza. È così spenta e triste che ti fa venire voglia solo di dormire.");
-        System.out.println("Il letto è pieno di polvere, e tu ci dovrai dormire sopra.");
+        System.out.println("Il letto è pieno di polvere, e tu ci dovrai dormire sopra.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
@@ -334,22 +331,22 @@ public class Casa extends Ambiente {
     private static void stampaCameraDaLettoCustode(){
         System.out.println("> La stanza del custode. Ti sembra strano che non la tenga chiusa a chiave.");
         System.out.println("Il suo letto è ordinato, e sulla scrivania ci sono tanti fogli ed un diario.");
-        System.out.println("Il muro affianco al letto ha qualcosa che non va..");
+        System.out.println("Il muro affianco al letto ha qualcosa che non va..<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
 
     private static void stampaBagno() {
         System.out.println("> Gli angoli di questo bagno sono pieni di muffa. Piccoli ragnetti e formiche qui dentro si godono la vita."); 
-        System.out.println("Almeno il gabinetto è pulito e, strano ma vero, nella vasca da bagno non c'è nessuna donna dai capelli neri e lunghi morta.");
-        System.out.println("Noti il lavandino: ci sono delle goccie di sangue..");
+        System.out.println("Almeno il gabinetto è pulito e, strano ma vero, nella vasca da bagno non c'è nessuna donna dai capelli neri e lunghi morta.<");
+        System.out.println("Noti il lavandino: ci sono delle goccie di .. sangue?<");
         Oggetti.stampaOggetti();
     }
 
     private static void stampaStanzaSegreta(){
-        System.out.println("> È una stanza con delle luci accecanti bianche. Le pareti sono tinte di un colore rosso vermiglio. È sangue.");
+        System.out.println("> È una stanza con delle luci accecanti bianche. Le pareti sono tinte di colore rosso vermiglio. È sangue.");
         System.out.println("Non riesci a credere ai tuoi occhi. Per terra, dei teli bianchi sporcati anch'essi dal sangue.");
-        System.out.println("Macchine fotografiche ovunque.. Non osi immaginare cosa sia successo in questa stanza. Il tuo passato ti è sconosciuto.");
+        System.out.println("Macchine fotografiche ovunque.. Non osi immaginare cosa sia successo in questa stanza. Il tuo passato ti è sconosciuto.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
         Oggetti.stampaOggetti();
     }
