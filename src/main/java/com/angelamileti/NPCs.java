@@ -14,11 +14,7 @@ import com.angelamileti.Db.Database;
 
 public class NPCs {
     public static Random rand= new Random();
-    public static boolean dialogoGrigioStanzaSegreta;
-
-    public NPCs(){
-        dialogoGrigioStanzaSegreta= false;
-    }
+    public static boolean dialogoGrigioStanzaSegreta= false;
     
     // Introduzione del personaggio "Grigio".
     public static void introGrigio() throws InterruptedException{

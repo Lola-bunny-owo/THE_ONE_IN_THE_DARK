@@ -153,16 +153,16 @@ public class Casa extends Ambiente {
                     Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 8){
 
-                    if(Utilita.giornaliAperti == 2){
+                    if((Utilita.giornaliAperti == 2)&&(NPCs.dialogoGrigioStanzaSegreta == false)){
                         incrementoStanza();
                         incrementoStanza();
                         Utilita.stampaStanzaCorrente();
                         
-                    }else if(NPCs.dialogoGrigioStanzaSegreta == true){
+                    }else if((Utilita.giornaliAperti == 2)&&(NPCs.dialogoGrigioStanzaSegreta == true)){
                         System.out.println("Non puoi andare avanti. Ricordi? C'è un possibile serial killer bloccato all'interno.");
                         System.out.println("In ogni caso, devi capirne di più.");
 
-                    }else {
+                    }else if(Utilita.giornaliAperti < 2){
                         System.out.println("Non puoi andare avanti. Cerca degli indizi, e forse la situazione cambierà.");
                     }
                     
