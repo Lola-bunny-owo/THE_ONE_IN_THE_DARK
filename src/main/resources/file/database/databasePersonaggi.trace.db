@@ -1,4 +1,4 @@
-2022-07-13 20:40:42 jdbc[3]: null
+2022-07-16 12:27:19 jdbc[3]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
@@ -10,9 +10,10 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:189)
 	at com.angelamileti.Db.Database.connessioneDB(Database.java:22)
 	at com.angelamileti.Db.Database.cancellaDatabase(Database.java:52)
-	at com.angelamileti.Utilita.intro(Utilita.java:45)
-	at com.angelamileti.TheOneInTheDark.main(TheOneInTheDark.java:11)
+	at com.angelamileti.Utilita.intro(Utilita.java:41)
+	at com.angelamileti.TheOneInTheDark.run(TheOneInTheDark.java:19)
+	at com.angelamileti.Main.main(Main.java:11)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 12 more
+	... 13 more

@@ -1,6 +1,5 @@
 package com.angelamileti;
 
-import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -8,7 +7,9 @@ import com.angelamileti.Ambienti.Ambiente;
 import com.angelamileti.Db.Database;
 
 /**
- * Classe che si occupa di gestire gli oggetti nell'avventura testuale. 
+ * Classe che si occupa di gestire gli oggetti nell'avventura testuale. Al suo interno sono 
+ * definite funzioni che rappresentano alcune tipologie di comandi che l'utente può inserire.
+ * (Es: /raccogli <nomeOggetto>)
  * @author Angela Mileti
  */
 
@@ -17,25 +18,19 @@ public class Oggetti {
     protected static String[] nomeOggetto;
     protected static String[] descrizioneOggetto;
     protected static int[] numeroOggetti;
-    protected static boolean inInventario;
-    public static int giornaliAperti;
     /**
      * MAX_OGGETTI: costante che indica il numero massimo di oggetti 
      * che si possono inserire nell'inventario. 
      */ 
     protected static final int MAX_OGGETTI = 10;
 
-    Oggetti() {
-        inInventario= false;
-        giornaliAperti= 0;
-    }
 
     /* Il seguente metodo di raccolta di un oggetto, raccoglie l'oggetto e lo ispeziona.
      * Da questo metodo ne discendono altri due, che permettono al giocatore di scegliere
      * se inserire o meno l'oggetto nell'inventario. 
      * Importante: l'oggetto può essere inserito nell'inventario solo dopo averlo raccolto.
      */
-    public static void raccogliOggetto(String inputUtente) throws SQLException {
+    public static void raccogliOggetto(String inputUtente, Scanner inputScanner) throws SQLException {
         Statement stm;
         ResultSet result;
         String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
@@ -43,7 +38,7 @@ public class Oggetti {
         
         // Controlla che l'input sia nel database
         stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
-        result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE AND raccoglibile = TRUE");
+        result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza = " + Ambiente.numeroStanzaCorrente + " AND nomeOggetto = '" + nuovoInput + "' AND visibile = TRUE AND raccoglibile = TRUE");
         if(result.next()){
 
             System.out.println("---------------------------------------------");
@@ -53,47 +48,43 @@ public class Oggetti {
             System.out.println("NOME: [" + result.getString("nomeOggetto").substring(0, 1).toUpperCase() + result.getString("nomeOggetto").substring(1) + "]");
             System.out.println("DESCRIZIONE: [" + result.getString("descrizione") + "]");
             System.out.println("Vuoi inserire questo oggetto nel tuo inventario? (s/n)");
-            System.out.print(" --> ");
-            Oggetti.sceltaInserimentoInventario(result.getString("nomeOggetto"));
+            sceltaInserimentoInventario(result.getString("nomeOggetto"), inputScanner);
         }else if(!result.next()){
             System.out.println("Non puoi raccogliere l'oggetto [" + nuovoInput + "] !");
         }else {
             System.out.println("Non c'è alcun oggetto con quel nome.");
         }
+
         stm.close();
     }
 
     // Sceglie se inserire l'oggetto o meno nell'inventario.
-    public static void sceltaInserimentoInventario(String nomeOggetto) {
-        Scanner controllaScelta = new Scanner(new InputStreamReader(System.in));
+    public static void sceltaInserimentoInventario(String nomeOggetto, Scanner inputScanner) throws SQLException {
         String inputUtente = "";
         boolean sceltaValida = false;
 
         while (sceltaValida == false){
-            inputUtente = controllaScelta.nextLine();
-            if ((inputUtente.equalsIgnoreCase("s"))&&(controllaOggettiInInventario() == true)){
+            System.out.print(" --> ");
+            inputUtente = inputScanner.nextLine();
+            if ((inputUtente.equalsIgnoreCase("s"))&&(Utilita.controllaOggettiInInventario() == true)){
                 Statement stm;
                 ResultSet res;
 
-                try {
-                    stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
-                    res= stm.executeQuery("SELECT * FROM oggetti WHERE inseribile = TRUE AND nomeOggetto ='" + nomeOggetto + "'");
+                stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
+                res= stm.executeQuery("SELECT * FROM oggetti WHERE inseribile = TRUE AND nomeOggetto = '" + nomeOggetto + "'");
                     
-                    if(res.next()){
-                        inserisciOggetto(nomeOggetto);
-                        stm.close();
-                    }else{
-                        System.out.println("L'oggetto non può essere inserito nell'inventario!");
-                    }
-
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                if(res.next()){
+                    inserisciOggetto(nomeOggetto);
+                        
+                }else{
+                    System.out.println("L'oggetto non può essere inserito nell'inventario!");
                 }
 
+                stm.close();
                 sceltaValida = true;
     
-            }else if((inputUtente.equalsIgnoreCase("s"))&&(controllaOggettiInInventario() == false)){
-                controllaOggettiInInventario();
+            }else if((inputUtente.equalsIgnoreCase("s"))&&(Utilita.controllaOggettiInInventario() == false)){
+                Utilita.controllaOggettiInInventario();
                 sceltaValida = true;
 
             }else if(inputUtente.equalsIgnoreCase("n")){
@@ -101,12 +92,11 @@ public class Oggetti {
                 sceltaValida = true;
                     
             }else {
-                    System.out.println("Hai sbagliato a scrivere? O forse sei solo stupido/a?");
-                    
+                System.out.println("Hai sbagliato a scrivere? O forse sei solo stupido/a?");
+     
             }
         }
 
-        controllaScelta.close(); 
     }
 
     // Inserisce l'oggetto nell'inventario.
@@ -122,7 +112,7 @@ public class Oggetti {
             System.out.println("");
             Inventario.numeroOggettiInventario++;
             System.out.println("");
-            getNumOggettiInInventario();
+            Inventario.getNumOggettiInInventario();
             stm.close();
         } catch (SQLException e) {  
             System.out.println("Errore nell'aggiornamento degli attributi nel database.");
@@ -130,47 +120,26 @@ public class Oggetti {
         
     }
 
-    /* METODI GET */
-
-    public static int getNumOggettiInInventario() {
-
-        if(Inventario.numeroOggettiInventario == MAX_OGGETTI){
-            System.out.println("Il numero di oggetti nell'inventario è [" + Inventario.numeroOggettiInventario + "] - Hai raggiunto il numero massimo di oggetti che puoi inserire nell'inventario.");
-            return MAX_OGGETTI;
-        }else if(Inventario.numeroOggettiInventario == 0){
-            System.out.println("Nel tuo inventario non c'è nulla!");
-            return Inventario.numeroOggettiInventario;
-        }else {
-            System.out.println("Il numero di oggetti nell'inventario è [" + Inventario.numeroOggettiInventario + "] - Puoi ancora inserire oggetti.");
-            return Inventario.numeroOggettiInventario;
-        }
-
-    }
-
     /* Metodi per guardare, usare, aprire, scartare un oggetto. */
 
     // Metodo che permette di guardare un oggetto.
-    public static void guardaOggetto(String inputUtente) {
+    public static void guardaOggetto(String inputUtente) throws SQLException {
         String nuovoInput = inputUtente.substring(inputUtente.indexOf(" ") + 1);
         nuovoInput= nuovoInput.toLowerCase();
-
         Statement stm;
         ResultSet result;
-        try {
-            stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
-            result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE");
-            
-            if(result.next()){
-                System.out.println("NOME: [" + result.getString("nomeOggetto").substring(0, 1).toUpperCase() + result.getString("nomeOggetto").substring(1) + "]");
-                System.out.println("DESCRIZIONE: [" + result.getString("descrizione") + "]");
-                stm.close();
-            }else{
-                System.out.println("Non c'è nessun oggetto con questo nome. Ti sogni le cose?");
-            }
 
-        } catch (SQLException e) {
-            System.out.println("Il nome dell'oggetto inserito non esiste.");
-        } 
+        stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
+        result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE");
+            
+        if(result.next()){
+            System.out.println("NOME: [" + result.getString("nomeOggetto").substring(0, 1).toUpperCase() + result.getString("nomeOggetto").substring(1) + "]");
+            System.out.println("DESCRIZIONE: [" + result.getString("descrizione") + "]");
+        }else{
+            System.out.println("Non c'è nessun oggetto con questo nome. Ti sogni le cose?");
+        }
+        
+        stm.close();
     }
 
     /* Questo metodo controlla se l'input inserito dall'utente è un oggetto che si può usare, con gli attributi
@@ -186,7 +155,7 @@ public class Oggetti {
         nuovoInput= nuovoInput.toLowerCase();
 
         
-        if(controllaGiornaliAperti(nuovoInput) == true){
+        if(Utilita.controllaGiornaliAperti(nuovoInput) == true){
             stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto ='" + nuovoInput + "' AND visibile = TRUE AND usabile = TRUE");
             
@@ -220,7 +189,7 @@ public class Oggetti {
     /* Questo metodo controlla se l'input inserito dall'utente è un oggetto che si può aprire, con gli attributi
     * visibile e usabile impostati a true.
     * Se la query restituisce un risultato valido, allora si controlla che la stanza in cui
-    * ci si trova sia la stessa stanza dell'oggetto.
+    * ci si trova sia la stessa stanza in cui si trova l'oggetto.
     */
     public static void apriOggetto(String inputUtente) throws SQLException{
         Statement stm;
@@ -229,7 +198,7 @@ public class Oggetti {
         nuovoInput= nuovoInput.toLowerCase();
         int numeroStanza= 0;
 
-        if(controllaGiornaliAperti(nuovoInput) == true){
+        if(Utilita.controllaGiornaliAperti(nuovoInput) == true){
 
             stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto = '" + nuovoInput + "' AND visibile = TRUE AND usabile = TRUE");
@@ -277,7 +246,7 @@ public class Oggetti {
         
             System.out.println("Hai scartato l'oggetto [" + nuovoInput.substring(0, 1).toUpperCase() + nuovoInput.substring(1) + "] dall'inventario!");
             Inventario.numeroOggettiInventario--;
-            getNumOggettiInInventario();
+            Inventario.getNumOggettiInInventario();
             stm.close();
         }else{
             System.out.println("Non c'è nessun oggetto con questo nome nel tuo inventario. Fatti controllare da un medico.");
@@ -285,56 +254,4 @@ public class Oggetti {
 
     }
 
-    /** Metodo che stampa gli oggetti presenti nella stanza corrente.
-    * @param numeroStanzaCorrente: numero della stanza corrente.
-    */
-    public static void stampaOggetti() {
-        Statement stm;
-        ResultSet result;
-        if(Ambiente.nomeAmbiente.equals("Casa")){
-
-            try {
-                stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
-                result= stm.executeQuery("SELECT * FROM oggetti WHERE stanza =" + Ambiente.numeroStanzaCorrente + " AND visibile = TRUE");
-                
-                while(result.next()){
-                    System.out.println("NOME: [" + result.getString("nomeOggetto").substring(0, 1).toUpperCase() + result.getString("nomeOggetto").substring(1) + "]");
-                }
-    
-                stm.close();
-            } catch (SQLException e) {
-                System.out.println("Errore nella stampa degli oggetti.");
-            }
-
-        }else{
-            System.out.println("Al momento, in questo ambiente non ci sono oggetti. :)");
-        }
-        
-    }
-
-    // Esegue un controllo booleano sul numero di oggetti nell'inventario.
-    public static boolean controllaOggettiInInventario() {
-
-        if(Inventario.numeroOggettiInventario >= MAX_OGGETTI){
-            System.out.println("Hai raggiunto il numero massimo di oggetti che puoi inserire nell'inventario. L'oggetto non è stato inserito.");
-            System.out.println("Se vuoi puoi buttare qualcosa dal tuo inventario per avere uno o più slot liberi.");
-            return false;
-        }else{
-            return true;
-        }
-    }
-
-    public static boolean controllaGiornaliAperti(String inputUtente){
-        if(inputUtente.equalsIgnoreCase("muro")){
-            
-            if(giornaliAperti < 2){
-                return false;
-            }else{
-                return true;
-            }
-
-        }else{
-            return true;
-        }
-    }
 }

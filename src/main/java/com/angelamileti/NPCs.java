@@ -14,22 +14,26 @@ import com.angelamileti.Db.Database;
 
 public class NPCs {
     public static Random rand= new Random();
-    public static boolean dialogoGrigioStanzaSegreta= false;
+    public static boolean dialogoGrigioStanzaSegreta;
 
     public NPCs(){
+        dialogoGrigioStanzaSegreta= false;
     }
     
     // Introduzione del personaggio "Grigio".
     public static void introGrigio() throws InterruptedException{
         System.out.println("GRIGIO: Benvenuto. Io sono Ralof, anche detto 'Il Grigio', e sono il custode di questa casa.");
-        Utilita.delay(2000);
+        Utilita.delay(4000);
         System.out.println("GRIGIO: Ho sentito parlare di lei, signor Spike. In realtà, non ricordo molto. La mia memoria fa brutti scherzi.");
+        Utilita.delay(4000);
         System.out.println("GRIGIO: Non faccia caso a me, e si accomodi pure. Io non sarò altro che un fantasma, per tutta la sua permanenza qui.");
         Utilita.delay(4000);
         System.out.println("GRIGIO: Per ora, vado a farmi un pisolino nel salone.");
+        Utilita.delay(3000);
         System.out.println("");
-        System.out.println("GRIGIO: Ah, a proposito. Lui è Ein, vive in questa casa da qualche mese. È un nuovo arrivato come te.");
+        System.out.println("GRIGIO: Ah, a proposito. Lui è Ein, un Corgi che vive in questa casa da qualche mese. È un nuovo arrivato come te.");
         einAbbaia();
+        Utilita.delay(3000);
         System.out.println("GRIGIO: Puoi farci quello che vuoi con lui, calcialo, lascialo ad un canile, fai quello che ti pare.");
         System.out.println("");
     }
@@ -43,9 +47,10 @@ public class NPCs {
     }
 
     // Stampa a schermo del dialogo con Grigio nella stanza segreta dell'ambiente Casa
-    public static void dialogoGrigioStanzaSegreta() throws InterruptedException{
+    public static void dialogoGrigioStanzaSegreta() throws InterruptedException, SQLException{
         Statement stm;
         ResultSet result;
+        boolean oggettoPresente= false;
 
         Utilita.delay(15000);
         System.out.println("");
@@ -72,39 +77,44 @@ public class NPCs {
         Utilita.delay(12000);
         System.out.println("Ma il custode sembra esser fatto di roccia. Nonostante adesso si ritrovi con il braccio"
         + " sanguinante, lancia Ein contro il muro e dice: <");
+        Utilita.delay(5000);
         System.out.println("");
         System.out.println("GRIGIO: Tutto qui? Mi aspettavo di più dal nipote dei Thompson. Invece sei solo una mezza calzetta.");
+        Utilita.delay(3000);
         System.out.println("> Il custode si avvicina di nuovo, e questa volta non ti lasci sorprendere:");
+        Utilita.delay(2000);
 
-        try {
-            stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
-            result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto = 'sparachiodi' AND inInventario = TRUE");
+        // Controlla che nell'inventario ci sia l'oggetto "Sparachiodi" e "Chiodi".
+        stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
+        result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto = 'sparachiodi' AND inInventario = TRUE");
 
+        if(result.next()){
+
+            result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto = 'chiodi' AND inInventario = TRUE");
+
+            // Se nell'inventario sono presenti entrambi gli oggetti, stampa il seguente dialogo..
+            // altrimenti ne stampa uno diverso.
             if(result.next()){
-
-                result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto = 'chiodi' AND inInventario = TRUE");
-
-                if(result.next()){
-                    System.out.println("Si butta di nuovo su di te, ma questa volta usi la sparachiodi a mo' di pistola.");
-                    System.out.println("Dato che non sei un assassino, gli spari due chiodi sulle mani"
-                    + " e gli tiri un calcio, per immobilizzarlo.");
-                    System.out.println("Lui cade atterra, preso dal dolore.");
-                    System.out.println("Per tua fortuna hai ancora un po' di chiodi.");
-                    Utilita.delay(15000);
-                }else{
-                    System.out.println("Non appena prova a buttarsi di nuovo su di te, prendi la tua sparachiodi"
-                    + " e la usi per tirargliela dove non batte il sole.");
-                    System.out.println("Lui cade atterra, preso dal dolore.");
-                    Utilita.delay(10000);
-                }
+                System.out.println("Si butta di nuovo su di te, ma questa volta usi la sparachiodi a mo' di pistola.");
+                System.out.println("Dato che non sei un assassino, gli spari due chiodi sulle mani"
+                + " e gli tiri un calcio, per immobilizzarlo.");
+                System.out.println("Lui cade a terra, preso dal dolore.");
+                System.out.println("Per tua fortuna hai ancora un po' di chiodi.");
+                Utilita.delay(15000);
+                oggettoPresente= true;
+            }else{
+                System.out.println("Non appena prova a buttarsi di nuovo su di te, prendi la tua sparachiodi"
+                + " e la usi per tirargliela dove non batte il sole.");
+                System.out.println("Lui cade a terra, preso dal dolore.");
+                Utilita.delay(10000);
+                oggettoPresente= true;
             }
-            stm.close();
-
-        } catch (SQLException e) {
-            System.out.println("Errore SQL: " + e.getMessage());
         }
+        stm.close();
 
-        try{
+        // Se nell'inventario non ci sono i due oggetti sopracitati, controlla che nell'inventario ci sia l'oggetto "Coltello".
+        if(!oggettoPresente){
+
             stm= Database.connessioneDB(Utilita.urlCasa).createStatement();
             result= stm.executeQuery("SELECT * FROM oggetti WHERE nomeOggetto = 'coltello' AND inInventario = TRUE");
 
@@ -112,16 +122,14 @@ public class NPCs {
                 System.out.println("Si butta su di te, ma questa volta usi il coltello.");
                 System.out.println("Cerchi di non colpire punti vitali, e allo stesso tempo gli fai abbastanza"
                 + " male da immobilizzarlo.");
-                System.out.println("Lui cade atterra, preso dal dolore.");
+                System.out.println("Lui cade a terra, preso dal dolore.");
                 Utilita.delay(15000);
+                oggettoPresente= true;
             }else{
                 System.out.println("Si butta su di te, e riesci a spostarti in tempo.");
                 Utilita.delay(5000);
             }
             stm.close();
-
-        }catch(SQLException e){
-            System.out.println("Errore SQL: " + e.getMessage());
         }
 
         System.out.println("");

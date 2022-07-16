@@ -15,11 +15,11 @@ public class StazioneDiPolizia extends Ambiente {
      * @param args
      */
 
-    public StazioneDiPolizia(){
-        super();
-    }
+    public static boolean introduzioneAmbiente;
 
-    static boolean introduzioneAmbiente= false;
+    public StazioneDiPolizia(){
+        introduzioneAmbiente= false;
+    }
 
     // Set dell'ambiente.
     public static void setStazioneDiPolizia() {
@@ -42,7 +42,7 @@ public class StazioneDiPolizia extends Ambiente {
 
         if(!introduzioneAmbiente){
             try {
-                introduzioneStazionePolizia();
+                Utilita.introduzioneStazionePolizia();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -58,15 +58,15 @@ public class StazioneDiPolizia extends Ambiente {
                 incrementoStanza();
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a destra.");
             }
@@ -75,14 +75,14 @@ public class StazioneDiPolizia extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 // Va di default all'ingresso
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a sinistra.");
             }
@@ -95,15 +95,15 @@ public class StazioneDiPolizia extends Ambiente {
                     
                 if(getNumeroStanzaCorrente() == 1){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 2){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 3){
                     incrementoStanza();
                     incrementoStanza();
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -112,15 +112,15 @@ public class StazioneDiPolizia extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
@@ -152,21 +152,10 @@ public class StazioneDiPolizia extends Ambiente {
         }
     }
 
-    // Metodo di stampa per l'introduzione dell'ambiente.
-    public static boolean introduzioneStazionePolizia() throws InterruptedException{
-        System.out.println("> Ti avvicini alla stazione di polizia timoroso. Chissà quante brutte storie ha sentito questo luogo, e chissà quante altre sono state sepolte.");
-        Utilita.delay(2000);
-        System.out.println("All'ingresso non ci trovi anima viva, il ché è abbastanza strano. Dovrebbe essere pieno di agenti pronti a servirti ed ascoltarti, eppure.. zero.");
-        Utilita.delay(2000);
-        System.out.println("Vuoi essere così ficcanaso da entrare in un posto del genere, senza aver ricevuto il permesso di nessuno?");
-        System.out.println(".. Ovviamente sì.<");
-        System.out.println("");
-        return introduzioneAmbiente= true;
-    }
-
     public static void guardaStanzaStazioneDiPolizia() {
         // TO-DO: da implementare più avanti :)
         System.out.println("Per ora, non puoi.");
     }
+
 
 }

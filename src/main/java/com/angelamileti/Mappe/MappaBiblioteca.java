@@ -45,13 +45,13 @@ public class MappaBiblioteca extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon("/home/angela/Scrivania/THE_ONE_IN_THE_DARK/src/img/Biblioteca.png")); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Biblioteca.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Label)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,4 +75,5 @@ public class MappaBiblioteca extends javax.swing.JFrame {
     private javax.swing.JLabel Label;
     private javax.swing.JInternalFrame jInternalFrame1;
     // End of variables declaration//GEN-END:variables
+
 }

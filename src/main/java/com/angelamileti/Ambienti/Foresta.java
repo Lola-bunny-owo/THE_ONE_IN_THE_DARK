@@ -14,11 +14,11 @@ public class Foresta extends Ambiente {
      * @param args
      */
 
-    public Foresta(){
-        super();
-    }
+    public static boolean introduzioneAmbiente;
 
-    static boolean introduzioneAmbiente= false;
+    public Foresta(){
+        introduzioneAmbiente= false;
+    }
 
     // Set dell'ambiente.
     public static void setForesta() {
@@ -40,7 +40,7 @@ public class Foresta extends Ambiente {
 
         if(!introduzioneAmbiente){
             try {
-                introduzioneForesta();
+                Utilita.introduzioneForesta();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -53,10 +53,10 @@ public class Foresta extends Ambiente {
 
             if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a destra.");
             }
@@ -66,10 +66,10 @@ public class Foresta extends Ambiente {
             if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a sinistra.");
             }
@@ -84,7 +84,7 @@ public class Foresta extends Ambiente {
                     incrementoStanza();
                 }else if(getNumeroStanzaCorrente() == 4){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -93,17 +93,17 @@ public class Foresta extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
@@ -149,22 +149,8 @@ public class Foresta extends Ambiente {
     
     }
 
-    // Metodo di stampa per l'introduzione dell'ambiente.
-    public static boolean introduzioneForesta() throws InterruptedException{
-        System.out.println("> Sei un pazzo, sei un pazzo, sei un pazzo. Continui a ripetertelo ma comunque prosegui.");
-        System.out.println("Questa ti sembra l'occasione giusta per mangiare, perché potrebbe anche essere il tuo ultimo pasto.");
-        Utilita.delay(3000);
-        System.out.println("Armato di coraggio, arrivi a quella che ti sembra l'entrata di Bosco Atro.");
-        Utilita.delay(2000);
-        System.out.println("Ti guardi attorno, e vedi solo spine. Non ci sono altre strade, devi per forza attraversarle se vuoi proseguire..");
-        System.out.println("Boh, almeno sarai ricordato come un eroe.. Certo, da tua madre.<");
-        System.out.println("");
-        return introduzioneAmbiente= true;
-    }
-
     public static void guardaStanzaForesta() {
         // TO-DO: da implementare più avanti :)
         System.out.println("Nope. Non puoi ancora.");
     }
-
 }

@@ -16,8 +16,8 @@ import com.angelamileti.Mappe.*;
 
 public class GestioneIO {
 
-    Scanner gestoreInput = new Scanner(new InputStreamReader(System.in));
-    String inputUtente;
+    public Scanner gestoreInput = new Scanner(new InputStreamReader(System.in));
+    public String inputUtente;
 
     public GestioneIO(){
         inputUtente = "";
@@ -43,7 +43,7 @@ public class GestioneIO {
                 }
                 
             }else if(inputUtente.equalsIgnoreCase("/stanza")){
-                Ambiente.stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
         
             }else if(inputUtente.equalsIgnoreCase("/trama")){
         
@@ -54,7 +54,7 @@ public class GestioneIO {
                 }
             
             }else if((inputUtente.equalsIgnoreCase("/apri inventario"))||(inputUtente.equalsIgnoreCase("/inventario"))){
-                Inventario.stampaInventario();
+                Utilita.stampaInventario();
         
             }else if(inputUtente.startsWith("/usa ")){
 
@@ -89,12 +89,16 @@ public class GestioneIO {
                 }
         
             }else if (inputUtente.startsWith("/guarda ")){
-                Oggetti.guardaOggetto(inputUtente);
+                try {
+                    Oggetti.guardaOggetto(inputUtente);
+                } catch (SQLException e) {
+                    System.out.println("Errore nell'osservazione dell'oggetto.");
+                }
         
             }else if(inputUtente.startsWith("/raccogli ")){
 
                 try {
-                    Oggetti.raccogliOggetto(inputUtente);
+                    Oggetti.raccogliOggetto(inputUtente, gestoreInput);
                 } catch (SQLException e) {
                     System.out.println("Errore nella raccolta dell'oggetto.");
                 }
@@ -111,13 +115,13 @@ public class GestioneIO {
                 NPCs.parla(inputUtente);
             
             }else if(inputUtente.startsWith("vai in stanza ")){
-                Ambiente.acquisisciInputConNumero(inputUtente);
+                acquisisciInputConNumero(inputUtente);
 
             }else if(inputUtente.equalsIgnoreCase("/oggetti")){
-                Oggetti.stampaOggetti();
+                Utilita.stampaOggetti();
         
             }else if(inputUtente.equalsIgnoreCase("/lista stanze")){
-                Ambiente.stampaStanze();
+                Utilita.stampaStanze();
         
             }else if(inputUtente.equalsIgnoreCase("/mappa")){
                     
@@ -188,26 +192,34 @@ public class GestioneIO {
         }
     }
 
-    /* METODI SET */
-    
-    public void setInputUtente(String inputUtente) {
-        this.inputUtente = inputUtente;
-    }
+    // Metodo che acquisisce l'input dell'utente e lo trasforma in intero,
+    // in modo da poter eseguire i controlli del caso e farlo spostare nella stanza da lui desiderata.
+    public static void acquisisciInputConNumero(String inputUtente){
+        String nuovoInput = inputUtente.substring(inputUtente.lastIndexOf(" ") + 1);
+        int numeroStanzaUtente= 0;
+        int controlloNumeroStanze= Ambiente.getNumeroStanze().size();
 
-    public void setGestoreInput(Scanner gestoreInput) {
-        this.gestoreInput = gestoreInput;
-    }
-    
-    /* METODI GET */
+        // Trasforma l'input utente nell'intero equivalente
+        numeroStanzaUtente= Integer.parseInt(nuovoInput);
 
-    public String getInputUtente() {
-        return inputUtente;
-    }
+        if((numeroStanzaUtente > 0)&&(numeroStanzaUtente < 10)&&(controlloNumeroStanze >= numeroStanzaUtente)){
 
-    public Scanner getGestoreInput() {
-        return gestoreInput;
-    }
+            if(Utilita.controllaNumeroStanza(numeroStanzaUtente)){
 
-    
+                // Se l'ambiente in cui si trova il giocatore è la casa,
+                // esegue il metodo di controllo sulla stanza.
+                if(Ambiente.nomeAmbiente.equals("Casa")){
+                    Casa.controllaStanza();
+                }
+
+                Ambiente.numeroStanzaCorrente= numeroStanzaUtente;
+                Ambiente.nomeStanzaCorrente= Ambiente.nomiStanze[numeroStanzaUtente-1];
+                System.out.println("Ti sei spostato in: [" + Ambiente.numeroStanzaCorrente + "] - " + Ambiente.nomiStanze[numeroStanzaUtente-1]);
+            }
+
+        }else {
+            System.out.println("Non c'è alcuna stanza con questo numero!");
+        }
+    }
 
 }

@@ -45,7 +45,7 @@ public class MappaDiner extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/the_one_in_the_dark/Diner.png"))); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Diner.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

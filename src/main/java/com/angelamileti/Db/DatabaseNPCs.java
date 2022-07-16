@@ -21,7 +21,7 @@ public class DatabaseNPCs extends Database {
 
             /* IL GRIGIO */
             statementPrep= connessioneDB(Utilita.urlNPCs).prepareStatement("INSERT INTO personaggi VALUES (?,?,?)");
-            statementPrep.setString(1, "Grigio");
+            statementPrep.setString(1, "grigio");
             statementPrep.setString(2, "'Il Grigio' è un signore barbuto dall'aspetto cupo ed è il custode della tua nuova casa.\n"
             + "Da quello che hai potuto vedere, non è una persona che dà molta confidenza agli sconosciuti. Tu non fai eccezione alla regola.\n"
             + "Il suo sguardo pungente farebbe rabbrividire anche il peggior serial killer. A quanto pare ha problemi con la memoria.\n"
@@ -31,7 +31,7 @@ public class DatabaseNPCs extends Database {
 
             /* EIN */
             statementPrep= connessioneDB(Utilita.urlNPCs).prepareStatement("INSERT INTO personaggi VALUES (?,?,?)");
-            statementPrep.setString(1, "Ein");
+            statementPrep.setString(1, "ein");
             statementPrep.setString(2, "Ein è un simpatico cagnolino del colore del sole, e a quanto pare, ha scelto di seguirti.\n"
             + "Grazie al suo carattere vivace e al contempo dolce, sa come tirarti sù quando le cose vanno per il peggio.\n"
             + "Il suo dolcetto preferito sono delle gomme da masticare al caffè. È meglio non viziarlo!");

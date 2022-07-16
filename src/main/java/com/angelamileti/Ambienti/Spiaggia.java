@@ -14,11 +14,11 @@ public class Spiaggia extends Ambiente {
      * @param args
      */
 
-    public Spiaggia(){
-        super();
-    }
+    public static boolean introduzioneAmbiente;
 
-    static boolean introduzioneAmbiente= false;
+    public Spiaggia(){
+        introduzioneAmbiente= false;
+    }
 
     // Set dell'ambiente.
     public static void setSpiaggia() {
@@ -40,7 +40,7 @@ public class Spiaggia extends Ambiente {
 
         if(!introduzioneAmbiente){
             try {
-                introduzioneSpiaggia();
+                Utilita.introduzioneSpiaggia();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -56,19 +56,19 @@ public class Spiaggia extends Ambiente {
                 incrementoStanza();
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a destra.");
             }
@@ -79,19 +79,19 @@ public class Spiaggia extends Ambiente {
                 incrementoStanza();
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a sinistra.");
             }
@@ -107,7 +107,7 @@ public class Spiaggia extends Ambiente {
                     incrementoStanza();
                     incrementoStanza();
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -116,22 +116,22 @@ public class Spiaggia extends Ambiente {
             
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
@@ -185,20 +185,6 @@ public class Spiaggia extends Ambiente {
         }else{
             System.out.println("Comando non riconosciuto.");
         }
-    }
-
-    // Metodo di stampa per l'introduzione dell'ambiente.
-    public static boolean introduzioneSpiaggia() throws InterruptedException{
-        System.out.println("> Fa caldo.. Il tuo corpo sta iniziando a piangere.");
-        System.out.println("Senti il rumore delle onde. Un vento violento ed improvviso ti sferza il viso.");
-        System.out.println("Il meteo è sempre inaffidabile..");
-        Utilita.delay(3000);
-        System.out.println("Noti che dalla spiaggia puoi spostarti ovunque.");
-        System.out.println("Ti senti Dio.");
-        Utilita.delay(2000);
-        System.out.println("Fai due passi..<");
-        System.out.println("");
-        return introduzioneAmbiente= true;
     }
 
     public static void guardaStanzaSpiaggia() {

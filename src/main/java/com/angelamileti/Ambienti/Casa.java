@@ -3,7 +3,6 @@ package com.angelamileti.Ambienti;
 import java.sql.*;
 
 import com.angelamileti.NPCs;
-import com.angelamileti.Oggetti;
 import com.angelamileti.Utilita;
 import com.angelamileti.Db.Database;
 import com.angelamileti.Db.DatabaseCasa;
@@ -20,10 +19,10 @@ public class Casa extends Ambiente {
      * @param args
      */
 
-    static boolean setOggettiCasa= false;
+    static boolean setOggettiCasa;
 
     public Casa(){
-        super();
+        setOggettiCasa = false;
     }
 
     public static void setCasa() throws InterruptedException {
@@ -63,20 +62,20 @@ public class Casa extends Ambiente {
 
             if(getNumeroStanzaCorrente() == 1){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 7){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 8){
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 10){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a destra.");
             }
@@ -85,17 +84,17 @@ public class Casa extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
                 // Va di defalut nella propria stanza.
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 9){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a sinistra.");
             }
@@ -108,7 +107,7 @@ public class Casa extends Ambiente {
                 incrementoStanza();
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 System.out.println("Non puoi andare sopra dalla cucina.");
             }else if(getNumeroStanzaCorrente() == 4){
@@ -123,7 +122,7 @@ public class Casa extends Ambiente {
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
                 System.out.println("Non puoi andare giù dal corridoio stretto.");
             }else if(getNumeroStanzaCorrente() == 7){
@@ -143,22 +142,21 @@ public class Casa extends Ambiente {
                 if(getNumeroStanzaCorrente() == 1){
                     incrementoStanza();
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 3){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 6){
                     incrementoStanza();
                     incrementoStanza();
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 8){
 
-                    if(Oggetti.giornaliAperti == 2){
+                    if(Utilita.giornaliAperti == 2){
                         incrementoStanza();
                         incrementoStanza();
-                        stampaStanzaCorrente();
-                        Oggetti.giornaliAperti = 0;
+                        Utilita.stampaStanzaCorrente();
                         
                     }else if(NPCs.dialogoGrigioStanzaSegreta == true){
                         System.out.println("Non puoi andare avanti. Ricordi? C'è un possibile serial killer bloccato all'interno.");
@@ -177,15 +175,15 @@ public class Casa extends Ambiente {
             if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 9){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
@@ -281,7 +279,7 @@ public class Casa extends Ambiente {
         System.out.println("Il tappeto per terra è graffiato, forse è stata colpa di Ein..");
         System.out.println("Per essere un ingresso, è comunque bello grande. Tanti piccoli vasi con fiori di vario genere sono disposti di fianco alla porta.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     public static void stampaSalone(){
@@ -289,7 +287,7 @@ public class Casa extends Ambiente {
         System.out.println("Armadietti, piccole scrivanie e quadri la decorano.");
         System.out.println("Si può salire al piano di sopra grazie alle scale affianco ai divani.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     public static void stampaCucina(){
@@ -297,7 +295,7 @@ public class Casa extends Ambiente {
         System.out.println("L'unico problema è l'odore: c'è puzza nell'intera stanza. Forse qualcosa di ammuffito?");
         System.out.println("La tavola è apparecchiata per 2. Un gesto molto carino da parte del custode..<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     public static void stampaVeranda(){
@@ -305,27 +303,27 @@ public class Casa extends Ambiente {
         System.out.println("Un paio di ruote forate sono appoggiate affianco alla porta.");
         System.out.println("Il tavolino pieno di chiodi, martelli e strumenti di vario genere è la principale attrazione della stanza.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     private static void stampaCorridoioLargo(){
         System.out.println("> Il corridoio largo è un corridoio molto vivace. Sono presenti dei cavalletti da pittura, delle fotocamere, librerie e strofinacci sporchi.");
         System.out.println("Le crepe sul muro e sul pavimento possono essere viste come decorazioni.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     private static void stampaCorridoioStretto(){
         System.out.println("> Qui dentro non c'è quasi nulla. Ci sono solo le porte per le altre stanze, un pendolo e un piccolo comodino di fronte al bagno.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     private static void stampaCameraDaLettoSpike(){
         System.out.println("> La tua nuova stanza. È così spenta e triste che ti fa venire voglia solo di dormire.");
         System.out.println("Il letto è pieno di polvere, e tu ci dovrai dormire sopra.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     private static void stampaCameraDaLettoCustode(){
@@ -333,14 +331,14 @@ public class Casa extends Ambiente {
         System.out.println("Il suo letto è ordinato, e sulla scrivania ci sono tanti fogli ed un diario.");
         System.out.println("Il muro affianco al letto ha qualcosa che non va..<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     private static void stampaBagno() {
         System.out.println("> Gli angoli di questo bagno sono pieni di muffa. Piccoli ragnetti e formiche qui dentro si godono la vita."); 
         System.out.println("Almeno il gabinetto è pulito e, strano ma vero, nella vasca da bagno non c'è nessuna donna dai capelli neri e lunghi morta.<");
         System.out.println("Noti il lavandino: ci sono delle goccie di .. sangue?<");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     private static void stampaStanzaSegreta(){
@@ -348,7 +346,7 @@ public class Casa extends Ambiente {
         System.out.println("Non riesci a credere ai tuoi occhi. Per terra, dei teli bianchi sporcati anch'essi dal sangue.");
         System.out.println("Macchine fotografiche ovunque.. Non osi immaginare cosa sia successo in questa stanza. Il tuo passato ti è sconosciuto.<");
         System.out.println("Ciò che salta subito all'occhio in questa stanza sono i seguenti oggetti:");
-        Oggetti.stampaOggetti();
+        Utilita.stampaOggetti();
     }
 
     // Metodo che controlla la stanza corrente. Se è una stanza speciale, viene eseguito uno dei casi specifici.
@@ -356,7 +354,7 @@ public class Casa extends Ambiente {
         Statement stm;
         ResultSet result;
 
-        if(getNumeroStanzaCorrente() == 2){
+        if(Ambiente.numeroStanzaCorrente == 2){
 
             try {
                 stm= Database.connessioneDB(Utilita.urlNPCs).createStatement();
@@ -369,6 +367,7 @@ public class Casa extends Ambiente {
             }catch (SQLException e) {
                 System.out.println("Errore nella query.");
             }
+
         }else {
             try {
                 stm= Database.connessioneDB(Utilita.urlNPCs).createStatement();
@@ -383,5 +382,4 @@ public class Casa extends Ambiente {
             }
         }
     }
-
 }

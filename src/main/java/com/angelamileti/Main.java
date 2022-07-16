@@ -7,7 +7,6 @@ package com.angelamileti;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("Hello World!");
         TheOneInTheDark.init();
         TheOneInTheDark.run();
     }

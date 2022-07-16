@@ -13,11 +13,11 @@ public class Biblioteca extends Ambiente {
      * @param args
      */
 
-    public Biblioteca(){
-        super();
-    }
+    public static boolean introduzioneAmbiente;
 
-    static boolean introduzioneAmbiente= false;
+    public Biblioteca(){
+        introduzioneAmbiente= false;
+    }
 
     // Set dell'ambiente.
     public static void setBiblioteca() {
@@ -39,7 +39,7 @@ public class Biblioteca extends Ambiente {
 
         if(!introduzioneAmbiente){
             try {
-                introduzioneBiblioteca();
+                Utilita.introduzioneBiblioteca();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -53,11 +53,11 @@ public class Biblioteca extends Ambiente {
 
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 incrementoStanza();
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a destra.");
             }
@@ -66,11 +66,11 @@ public class Biblioteca extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 1){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a sinistra.");
             }
@@ -85,13 +85,13 @@ public class Biblioteca extends Ambiente {
                     incrementoStanza();
                     incrementoStanza();
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 2){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 4){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -100,15 +100,15 @@ public class Biblioteca extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
@@ -141,17 +141,6 @@ public class Biblioteca extends Ambiente {
             System.out.println("Comando non riconosciuto.");
         }
 
-    }
-    
-    // Metodo di stampa per l'introduzione dell'ambiente.
-    public static boolean introduzioneBiblioteca() throws InterruptedException{
-        System.out.println("> La biblioteca: un posto amato da grandi e piccini. Il silenzio è una delle sue caratteristiche.");
-        Utilita.delay(2000);
-        System.out.println("L'aspetto è serio e cupo, e anche le persone al suo interno sono abbastanza inquietanti. Sembrano tutte così spente..");
-        Utilita.delay(2000);
-        System.out.println("Nonostante la paura, scegli di dare un'occhiata in giro. Magari può aiutarti a scoprire qualcosa..<");
-        System.out.println("");
-        return introduzioneAmbiente= true;
     }
 
     public static void guardaStanzaBiblioteca() {

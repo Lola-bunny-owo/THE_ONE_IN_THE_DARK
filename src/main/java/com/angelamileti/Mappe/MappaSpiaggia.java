@@ -45,7 +45,7 @@ public class MappaSpiaggia extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon("/home/angela/Scrivania/THE_ONE_IN_THE_DARK/src/img/Spiaggia.png")); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Spiaggia.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

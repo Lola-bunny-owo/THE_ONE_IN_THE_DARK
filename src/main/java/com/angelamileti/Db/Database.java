@@ -33,9 +33,9 @@ public class Database {
         try {
             Statement statement= connessioneDB(url).createStatement();
 
-            if(url == "jdbc:h2:.//src//file//database//databaseCasa"){
+            if(url == Utilita.urlCasa){
                 statement.executeUpdate(Utilita.CREATE_TABLE_CASA);
-            }else if(url == "jdbc:h2:.//src//file//database//databasePersonaggi"){
+            }else if(url == Utilita.urlNPCs){
                 statement.executeUpdate(Utilita.CREATE_TABLE_NPCS);
             }
 
@@ -52,9 +52,9 @@ public class Database {
         connessioneDB(url);
         try (Statement statement = connessioneDB(url).createStatement()) {
 
-            if(url == "jdbc:h2:.//src//file//database//databaseCasa"){
+            if(url == Utilita.urlCasa){
                 statement.executeUpdate("DROP TABLE IF EXISTS oggetti");
-            }else if(url == "jdbc:h2:.//src//file//database//databasePersonaggi"){
+            }else if(url == Utilita.urlNPCs){
                 statement.executeUpdate("DROP TABLE IF EXISTS personaggi");
             }
             

@@ -17,15 +17,11 @@ Spike, spinto da curiosità e da pura voglia di conoscere la storia dei suoi zii
 
 ### Informazioni sulla Repository
 La repository è suddivisa in:
- - `src`, che è a sua volta suddivisa in
- - - `audio`
- - - `file`
- - - `img`
- - - `main`
- - - `test`
- 
- - `target`
- 
- - `doc`
+ - **`src`**, che è a sua volta suddivisa in
+    - **`main`**
+    - **`java`**
+      - **`resources`**
+ - **`target`**
+ - **`doc`**
  -----------
  Questo è quanto! :)

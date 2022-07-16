@@ -489,6 +489,18 @@ public class DatabaseCasa extends Database {
             statementPrep.setString(9, "");
             statementPrep.executeUpdate();
 
+            statementPrep= connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
+            statementPrep.setString(1, "colori a tempera");
+            statementPrep.setString(2, "Dei colori a tempera.");
+            statementPrep.setBoolean(3, false);
+            statementPrep.setBoolean(4, false);
+            statementPrep.setBoolean(5, true);
+            statementPrep.setInt(6, 6);
+            statementPrep.setBoolean(7, true);
+            statementPrep.setBoolean(8, false);
+            statementPrep.setString(9, "");
+            statementPrep.executeUpdate();
+
             /* CAMERA DA LETTO DI SPIKE */
             statementPrep = connessioneDB(Utilita.urlCasa).prepareStatement("INSERT INTO oggetti VALUES (?,?,?,?,?,?,?,?,?)");
             statementPrep.setString(1, "armadio nero");
@@ -617,7 +629,7 @@ public class DatabaseCasa extends Database {
             statementPrep.setBoolean(7, true);
             statementPrep.setBoolean(8, true);
             statementPrep.setString(9, "Tasti il muro ovunque, e senti sotto le dita che quel muro non è davvero un muro."
-            + " Provi a tirare, e funziona:\nciò che hai tirato era un pomello di una porta, che porta ad un'altra stanza."
+            + " Provi a tirare, e funziona:\nciò che hai tirato era il pomello di una porta, che conduce ad un'altra stanza."
             + " In pratica, è un passaggio segreto..");
             statementPrep.executeUpdate();
             

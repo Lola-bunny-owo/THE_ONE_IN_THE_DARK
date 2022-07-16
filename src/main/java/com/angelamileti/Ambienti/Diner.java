@@ -14,11 +14,11 @@ public class Diner extends Ambiente {
      * @param args
      */
 
-    public Diner(){
-        super();
-    }
+    public static boolean introduzioneAmbiente;
 
-    static boolean introduzioneAmbiente= false;
+    public Diner(){
+        introduzioneAmbiente= false;
+    }
 
     // Set dell'ambiente.
     public static void setDiner() {
@@ -41,7 +41,7 @@ public class Diner extends Ambiente {
 
         if(!introduzioneAmbiente){
             try {
-                introduzioneDiner();
+                Utilita.introduzioneDiner();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -54,10 +54,10 @@ public class Diner extends Ambiente {
 
             if(getNumeroStanzaCorrente() == 2){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
                 incrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a destra.");
             }
@@ -66,10 +66,10 @@ public class Diner extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare a sinistra.");
             }
@@ -82,15 +82,15 @@ public class Diner extends Ambiente {
                     
                 if(getNumeroStanzaCorrente() == 1){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 3){
                     incrementoStanza();
                     incrementoStanza();
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 4){
                     incrementoStanza();
-                    stampaStanzaCorrente();
+                    Utilita.stampaStanzaCorrente();
                 }else{
                     System.out.println("Non puoi andare avanti.");
                 }
@@ -99,15 +99,15 @@ public class Diner extends Ambiente {
                 
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 5){
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
                 decrementoStanza();
                 decrementoStanza();
                 decrementoStanza();
-                stampaStanzaCorrente();
+                Utilita.stampaStanzaCorrente();
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
@@ -146,21 +146,6 @@ public class Diner extends Ambiente {
         }else{
             System.out.println("Comando non riconosciuto.");
         }
-    }
-
-    // Metodo di stampa per l'introduzione dell'ambiente.
-    public static boolean introduzioneDiner() throws InterruptedException{
-        System.out.println("> Entri nel diner 'Lola's Diner', e vieni subito pervaso da un odore di frittura misto dolcezza.");
-        System.out.println("Il tuo sguardo viene subito catturato dall'incantevole cameriera al bancone. La sua uniforme rivela il suo nome: 'Fanny'.");
-        System.out.println("Il nome del diner però è diverso..");
-        Utilita.delay(4000);
-        System.out.println("Fanny è circondata da clienti, affascinati dal suo sorriso e dal suo profumo inebriante.");
-        System.out.println("Allora ti chiedi: ordino da mangiare? Ordino da bere?");
-        Utilita.delay(2000);
-        System.out.println("Vorresti prima ispezionare il posto, ma se non mangi tua nonna ti vede sciupato..");
-        System.out.println("Sei combattuto..<");
-        System.out.println("");
-        return introduzioneAmbiente= true;
     }
 
     public static void guardaStanzaDiner() {
