@@ -21,7 +21,6 @@ La repository è suddivisa in:
     - **`main`**
     - **`java`**
       - **`resources`**
- - **`target`**
  - **`doc`**
  -----------
  Questo è quanto! :)
