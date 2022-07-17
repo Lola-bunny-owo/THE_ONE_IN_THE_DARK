@@ -2,7 +2,7 @@
 Questa repository contiene il progetto che sto sviluppando al momento, un'avventura testuale chiamata "TheOneInTheDark".
 
 ### Avventura testuale 
-Il mio obiettivo, sin dall'inizio, è quello di intrigare il giocatore che s'immedesima nel protagonista della storia, Spike. Il progetto è nato come preparazione per un esame del corso 'Metodi Avanzati di Programmazione' dell'Università degli Studi di Bari (Dipartimento d'Informatica), ma l'idea è quello di farlo diventare qualcosa di più.
+Il mio obiettivo, sin dall'inizio, è quello di intrigare il giocatore che s'immedesima nel protagonista della storia, Spike. Il progetto è nato come preparazione per un esame del corso 'Metodi Avanzati di Programmazione' dell'Università degli Studi di Bari (Dipartimento d'Informatica), ma l'idea è quella di farlo diventare qualcosa di più.
 
 ### Storia
 È il 1995 e la storia si svolge nella misteriosa cittadina di _Awhell_, lontana dal resto del mondo. La cittadina è molto rinomata per alcune orribili vicende accadute nel 1975, e il giocatore (Spike) è il nuovo arrivato nella città, trasferitosi nella casa sulla spiaggia degli zii deceduti.
