@@ -1,18 +1,18 @@
-package com.angelamileti.Mappe;
+package com.angelamileti.mappe;
 
 /**
- * Classe che permette di creare una finestra la quale contiene la mappa della Biblioteca.
+ * Classe che permette di creare una finestra la quale contiene la mappa della Casa al primo piano.
  * @author Angela Mileti
  */
-public class MappaBiblioteca extends javax.swing.JFrame {
+public class MappaCasaPrimoPiano extends javax.swing.JFrame {
 
     /**
      * Creates new form Mappa
      */
-    public MappaBiblioteca() {
+    public MappaCasaPrimoPiano() {
         initComponents();
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -34,31 +34,31 @@ public class MappaBiblioteca extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("BIBLIOTECA");
+        setTitle("CASA 1# PIANO");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         setFont(new java.awt.Font("AnjaliOldLipi", 0, 14)); // NOI18N
         setForeground(java.awt.Color.darkGray);
         setIconImage(getIconImage());
-        setName("Mappa Biblioteca"); // NOI18N
+        setName("Mappa Casa#1"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Biblioteca.png"))); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Casa 1 piano.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Label)
+            .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getAccessibleContext().setAccessibleDescription("Mappa della biblioteca");
+        getAccessibleContext().setAccessibleDescription("Mappa della casa - 1 piano");
 
         pack();
         setLocationRelativeTo(null);
@@ -67,7 +67,7 @@ public class MappaBiblioteca extends javax.swing.JFrame {
     public static void stampaFrame(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MappaBiblioteca().setVisible(true);
+            new MappaCasaPrimoPiano().setVisible(true);
         });
     }
 

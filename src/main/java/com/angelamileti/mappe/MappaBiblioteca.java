@@ -1,18 +1,18 @@
-package com.angelamileti.Mappe;
+package com.angelamileti.mappe;
 
 /**
- * Classe che permette di creare una finestra la quale contiene la mappa della Spiaggia.
+ * Classe che permette di creare una finestra la quale contiene la mappa della Biblioteca.
  * @author Angela Mileti
  */
-public class MappaSpiaggia extends javax.swing.JFrame {
+public class MappaBiblioteca extends javax.swing.JFrame {
 
     /**
      * Creates new form Mappa
      */
-    public MappaSpiaggia() {
+    public MappaBiblioteca() {
         initComponents();
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -34,40 +34,40 @@ public class MappaSpiaggia extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SPIAGGIA");
+        setTitle("BIBLIOTECA");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         setFont(new java.awt.Font("AnjaliOldLipi", 0, 14)); // NOI18N
         setForeground(java.awt.Color.darkGray);
         setIconImage(getIconImage());
-        setName("Mappa Spiaggia"); // NOI18N
+        setName("Mappa Biblioteca"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Spiaggia.png"))); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Biblioteca.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Label)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getAccessibleContext().setAccessibleDescription("Mappa della spiaggia");
+        getAccessibleContext().setAccessibleDescription("Mappa della biblioteca");
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     public static void stampaFrame(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MappaSpiaggia().setVisible(true);
+            new MappaBiblioteca().setVisible(true);
         });
     }
 
@@ -75,4 +75,5 @@ public class MappaSpiaggia extends javax.swing.JFrame {
     private javax.swing.JLabel Label;
     private javax.swing.JInternalFrame jInternalFrame1;
     // End of variables declaration//GEN-END:variables
+
 }

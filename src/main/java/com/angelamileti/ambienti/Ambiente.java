@@ -1,4 +1,4 @@
-package com.angelamileti.Ambienti;
+package com.angelamileti.ambienti;
 
 import java.util.SortedSet;
 import java.util.TreeSet;

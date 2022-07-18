@@ -1,15 +1,15 @@
-package com.angelamileti.Mappe;
+package com.angelamileti.mappe;
 
 /**
- * Classe che permette di creare una finestra la quale contiene la mappa della Casa al primo piano.
+ * Classe che permette di creare una finestra la quale contiene la mappa del Diner.
  * @author Angela Mileti
  */
-public class MappaCasaSecondoPiano extends javax.swing.JFrame {
+public class MappaDiner extends javax.swing.JFrame {
 
     /**
      * Creates new form Mappa
      */
-    public MappaCasaSecondoPiano() {
+    public MappaDiner() {
         initComponents();
     }
 
@@ -34,18 +34,18 @@ public class MappaCasaSecondoPiano extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("CASA 2# PIANO");
+        setTitle("DINER");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         setFont(new java.awt.Font("AnjaliOldLipi", 0, 14)); // NOI18N
         setForeground(java.awt.Color.darkGray);
         setIconImage(getIconImage());
-        setName("Mappa Casa#2"); // NOI18N
+        setName("Mappa Diner"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Casa 2 piano.png"))); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Diner.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,7 +58,7 @@ public class MappaCasaSecondoPiano extends javax.swing.JFrame {
             .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getAccessibleContext().setAccessibleDescription("Mappa della casa - 2 piano");
+        getAccessibleContext().setAccessibleDescription("Mappa del diner");
 
         pack();
         setLocationRelativeTo(null);
@@ -67,7 +67,7 @@ public class MappaCasaSecondoPiano extends javax.swing.JFrame {
     public static void stampaFrame(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MappaCasaSecondoPiano().setVisible(true);
+            new MappaDiner().setVisible(true);
         });
     }
 

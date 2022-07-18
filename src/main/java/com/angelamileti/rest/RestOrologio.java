@@ -1,4 +1,4 @@
-package com.angelamileti.REST;
+package com.angelamileti.rest;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

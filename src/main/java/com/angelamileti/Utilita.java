@@ -10,10 +10,10 @@ import java.sql.*;
 import java.util.Scanner;
 import javax.sound.sampled.*;
 
-import com.angelamileti.Db.Database;
-import com.angelamileti.Db.DatabaseNPCs;
-import com.angelamileti.Ambienti.*;
-import com.angelamileti.REST.*;
+import com.angelamileti.db.Database;
+import com.angelamileti.db.DatabaseNPCs;
+import com.angelamileti.rest.*;
+import com.angelamileti.ambienti.*;
 
 /**
  * Classe di Utilità: in quest'ultima, si trovano metodi di vario tipo, come metodi per la stampa,

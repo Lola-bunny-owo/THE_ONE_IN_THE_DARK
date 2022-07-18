@@ -3,8 +3,8 @@ package com.angelamileti;
 import java.sql.*;
 import java.util.Random;
 
-import com.angelamileti.Ambienti.Ambiente;
-import com.angelamileti.Db.Database;
+import com.angelamileti.ambienti.Ambiente;
+import com.angelamileti.db.Database;
 
 /**
  * Classe relativa agli NPC all'interno dell'avventura testuale. Questa si occupa di gestire le 

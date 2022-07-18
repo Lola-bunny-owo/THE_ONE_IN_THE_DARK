@@ -1,30 +1,31 @@
-package com.angelamileti.Ambienti;
+package com.angelamileti.ambienti;
 
 import com.angelamileti.Utilita;
 
 /**
- * Classe che gestisce l'ambiente Diner. Come per ogni altro ambiente, questa classe contiene un
- * metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per l'acquisizione
- * dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati all'ambiente.
+ * Classe che gestisce l'ambiente Stazione di Polizia. Come per ogni altro ambiente, questa classe 
+ * contiene un metodo set nel quale s'impostano i valori degli attributi interessati, un metodo per
+ * l'acquisizione dell'input inerente all'ambiente, ed altri metodi di vario genere, sempre correlati
+ * all'ambiente.
  * @author Angela Mileti
  */
 
-public class Diner extends Ambiente {
+public class StazioneDiPolizia extends Ambiente {
     /**
      * @param args
      */
 
     public static boolean introduzioneAmbiente;
 
-    public Diner(){
+    public StazioneDiPolizia(){
         introduzioneAmbiente= false;
     }
 
     // Set dell'ambiente.
-    public static void setDiner() {
+    public static void setStazioneDiPolizia() {
         
         // Set del nome dell'ambiente e del numero delle stanze.
-        Ambiente.setNomeAmbiente("Diner");
+        Ambiente.setNomeAmbiente("Stazione di Polizia");
         if(!Ambiente.numeroStanze.isEmpty()){
             Ambiente.numeroStanze.clear();
         }
@@ -35,13 +36,13 @@ public class Diner extends Ambiente {
         Ambiente.numeroStanze.add(5);
         Ambiente.numeroStanze.add(6);
 
-        Ambiente.setNomiStanze(new String[] { "Ingresso", "Bancone", "Tabella della città",  "Tavolini", "Magazzino", "Bagno"});
+        Ambiente.setNomiStanze(new String[] { "Ingresso", "Ufficio n#1", "Ufficio n#2",  "Area denunce", "Stanza interrogatorio", "Celle di custodia"});
         Ambiente.setNumeroStanzaCorrente(numeroStanze.first());
-        Ambiente.setNomeStanzaCorrente("Ingresso");
+        Ambiente.setNomeStanzaCorrente("Di fronte casa");
 
         if(!introduzioneAmbiente){
             try {
-                Utilita.introduzioneDiner();
+                Utilita.introduzioneStazionePolizia();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -49,10 +50,18 @@ public class Diner extends Ambiente {
     }
 
     // Metodo per l'acquisizione dell'input inerente all'ambiente.
-    public static void acquisisciInputDiner(String inputUtente) throws InterruptedException{
+    public static void acquisisciInputStazionePolizia(String inputUtente) throws InterruptedException{
         if((inputUtente.equalsIgnoreCase("destra"))||(inputUtente.equalsIgnoreCase("destra"))){
 
-            if(getNumeroStanzaCorrente() == 2){
+            if(getNumeroStanzaCorrente() == 1){
+                incrementoStanza();
+                incrementoStanza();
+                incrementoStanza();
+                incrementoStanza();
+                Utilita.stampaStanzaCorrente();
+            }else if(getNumeroStanzaCorrente() == 2){
+                incrementoStanza();
+                incrementoStanza();
                 incrementoStanza();
                 Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 3){
@@ -64,10 +73,14 @@ public class Diner extends Ambiente {
 
         }else if((inputUtente.equalsIgnoreCase("vai a sinistra"))||(inputUtente.equalsIgnoreCase("sinistra"))){
                 
-            if(getNumeroStanzaCorrente() == 3){
+            if(getNumeroStanzaCorrente() == 4){
                 decrementoStanza();
                 Utilita.stampaStanzaCorrente();
-            }else if(getNumeroStanzaCorrente() == 4){
+            }else if(getNumeroStanzaCorrente() == 5){
+                // Va di default all'ingresso
+                decrementoStanza();
+                decrementoStanza();
+                decrementoStanza();
                 decrementoStanza();
                 Utilita.stampaStanzaCorrente();
             }else{
@@ -83,12 +96,12 @@ public class Diner extends Ambiente {
                 if(getNumeroStanzaCorrente() == 1){
                     incrementoStanza();
                     Utilita.stampaStanzaCorrente();
+                }else if(getNumeroStanzaCorrente() == 2){
+                    incrementoStanza();
+                    Utilita.stampaStanzaCorrente();
                 }else if(getNumeroStanzaCorrente() == 3){
                     incrementoStanza();
                     incrementoStanza();
-                    incrementoStanza();
-                    Utilita.stampaStanzaCorrente();
-                }else if(getNumeroStanzaCorrente() == 4){
                     incrementoStanza();
                     Utilita.stampaStanzaCorrente();
                 }else{
@@ -100,7 +113,7 @@ public class Diner extends Ambiente {
             if(getNumeroStanzaCorrente() == 2){
                 decrementoStanza();
                 Utilita.stampaStanzaCorrente();
-            }else if(getNumeroStanzaCorrente() == 5){
+            }else if(getNumeroStanzaCorrente() == 3){
                 decrementoStanza();
                 Utilita.stampaStanzaCorrente();
             }else if(getNumeroStanzaCorrente() == 6){
@@ -111,34 +124,25 @@ public class Diner extends Ambiente {
             }else{
                 System.out.println("Non puoi andare indietro.");
             }
-
+        
         }else if((inputUtente.equalsIgnoreCase("vai in Spiaggia"))||(inputUtente.equalsIgnoreCase("Spiaggia"))){
 
             if(getNumeroStanzaCorrente() == 1){
                 Utilita.stampaEntrataSpiaggia();
-                Spiaggia.setSpiaggia();
+                Spiaggia.setSpiaggia(); 
             }else{
                 System.out.println("Non puoi andare in Spiaggia da qui.");
             }
 
-        }else if((inputUtente.equalsIgnoreCase("vai alla stazione di Polizia"))||(inputUtente.equalsIgnoreCase("Stazione di Polizia"))){
-            System.out.println("Non puoi andare alla stazione di Polizia da qui.");
         }else if((inputUtente.equalsIgnoreCase("vai nella Foresta"))||(inputUtente.equalsIgnoreCase("Foresta"))){
-
-            if(getNumeroStanzaCorrente() == 1){
-                Utilita.stampaEntrataForesta();
-                Foresta.setForesta();
-            }else{
-                System.out.println("Non puoi andare nella Foresta da qui.");
-            }
-            
-        }else if((inputUtente.equalsIgnoreCase("vai in Biblioteca"))||(inputUtente.equalsIgnoreCase("Biblioteca"))){ 
-            System.out.println("Non puoi andare in Biblioteca da qui.");
+            System.out.println("Non puoi andare nella Foresta da qui.");
+        }else if((inputUtente.equalsIgnoreCase("vai al Diner"))||(inputUtente.equalsIgnoreCase("Diner"))){
+            System.out.println("Non puoi andare al Diner da qui.");
         }else if((inputUtente.equalsIgnoreCase("vai a casa"))||(inputUtente.equalsIgnoreCase("Casa"))){
             
             if(getNumeroStanzaCorrente() == 1){
                 Utilita.stampaEntrataCasa();
-                Casa.setCasa();
+                Casa.setCasa(); 
             }else{
                 System.out.println("Non puoi andare a casa da qui.");
             }
@@ -148,9 +152,10 @@ public class Diner extends Ambiente {
         }
     }
 
-    public static void guardaStanzaDiner() {
+    public static void guardaStanzaStazioneDiPolizia() {
         // TO-DO: da implementare più avanti :)
-        System.out.println("Nope. Non puoi ancora.");
+        System.out.println("Per ora, non puoi.");
     }
+
 
 }

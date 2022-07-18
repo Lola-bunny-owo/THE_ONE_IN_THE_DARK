@@ -3,8 +3,8 @@ package com.angelamileti;
 import java.sql.*;
 import java.util.Scanner;
 
-import com.angelamileti.Ambienti.Ambiente;
-import com.angelamileti.Db.Database;
+import com.angelamileti.ambienti.Ambiente;
+import com.angelamileti.db.Database;
 
 /**
  * Classe che si occupa di gestire gli oggetti nell'avventura testuale. Al suo interno sono 

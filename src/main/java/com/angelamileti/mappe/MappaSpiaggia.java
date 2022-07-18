@@ -1,15 +1,15 @@
-package com.angelamileti.Mappe;
+package com.angelamileti.mappe;
 
 /**
- * Classe che permette di creare una finestra la quale contiene la mappa della Stazione di Polizia.
+ * Classe che permette di creare una finestra la quale contiene la mappa della Spiaggia.
  * @author Angela Mileti
  */
-public class MappaPolizia extends javax.swing.JFrame {
+public class MappaSpiaggia extends javax.swing.JFrame {
 
     /**
      * Creates new form Mappa
      */
-    public MappaPolizia() {
+    public MappaSpiaggia() {
         initComponents();
     }
 
@@ -34,18 +34,18 @@ public class MappaPolizia extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("STAZIONE DI POLIZIA");
+        setTitle("SPIAGGIA");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         setFont(new java.awt.Font("AnjaliOldLipi", 0, 14)); // NOI18N
         setForeground(java.awt.Color.darkGray);
         setIconImage(getIconImage());
-        setName("Mappa Stazione di Polizia"); // NOI18N
+        setName("Mappa Spiaggia"); // NOI18N
         setResizable(false);
         setSize(new java.awt.Dimension(300, 300));
         setType(java.awt.Window.Type.UTILITY);
 
-        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Stazione di Polizia.png"))); // NOI18N
+        Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Spiaggia.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,16 +58,16 @@ public class MappaPolizia extends javax.swing.JFrame {
             .addComponent(Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getAccessibleContext().setAccessibleDescription("Mappa della stazione di polizia");
+        getAccessibleContext().setAccessibleDescription("Mappa della spiaggia");
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public static void stampaFrame(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MappaPolizia().setVisible(true);
+            new MappaSpiaggia().setVisible(true);
         });
     }
 

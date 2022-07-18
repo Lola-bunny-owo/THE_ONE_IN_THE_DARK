@@ -1,4 +1,4 @@
-package com.angelamileti.REST;
+package com.angelamileti.rest;
 
 /**
  * Classe che definisce delle variabili, le quali rappresentano la risposta dell'API RESTful.

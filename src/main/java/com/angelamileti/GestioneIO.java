@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import com.angelamileti.Ambienti.*;
-import com.angelamileti.Db.Database;
-import com.angelamileti.Mappe.*;
+import com.angelamileti.ambienti.*;
+import com.angelamileti.db.Database;
+import com.angelamileti.mappe.*;
 
 /**
  * Classe che gestisce l'input e l'output dell'utente. 

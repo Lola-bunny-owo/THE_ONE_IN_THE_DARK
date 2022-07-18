@@ -1,11 +1,11 @@
-package com.angelamileti.Ambienti;
+package com.angelamileti.ambienti;
 
 import java.sql.*;
 
 import com.angelamileti.NPCs;
 import com.angelamileti.Utilita;
-import com.angelamileti.Db.Database;
-import com.angelamileti.Db.DatabaseCasa;
+import com.angelamileti.db.Database;
+import com.angelamileti.db.DatabaseCasa;
 
 /**
  * Classe che gestisce l'ambiente Casa. Come per ogni altro ambiente, questa classe contiene un

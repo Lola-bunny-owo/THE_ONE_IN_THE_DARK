@@ -1,4 +1,4 @@
-package com.angelamileti.Db;
+package com.angelamileti.db;
 
 import java.sql.*;
 
